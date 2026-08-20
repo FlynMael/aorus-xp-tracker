@@ -409,6 +409,10 @@
     </section>
 
     <section id="drops-view" style="display:none;">
+      <div class="range-toggle" id="drops-period">
+        <button class="range-btn active" data-period="today">Hoje</button>
+        <button class="range-btn" data-period="7d">7 dias</button>
+      </div>
       <div class="range-toggle" id="drops-filter"></div>
       <div class="card" id="drops-list"></div>
     </section>
@@ -588,14 +592,14 @@ function renderPvpRanking(){
 
 function setRangeMode(mode){
   rangeMode = mode;
-  document.querySelectorAll(".range-btn").forEach(btn => {
+  document.querySelectorAll(".range-btn[data-mode]").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.mode === mode);
   });
   renderRanking();
   renderPvpRanking();
 }
 
-document.querySelectorAll(".range-btn").forEach(btn => {
+document.querySelectorAll(".range-btn[data-mode]").forEach(btn => {
   btn.addEventListener("click", () => setRangeMode(btn.dataset.mode));
 });
 
@@ -607,8 +611,23 @@ function updateFooter(){
     "Atualizado " + d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
 }
 
-let todayDropsCache = [];
+let allDropsCache = []; // histórico completo já ordenado, mais recente primeiro
 let dropsFilter = "all";
+let dropsPeriod = "today";
+
+function getDropsCutoffDate(period){
+  const now = new Date();
+  if(period === "7d"){
+    now.setDate(now.getDate() - 6); // hoje + 6 dias atrás = 7 dias
+  }
+  return now.toISOString().slice(0, 10);
+}
+
+function renderDropsPeriodToggle(){
+  document.querySelectorAll("#drops-period .range-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.period === dropsPeriod);
+  });
+}
 
 function renderDropsFilterChips(){
   const el = document.getElementById("drops-filter");
@@ -630,12 +649,16 @@ function renderDropsFilterChips(){
 
 function renderDropsList(){
   const el = document.getElementById("drops-list");
-  const rows = dropsFilter === "all"
-    ? todayDropsCache
-    : todayDropsCache.filter(d => d.nick.toLowerCase() === dropsFilter.toLowerCase());
+  const cutoff = getDropsCutoffDate(dropsPeriod);
+
+  let rows = allDropsCache.filter(d => d.date >= cutoff);
+  if(dropsFilter !== "all"){
+    rows = rows.filter(d => d.nick.toLowerCase() === dropsFilter.toLowerCase());
+  }
 
   if(rows.length === 0){
-    el.innerHTML = `<div class="empty">Nenhum drop hoje${dropsFilter === "all" ? "" : " de " + dropsFilter}.</div>`;
+    const periodLabel = dropsPeriod === "today" ? "hoje" : "nos últimos 7 dias";
+    el.innerHTML = `<div class="empty">Nenhum drop ${periodLabel}${dropsFilter === "all" ? "" : " de " + dropsFilter}.</div>`;
     return;
   }
 
@@ -664,6 +687,7 @@ function parseDropsCSV(text){
 
 async function fetchDrops(){
   const el = document.getElementById("drops-list");
+  renderDropsPeriodToggle();
   renderDropsFilterChips();
   try{
     const res = await fetch(DROPS_CSV_URL, { cache: "no-store" });
@@ -674,14 +698,28 @@ async function fetchDrops(){
     const text = await res.text();
     const drops = parseDropsCSV(text);
 
-    const todayStr = new Date().toISOString().slice(0, 10);
-    todayDropsCache = drops.filter(d => d.date === todayStr).reverse(); // mais recente primeiro
+    // ordena por data+horário, mais recente primeiro
+    drops.forEach(d => {
+      const timeMatch = (d.horario || "").match(/(\d{2}:\d{2})$/);
+      const time = timeMatch ? timeMatch[1] : "00:00";
+      d._sortKey = `${d.date}T${time}`;
+    });
+    drops.sort((a, b) => b._sortKey.localeCompare(a._sortKey));
 
+    allDropsCache = drops;
     renderDropsList();
   }catch(err){
     el.innerHTML = `<div class="empty">Erro ao carregar drops. Tenta atualizar de novo.</div>`;
   }
 }
+
+document.querySelectorAll("#drops-period .range-btn[data-period]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    dropsPeriod = btn.dataset.period;
+    renderDropsPeriodToggle();
+    renderDropsList();
+  });
+});
 
 async function loadData(){
   document.getElementById("loading").style.display = "block";
