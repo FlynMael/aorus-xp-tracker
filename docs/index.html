@@ -122,6 +122,14 @@
     font-weight: 600;
   }
 
+  #drops-filter{
+    flex-wrap: wrap;
+  }
+  #drops-filter .range-btn{
+    flex: 0 0 auto;
+    padding: 7px 12px;
+  }
+
   .card{
     background: var(--bg-elevated);
     border: 1px solid var(--line);
@@ -401,6 +409,7 @@
     </section>
 
     <section id="drops-view" style="display:none;">
+      <div class="range-toggle" id="drops-filter"></div>
       <div class="card" id="drops-list"></div>
     </section>
   </div>
@@ -598,6 +607,49 @@ function updateFooter(){
     "Atualizado " + d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
 }
 
+let todayDropsCache = [];
+let dropsFilter = "all";
+
+function renderDropsFilterChips(){
+  const el = document.getElementById("drops-filter");
+  const chips = ["all", ...TRACKED_PLAYERS];
+  el.innerHTML = chips.map(name => {
+    const label = name === "all" ? "Todos" : name;
+    const active = dropsFilter === name ? "active" : "";
+    return `<button class="range-btn ${active}" data-player="${name}">${label}</button>`;
+  }).join("");
+
+  el.querySelectorAll(".range-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      dropsFilter = btn.dataset.player;
+      renderDropsFilterChips();
+      renderDropsList();
+    });
+  });
+}
+
+function renderDropsList(){
+  const el = document.getElementById("drops-list");
+  const rows = dropsFilter === "all"
+    ? todayDropsCache
+    : todayDropsCache.filter(d => d.nick.toLowerCase() === dropsFilter.toLowerCase());
+
+  if(rows.length === 0){
+    el.innerHTML = `<div class="empty">Nenhum drop hoje${dropsFilter === "all" ? "" : " de " + dropsFilter}.</div>`;
+    return;
+  }
+
+  el.innerHTML = rows.map(d => `
+    <div class="drop-row">
+      <div class="drop-top">
+        <span class="drop-item">${d.item}</span>
+        <span class="drop-time">${(d.horario || "").replace(" ás ", " · ")}</span>
+      </div>
+      <div class="drop-meta"><b>${d.nick}</b> (${d.classe}) — ${d.monster} · ${d.mapa}</div>
+    </div>
+  `).join("");
+}
+
 function parseDropsCSV(text){
   const lines = text.trim().split("\n");
   if(lines.length <= 1) return [];
@@ -612,6 +664,7 @@ function parseDropsCSV(text){
 
 async function fetchDrops(){
   const el = document.getElementById("drops-list");
+  renderDropsFilterChips();
   try{
     const res = await fetch(DROPS_CSV_URL, { cache: "no-store" });
     if(!res.ok){
@@ -622,23 +675,9 @@ async function fetchDrops(){
     const drops = parseDropsCSV(text);
 
     const todayStr = new Date().toISOString().slice(0, 10);
-    const todayDrops = drops.filter(d => d.date === todayStr);
-    todayDrops.reverse(); // mais recente primeiro
+    todayDropsCache = drops.filter(d => d.date === todayStr).reverse(); // mais recente primeiro
 
-    if(todayDrops.length === 0){
-      el.innerHTML = `<div class="empty">Nenhum drop hoje ainda pros players rastreados.</div>`;
-      return;
-    }
-
-    el.innerHTML = todayDrops.map(d => `
-      <div class="drop-row">
-        <div class="drop-top">
-          <span class="drop-item">${d.item}</span>
-          <span class="drop-time">${(d.horario || "").replace(" ás ", " · ")}</span>
-        </div>
-        <div class="drop-meta"><b>${d.nick}</b> (${d.classe}) — ${d.monster} · ${d.mapa}</div>
-      </div>
-    `).join("");
+    renderDropsList();
   }catch(err){
     el.innerHTML = `<div class="empty">Erro ao carregar drops. Tenta atualizar de novo.</div>`;
   }
