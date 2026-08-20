@@ -107,12 +107,13 @@
     border: 1px solid var(--line);
     color: var(--text-muted);
     font-family:'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.06em;
+    font-size: 10px;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
-    padding: 8px 0;
+    padding: 8px 2px;
     border-radius: 8px;
     cursor: pointer;
+    white-space: nowrap;
   }
   .range-btn.active{
     background: var(--gold);
@@ -333,8 +334,8 @@
 
     <div class="tabs">
       <div class="tab active" data-tab="players">Players</div>
-      <div class="tab" data-tab="ranking">Nível 24h</div>
-      <div class="tab" data-tab="pvp">PvP 24h</div>
+      <div class="tab" data-tab="ranking">Nível</div>
+      <div class="tab" data-tab="pvp">PvP</div>
     </div>
 
     <div id="loading" class="loading">Carregando dados…</div>
@@ -347,7 +348,9 @@
     <section id="ranking-view" style="display:none;">
       <div class="range-toggle">
         <button class="range-btn active" data-mode="24h">24h</button>
-        <button class="range-btn" data-mode="today">Hoje (00:00)</button>
+        <button class="range-btn" data-mode="today">Hoje</button>
+        <button class="range-btn" data-mode="7d">7 dias</button>
+        <button class="range-btn" data-mode="30d">30 dias</button>
       </div>
       <div class="card" id="ranking-list"></div>
     </section>
@@ -355,7 +358,9 @@
     <section id="pvp-view" style="display:none;">
       <div class="range-toggle">
         <button class="range-btn active" data-mode="24h">24h</button>
-        <button class="range-btn" data-mode="today">Hoje (00:00)</button>
+        <button class="range-btn" data-mode="today">Hoje</button>
+        <button class="range-btn" data-mode="7d">7 dias</button>
+        <button class="range-btn" data-mode="30d">30 dias</button>
       </div>
       <div class="card" id="pvp-list"></div>
     </section>
@@ -385,14 +390,16 @@ function parseCSV(text){
   });
 }
 
-let rangeMode = "24h"; // "24h" ou "today"
+let rangeMode = "24h"; // "24h", "today", "7d" ou "30d"
 
 function getBaselineTs(latestTs, mode){
   if(mode === "today"){
     const now = new Date();
     return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0).getTime();
   }
-  return latestTs - 24*60*60*1000;
+  if(mode === "7d") return latestTs - 7*24*60*60*1000;
+  if(mode === "30d") return latestTs - 30*24*60*60*1000;
+  return latestTs - 24*60*60*1000; // "24h"
 }
 
 function latestAndPast(name, mode="24h"){
