@@ -288,6 +288,40 @@
   .rank-name{ flex:1; font-family:'Cinzel', serif; font-size: 15px; }
   .rank-gain{ font-family:'IBM Plex Mono', monospace; font-size: 13px; color: var(--positive); }
 
+  .drop-row{
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .drop-row:last-child{ border-bottom: none; }
+  .drop-row .drop-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .drop-row .drop-item{
+    font-family:'Cinzel', serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--gold-bright);
+  }
+  .drop-row .drop-time{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .drop-row .drop-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+  .drop-row .drop-meta b{
+    color: var(--text);
+    font-weight: 600;
+  }
+
   .empty, .loading{
     text-align:center;
     padding: 30px 10px;
@@ -336,6 +370,7 @@
       <div class="tab active" data-tab="players">Players</div>
       <div class="tab" data-tab="ranking">Nível</div>
       <div class="tab" data-tab="pvp">PvP</div>
+      <div class="tab" data-tab="drops">Drops</div>
     </div>
 
     <div id="loading" class="loading">Carregando dados…</div>
@@ -364,6 +399,10 @@
       </div>
       <div class="card" id="pvp-list"></div>
     </section>
+
+    <section id="drops-view" style="display:none;">
+      <div class="card" id="drops-list"></div>
+    </section>
   </div>
 
   <footer>
@@ -373,6 +412,7 @@
 
 <script>
 const CSV_URL = "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history.csv";
+const DROPS_API_BASE = "https://aorus-drops-analytics.vercel.app/api/drops";
 const TRACKED_PLAYERS = ["Tempest", "DarkFury", "midnightpurple", "SrVittar", "Secret", "LekJhonson95"];
 
 let allRows = [];
@@ -558,6 +598,39 @@ function updateFooter(){
     "Atualizado " + d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
 }
 
+async function fetchDrops(){
+  const el = document.getElementById("drops-list");
+  try{
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.getMonth() + 1;
+    const year = now.getFullYear();
+    const url = `${DROPS_API_BASE}?day=${day}&month=${month}&year=${year}&t=${now.getTime()}`;
+    const res = await fetch(url, { cache: "no-store" });
+    const drops = await res.json();
+
+    const trackedLower = TRACKED_PLAYERS.map(p => p.toLowerCase());
+    const filtered = drops.filter(d => trackedLower.includes((d.nick || "").toLowerCase()));
+
+    if(filtered.length === 0){
+      el.innerHTML = `<div class="empty">Nenhum drop hoje ainda pros players rastreados.</div>`;
+      return;
+    }
+
+    el.innerHTML = filtered.map(d => `
+      <div class="drop-row">
+        <div class="drop-top">
+          <span class="drop-item">${d.item}</span>
+          <span class="drop-time">${d.horario.replace(" ás ", " · ")}</span>
+        </div>
+        <div class="drop-meta"><b>${d.nick}</b> (${d.classe}) — ${d.monster} · ${d.mapa}</div>
+      </div>
+    `).join("");
+  }catch(err){
+    el.innerHTML = `<div class="empty">Erro ao carregar drops. Tenta atualizar de novo.</div>`;
+  }
+}
+
 async function loadData(){
   document.getElementById("loading").style.display = "block";
   try{
@@ -575,6 +648,7 @@ async function loadData(){
   }finally{
     document.getElementById("loading").style.display = "none";
   }
+  fetchDrops();
 }
 
 document.querySelectorAll(".tab").forEach(tab => {
@@ -585,6 +659,7 @@ document.querySelectorAll(".tab").forEach(tab => {
     document.getElementById("players-view").style.display = target === "players" ? "block" : "none";
     document.getElementById("ranking-view").style.display = target === "ranking" ? "block" : "none";
     document.getElementById("pvp-view").style.display = target === "pvp" ? "block" : "none";
+    document.getElementById("drops-view").style.display = target === "drops" ? "block" : "none";
   });
 });
 
