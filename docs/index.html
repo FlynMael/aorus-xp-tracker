@@ -1,1 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0E0B08" />
+<title>Aorus Tale — Rastreador</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="icon" href="icon-192.png" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E0B08;
+    --bg-elevated: #18130C;
+    --bg-elevated-2: #221B10;
+    --line: #35291A;
+    --gold: #C9A227;
+    --gold-bright: #E8C25A;
+    --lapis: #2E7C8A;
+    --text: #F3E9D2;
+    --text-muted: #9C9182;
+    --positive: #7FB369;
+    --negative: #C4573F;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: radial-gradient(120% 90% at 50% -10%, #241a0d 0%, var(--bg) 55%);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+  .wrap{
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 28px 20px 0;
+  }
+  header{
+    text-align:center;
+    margin-bottom: 22px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+  h1{
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: 0.02em;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .divider{
+    width: 64px;
+    height: 2px;
+    margin: 14px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
 
+  .tabs{
+    display:flex;
+    gap: 4px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 18px;
+  }
+  .tab{
+    flex:1;
+    text-align:center;
+    padding: 10px 0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+    transition: background .18s ease, color .18s ease;
+  }
+  .tab.active{
+    background: var(--gold);
+    color: #1A1206;
+    font-weight: 600;
+  }
+
+  .card{
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .player-row{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 13px 4px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--line);
+  }
+  .player-row:last-child{border-bottom:none;}
+  .player-row .name{
+    font-family:'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .player-row .clan{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .lvl-chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--gold-bright);
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+
+  /* detail panel */
+  #detail{ display:none; }
+  #detail.show{ display:block; }
+  .detail-name{
+    font-family:'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold-bright);
+    margin: 0 0 2px;
+  }
+  .detail-clan{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .cartouche-label{
+    display:flex;
+    justify-content: space-between;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .cartouche{
+    position: relative;
+    height: 26px;
+    background: var(--bg-elevated-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .cartouche::before, .cartouche::after{
+    content:"";
+    position:absolute;
+    top:0; bottom:0;
+    width: 6px;
+    background: var(--bg);
+    z-index: 2;
+  }
+  .cartouche::before{ left: -1px; border-radius: 999px 0 0 999px; }
+  .cartouche::after{ right: -1px; border-radius: 0 999px 999px 0; }
+  .cartouche-fill{
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-bright) 100%);
+    border-radius: 999px;
+    transition: width .4s ease;
+  }
+  .cartouche-pct{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1A1206;
+    mix-blend-mode: normal;
+    z-index: 3;
+  }
+
+  .stat-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .stat-box{
+    background: var(--bg-elevated-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .stat-box .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .stat-box .value{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .delta{
+    font-size: 11px;
+    margin-top: 3px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .delta.pos{ color: var(--positive); }
+  .delta.neg{ color: var(--negative); }
+  .delta.zero{ color: var(--text-muted); }
+
+  /* ranking */
+  .rank-row{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 11px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .rank-row:last-child{ border-bottom:none; }
+  .rank-num{
+    font-family:'Cinzel', serif;
+    font-weight: 700;
+    font-size: 15px;
+    width: 26px;
+    height: 26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 50%;
+    color: var(--text-muted);
+    border: 1px solid var(--line);
+    flex-shrink:0;
+  }
+  .rank-row:nth-child(1) .rank-num{ background: var(--gold); color:#1A1206; border-color: var(--gold); }
+  .rank-row:nth-child(2) .rank-num{ background: #B9B9B9; color:#1A1206; border-color:#B9B9B9; }
+  .rank-row:nth-child(3) .rank-num{ background: #A9713D; color:#1A1206; border-color:#A9713D; }
+  .rank-name{ flex:1; font-family:'Cinzel', serif; font-size: 15px; }
+  .rank-gain{ font-family:'IBM Plex Mono', monospace; font-size: 13px; color: var(--positive); }
+
+  .empty, .loading{
+    text-align:center;
+    padding: 30px 10px;
+    color: var(--text-muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+
+  footer{
+    max-width: 480px;
+    margin: 18px auto 0;
+    padding: 0 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  #refresh{
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--gold);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cartouche-fill{ transition: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Aorus Tale</p>
+      <h1>Rastreador de XP</h1>
+      <div class="divider"></div>
+    </header>
+
+    <div class="tabs">
+      <div class="tab active" data-tab="players">Players</div>
+      <div class="tab" data-tab="ranking">Ranking 24h</div>
+    </div>
+
+    <div id="loading" class="loading">Carregando dados…</div>
+
+    <section id="players-view">
+      <div class="card" id="player-list"></div>
+      <div class="card" id="detail"></div>
+    </section>
+
+    <section id="ranking-view" style="display:none;">
+      <div class="card" id="ranking-list"></div>
+    </section>
+  </div>
+
+  <footer>
+    <span id="updated-at">—</span>
+    <button id="refresh">Atualizar</button>
+  </footer>
+
+<script>
+const CSV_URL = "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history.csv";
+const TRACKED_PLAYERS = ["Tempest", "DarkFury", "midnightpurple", "SrVittar", "Secret", "LekJhonson95"];
+
+let allRows = [];
+let selectedPlayer = null;
+
+function parseCSV(text){
+  const lines = text.trim().split("\n");
+  const headers = lines[0].split(",");
+  return lines.slice(1).map(line => {
+    const values = line.split(",");
+    const row = {};
+    headers.forEach((h,i) => row[h.trim()] = (values[i]||"").trim());
+    row.ts = new Date(row.created_at).getTime();
+    return row;
+  });
+}
+
+function latestAndPast(name, hoursAgo=24){
+  const rows = allRows.filter(r => r.name.toLowerCase() === name.toLowerCase()).sort((a,b)=>a.ts-b.ts);
+  if(rows.length===0) return null;
+  const latest = rows[rows.length-1];
+  const targetTs = latest.ts - hoursAgo*60*60*1000;
+  let past = rows[0];
+  for(const r of rows){ if(r.ts <= targetTs) past = r; else break; }
+  return {latest, past};
+}
+
+function fmtDelta(val){
+  const cls = val > 0 ? "pos" : (val < 0 ? "neg" : "zero");
+  const sign = val > 0 ? "+" : "";
+  return `<span class="delta ${cls}">${sign}${val} (24h)</span>`;
+}
+
+function renderPlayerList(){
+  const el = document.getElementById("player-list");
+  el.innerHTML = TRACKED_PLAYERS.map(name => {
+    const result = latestAndPast(name);
+    if(!result) return `<div class="player-row"><span class="name">${name}</span><span class="lvl-chip">sem dados</span></div>`;
+    const { latest } = result;
+    return `<div class="player-row" data-name="${name}">
+      <div>
+        <div class="name">${latest.name}</div>
+        <div class="clan">${latest.clan}</div>
+      </div>
+      <div class="lvl-chip">Lvl ${latest.level}</div>
+    </div>`;
+  }).join("");
+
+  el.querySelectorAll(".player-row").forEach(row => {
+    row.addEventListener("click", () => selectPlayer(row.dataset.name));
+  });
+}
+
+function selectPlayer(name){
+  selectedPlayer = name;
+  const result = latestAndPast(name);
+  const detail = document.getElementById("detail");
+  if(!result){
+    detail.innerHTML = `<div class="empty">Sem dados pra ${name} ainda.</div>`;
+    detail.classList.add("show");
+    return;
+  }
+  const { latest, past } = result;
+  const expGain = Number(latest.battleEXP) - Number(past.battleEXP);
+  const killsGain = Number(latest.kills) - Number(past.kills);
+  const pct = Math.min(100, Math.max(0, Number(latest.percent)));
+
+  detail.innerHTML = `
+    <p class="detail-name">${latest.name}</p>
+    <p class="detail-clan">${latest.clan} · Level ${latest.level}</p>
+
+    <div class="cartouche-label"><span>Progresso do nível</span><span>${pct.toFixed(2)}%</span></div>
+    <div class="cartouche">
+      <div class="cartouche-fill" style="width:${pct}%"></div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="label">Kills</div>
+        <div class="value">${latest.kills}</div>
+        ${fmtDelta(killsGain)}
+      </div>
+      <div class="stat-box">
+        <div class="label">BattleEXP</div>
+        <div class="value">${Number(latest.battleEXP).toLocaleString("pt-BR")}</div>
+        ${fmtDelta(expGain)}
+      </div>
+    </div>
+  `;
+  detail.classList.add("show");
+}
+
+function renderRanking(){
+  const el = document.getElementById("ranking-list");
+  const rows = TRACKED_PLAYERS.map(name => {
+    const result = latestAndPast(name);
+    if(!result) return null;
+    const gain = Number(result.latest.battleEXP) - Number(result.past.battleEXP);
+    return { name: result.latest.name, gain };
+  }).filter(Boolean).sort((a,b)=>b.gain-a.gain);
+
+  if(rows.length===0){
+    el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
+    return;
+  }
+
+  el.innerHTML = rows.map((r,i) => `
+    <div class="rank-row">
+      <div class="rank-num">${i+1}</div>
+      <div class="rank-name">${r.name}</div>
+      <div class="rank-gain">+${r.gain.toLocaleString("pt-BR")} EXP</div>
+    </div>
+  `).join("");
+}
+
+function updateFooter(){
+  if(allRows.length===0) return;
+  const latestTs = Math.max(...allRows.map(r=>r.ts));
+  const d = new Date(latestTs);
+  document.getElementById("updated-at").textContent =
+    "Atualizado " + d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+}
+
+async function loadData(){
+  document.getElementById("loading").style.display = "block";
+  try{
+    const res = await fetch(CSV_URL, { cache: "no-store" });
+    const text = await res.text();
+    allRows = parseCSV(text);
+    renderPlayerList();
+    renderRanking();
+    updateFooter();
+    if(selectedPlayer) selectPlayer(selectedPlayer);
+  }catch(err){
+    document.getElementById("player-list").innerHTML =
+      `<div class="empty">Erro ao carregar dados. Verifique sua internet e tente novamente.</div>`;
+  }finally{
+    document.getElementById("loading").style.display = "none";
+  }
+}
+
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+    const target = tab.dataset.tab;
+    document.getElementById("players-view").style.display = target === "players" ? "block" : "none";
+    document.getElementById("ranking-view").style.display = target === "ranking" ? "block" : "none";
+  });
+});
+
+document.getElementById("refresh").addEventListener("click", loadData);
+
+loadData();
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>
