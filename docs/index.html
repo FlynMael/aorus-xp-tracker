@@ -122,10 +122,10 @@
     font-weight: 600;
   }
 
-  #drops-filter{
+  #drops-filter, #drops-category{
     flex-wrap: wrap;
   }
-  #drops-filter .range-btn{
+  #drops-filter .range-btn, #drops-category .range-btn{
     flex: 0 0 auto;
     padding: 7px 12px;
   }
@@ -413,6 +413,7 @@
         <button class="range-btn active" data-period="today">Hoje</button>
         <button class="range-btn" data-period="7d">7 dias</button>
       </div>
+      <div class="range-toggle" id="drops-category"></div>
       <div class="range-toggle" id="drops-filter"></div>
       <div class="card" id="drops-list"></div>
     </section>
@@ -614,6 +615,23 @@ function updateFooter(){
 let allDropsCache = []; // histórico completo já ordenado, mais recente primeiro
 let dropsFilter = "all";
 let dropsPeriod = "today";
+let dropsCategory = "all";
+
+const DROP_CATEGORIES = [
+  { key: "all", label: "Todos" },
+  { key: "fragment", label: "Fragmentos" },
+  { key: "gem", label: "Gemas" },
+  { key: "shelton", label: "Sheltons" },
+  { key: "other", label: "Outros" },
+];
+
+function categorizeItem(name){
+  const n = (name || "").toLowerCase();
+  if(n.includes("fragment")) return "fragment";
+  if(n.includes("gem")) return "gem";
+  if(n.includes("shelton")) return "shelton";
+  return "other";
+}
 
 function getDropsCutoffDate(period){
   const now = new Date();
@@ -626,6 +644,22 @@ function getDropsCutoffDate(period){
 function renderDropsPeriodToggle(){
   document.querySelectorAll("#drops-period .range-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.period === dropsPeriod);
+  });
+}
+
+function renderDropsCategoryToggle(){
+  const el = document.getElementById("drops-category");
+  el.innerHTML = DROP_CATEGORIES.map(c => {
+    const active = dropsCategory === c.key ? "active" : "";
+    return `<button class="range-btn ${active}" data-category="${c.key}">${c.label}</button>`;
+  }).join("");
+
+  el.querySelectorAll(".range-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      dropsCategory = btn.dataset.category;
+      renderDropsCategoryToggle();
+      renderDropsList();
+    });
   });
 }
 
@@ -655,10 +689,13 @@ function renderDropsList(){
   if(dropsFilter !== "all"){
     rows = rows.filter(d => d.nick.toLowerCase() === dropsFilter.toLowerCase());
   }
+  if(dropsCategory !== "all"){
+    rows = rows.filter(d => categorizeItem(d.item) === dropsCategory);
+  }
 
   if(rows.length === 0){
     const periodLabel = dropsPeriod === "today" ? "hoje" : "nos últimos 7 dias";
-    el.innerHTML = `<div class="empty">Nenhum drop ${periodLabel}${dropsFilter === "all" ? "" : " de " + dropsFilter}.</div>`;
+    el.innerHTML = `<div class="empty">Nenhum drop ${periodLabel}${dropsFilter === "all" ? "" : " de " + dropsFilter}${dropsCategory === "all" ? "" : " nessa categoria"}.</div>`;
     return;
   }
 
@@ -688,6 +725,7 @@ function parseDropsCSV(text){
 async function fetchDrops(){
   const el = document.getElementById("drops-list");
   renderDropsPeriodToggle();
+  renderDropsCategoryToggle();
   renderDropsFilterChips();
   try{
     const res = await fetch(DROPS_CSV_URL, { cache: "no-store" });
