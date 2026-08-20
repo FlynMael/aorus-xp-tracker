@@ -96,6 +96,31 @@
     font-weight: 600;
   }
 
+  .range-toggle{
+    display:flex;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  .range-btn{
+    flex:1;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    color: var(--text-muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .range-btn.active{
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #1A1206;
+    font-weight: 600;
+  }
+
   .card{
     background: var(--bg-elevated);
     border: 1px solid var(--line);
@@ -320,10 +345,18 @@
     </section>
 
     <section id="ranking-view" style="display:none;">
+      <div class="range-toggle">
+        <button class="range-btn active" data-mode="24h">24h</button>
+        <button class="range-btn" data-mode="today">Hoje (00:00)</button>
+      </div>
       <div class="card" id="ranking-list"></div>
     </section>
 
     <section id="pvp-view" style="display:none;">
+      <div class="range-toggle">
+        <button class="range-btn active" data-mode="24h">24h</button>
+        <button class="range-btn" data-mode="today">Hoje (00:00)</button>
+      </div>
       <div class="card" id="pvp-list"></div>
     </section>
   </div>
@@ -352,20 +385,30 @@ function parseCSV(text){
   });
 }
 
-function latestAndPast(name, hoursAgo=24){
+let rangeMode = "24h"; // "24h" ou "today"
+
+function getBaselineTs(latestTs, mode){
+  if(mode === "today"){
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0).getTime();
+  }
+  return latestTs - 24*60*60*1000;
+}
+
+function latestAndPast(name, mode="24h"){
   const rows = allRows.filter(r => r.name.toLowerCase() === name.toLowerCase()).sort((a,b)=>a.ts-b.ts);
   if(rows.length===0) return null;
   const latest = rows[rows.length-1];
-  const targetTs = latest.ts - hoursAgo*60*60*1000;
+  const targetTs = getBaselineTs(latest.ts, mode);
   let past = rows[0];
   for(const r of rows){ if(r.ts <= targetTs) past = r; else break; }
   return {latest, past};
 }
 
-function fmtDelta(val){
+function fmtDelta(val, label="24h"){
   const cls = val > 0 ? "pos" : (val < 0 ? "neg" : "zero");
   const sign = val > 0 ? "+" : "";
-  return `<span class="delta ${cls}">${sign}${val} (24h)</span>`;
+  return `<span class="delta ${cls}">${sign}${val} (${label})</span>`;
 }
 
 function renderPlayerList(){
@@ -440,7 +483,7 @@ function trueProgress(past, latest){
 function renderRanking(){
   const el = document.getElementById("ranking-list");
   const rows = TRACKED_PLAYERS.map(name => {
-    const result = latestAndPast(name);
+    const result = latestAndPast(name, rangeMode);
     if(!result) return null;
     const progress = trueProgress(result.past, result.latest);
     return { name: result.latest.name, progress };
@@ -463,7 +506,7 @@ function renderRanking(){
 function renderPvpRanking(){
   const el = document.getElementById("pvp-list");
   const rows = TRACKED_PLAYERS.map(name => {
-    const result = latestAndPast(name);
+    const result = latestAndPast(name, rangeMode);
     if(!result) return null;
     const expGain = Number(result.latest.battleEXP) - Number(result.past.battleEXP);
     const killsGain = Number(result.latest.kills) - Number(result.past.kills);
@@ -486,6 +529,19 @@ function renderPvpRanking(){
     </div>
   `).join("");
 }
+
+function setRangeMode(mode){
+  rangeMode = mode;
+  document.querySelectorAll(".range-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.mode === mode);
+  });
+  renderRanking();
+  renderPvpRanking();
+}
+
+document.querySelectorAll(".range-btn").forEach(btn => {
+  btn.addEventListener("click", () => setRangeMode(btn.dataset.mode));
+});
 
 function updateFooter(){
   if(allRows.length===0) return;
