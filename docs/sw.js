@@ -1,22 +1,16 @@
-const CACHE = "aorus-xp-shell-v1";
-const SHELL_FILES = ["./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
+// Service worker "no-op": nao guarda nada em cache, so existe pra permitir
+// instalar o app na tela inicial. Assim toda atualizacao aparece na hora,
+// sem precisar desinstalar/reinstalar.
 
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(SHELL_FILES))
-  );
+self.addEventListener("install", () => {
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(self.clients.claim());
-});
-
-self.addEventListener("fetch", (event) => {
-  // Não cacheia o CSV de dados — sempre busca da rede pra ter dado atual
-  if (event.request.url.includes("history.csv")) return;
-
-  event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request))
+  event.waitUntil(
+    caches.keys().then((keys) => Promise.all(keys.map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
 });
+
+// Sem handler de "fetch" -> o navegador busca tudo direto da rede, sempre.
