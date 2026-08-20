@@ -308,7 +308,8 @@
 
     <div class="tabs">
       <div class="tab active" data-tab="players">Players</div>
-      <div class="tab" data-tab="ranking">Ranking 24h</div>
+      <div class="tab" data-tab="ranking">Nível 24h</div>
+      <div class="tab" data-tab="pvp">PvP 24h</div>
     </div>
 
     <div id="loading" class="loading">Carregando dados…</div>
@@ -320,6 +321,10 @@
 
     <section id="ranking-view" style="display:none;">
       <div class="card" id="ranking-list"></div>
+    </section>
+
+    <section id="pvp-view" style="display:none;">
+      <div class="card" id="pvp-list"></div>
     </section>
   </div>
 
@@ -408,12 +413,12 @@ function selectPlayer(name){
 
     <div class="stat-grid">
       <div class="stat-box">
-        <div class="label">Kills</div>
+        <div class="label">Kills (PvP)</div>
         <div class="value">${latest.kills}</div>
         ${fmtDelta(killsGain)}
       </div>
       <div class="stat-box">
-        <div class="label">BattleEXP</div>
+        <div class="label">XP de PvP</div>
         <div class="value">${Number(latest.battleEXP).toLocaleString("pt-BR")}</div>
         ${fmtDelta(expGain)}
       </div>
@@ -422,14 +427,24 @@ function selectPlayer(name){
   detail.classList.add("show");
 }
 
+function trueProgress(past, latest){
+  // percent é 0-100 dentro do level atual. Se subiu de level no intervalo,
+  // soma 100% por level ganho — assim dá o progresso real, comparável
+  // entre players em levels diferentes (battleEXP bruto não é comparável:
+  // ele só conta XP de combate, e o custo de XP por % varia por level).
+  const levelDiff = Number(latest.level) - Number(past.level);
+  const pctDiff = Number(latest.percent) - Number(past.percent);
+  return levelDiff * 100 + pctDiff;
+}
+
 function renderRanking(){
   const el = document.getElementById("ranking-list");
   const rows = TRACKED_PLAYERS.map(name => {
     const result = latestAndPast(name);
     if(!result) return null;
-    const gain = Number(result.latest.battleEXP) - Number(result.past.battleEXP);
-    return { name: result.latest.name, gain };
-  }).filter(Boolean).sort((a,b)=>b.gain-a.gain);
+    const progress = trueProgress(result.past, result.latest);
+    return { name: result.latest.name, progress };
+  }).filter(Boolean).sort((a,b)=>b.progress-a.progress);
 
   if(rows.length===0){
     el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
@@ -440,7 +455,34 @@ function renderRanking(){
     <div class="rank-row">
       <div class="rank-num">${i+1}</div>
       <div class="rank-name">${r.name}</div>
-      <div class="rank-gain">+${r.gain.toLocaleString("pt-BR")} EXP</div>
+      <div class="rank-gain">+${r.progress.toFixed(2)}% nível</div>
+    </div>
+  `).join("");
+}
+
+function renderPvpRanking(){
+  const el = document.getElementById("pvp-list");
+  const rows = TRACKED_PLAYERS.map(name => {
+    const result = latestAndPast(name);
+    if(!result) return null;
+    const expGain = Number(result.latest.battleEXP) - Number(result.past.battleEXP);
+    const killsGain = Number(result.latest.kills) - Number(result.past.kills);
+    return { name: result.latest.name, expGain, killsGain };
+  }).filter(Boolean).sort((a,b)=>b.expGain-a.expGain);
+
+  if(rows.length===0){
+    el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
+    return;
+  }
+
+  el.innerHTML = rows.map((r,i) => `
+    <div class="rank-row">
+      <div class="rank-num">${i+1}</div>
+      <div class="rank-name">${r.name}</div>
+      <div style="text-align:right;">
+        <div class="rank-gain">+${r.expGain.toLocaleString("pt-BR")} XP</div>
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-muted);">${r.killsGain >= 0 ? "+" : ""}${r.killsGain} kills</div>
+      </div>
     </div>
   `).join("");
 }
@@ -461,6 +503,7 @@ async function loadData(){
     allRows = parseCSV(text);
     renderPlayerList();
     renderRanking();
+    renderPvpRanking();
     updateFooter();
     if(selectedPlayer) selectPlayer(selectedPlayer);
   }catch(err){
@@ -478,6 +521,7 @@ document.querySelectorAll(".tab").forEach(tab => {
     const target = tab.dataset.tab;
     document.getElementById("players-view").style.display = target === "players" ? "block" : "none";
     document.getElementById("ranking-view").style.display = target === "ranking" ? "block" : "none";
+    document.getElementById("pvp-view").style.display = target === "pvp" ? "block" : "none";
   });
 });
 
