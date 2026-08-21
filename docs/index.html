@@ -491,17 +491,23 @@
 
 <script>
 const ACCESS_CONFIG = {
-  "dmx": {
+  "ae497696da1da05581774c71b7c2ecc77f219f3e7914b02fe340c4eabaa17252": {
     players: ["Tempest", "DarkFury", "midnightpurple", "SrVittar", "Secret", "LekJhonson95"],
     csvUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history.csv",
     dropsUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops.csv",
   },
-  "pt2": {
+  "8787b68d6cef24c6755d8f72555835cbd2d7bfe1b629e87011f7197e278e0abb": {
     players: ["LiMaO", "SafaBosS", "Psych0", "Stelar", "PaoNaSchapa", "Hewitt"],
     csvUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history_grupo2.csv",
     dropsUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops_grupo2.csv",
   },
 };
+
+async function sha256Hex(text){
+  const enc = new TextEncoder().encode(text);
+  const buf = await crypto.subtle.digest("SHA-256", enc);
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
 
 let CSV_URL = "";
 let DROPS_CSV_URL = "";
@@ -871,8 +877,8 @@ document.querySelectorAll(".tab").forEach(tab => {
 
 document.getElementById("refresh").addEventListener("click", loadData);
 
-function unlockWithKeyword(keyword){
-  const config = ACCESS_CONFIG[keyword.trim().toLowerCase()];
+function unlockWithHash(hash){
+  const config = ACCESS_CONFIG[hash];
   if(!config) return false;
 
   TRACKED_PLAYERS = config.players;
@@ -887,13 +893,14 @@ function unlockWithKeyword(keyword){
   return true;
 }
 
-function tryUnlock(){
+async function tryUnlock(){
   const input = document.getElementById("lock-input");
   const errorEl = document.getElementById("lock-error");
-  const keyword = input.value;
+  const keyword = input.value.trim().toLowerCase();
+  const hash = await sha256Hex(keyword);
 
-  if(unlockWithKeyword(keyword)){
-    localStorage.setItem("aorus_keyword", keyword.trim().toLowerCase());
+  if(unlockWithHash(hash)){
+    localStorage.setItem("aorus_keyword_hash", hash);
     errorEl.style.display = "none";
   }else{
     errorEl.style.display = "block";
@@ -909,7 +916,7 @@ document.getElementById("lock-input").addEventListener("keydown", (e) => {
 
 document.getElementById("switch-group").addEventListener("click", (e) => {
   e.preventDefault();
-  localStorage.removeItem("aorus_keyword");
+  localStorage.removeItem("aorus_keyword_hash");
   document.getElementById("app-wrap").style.display = "none";
   document.getElementById("app-footer").style.display = "none";
   document.getElementById("lock-screen").style.display = "block";
@@ -918,9 +925,9 @@ document.getElementById("switch-group").addEventListener("click", (e) => {
 });
 
 // Se já desbloqueou antes nesse aparelho, entra direto sem pedir de novo
-const savedKeyword = localStorage.getItem("aorus_keyword");
-if(savedKeyword && ACCESS_CONFIG[savedKeyword]){
-  unlockWithKeyword(savedKeyword);
+const savedHash = localStorage.getItem("aorus_keyword_hash");
+if(savedHash && ACCESS_CONFIG[savedHash]){
+  unlockWithHash(savedHash);
 }
 
 if("serviceWorker" in navigator){
