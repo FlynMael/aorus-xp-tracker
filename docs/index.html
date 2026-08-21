@@ -88,7 +88,92 @@
     max-width: 480px;
     margin: 0 auto;
     padding: 28px 20px 0;
+    position: relative;
   }
+
+  #guide-btn{
+    position: fixed;
+    top: 16px;
+    right: max(16px, calc(50% - 240px + 16px));
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--bg-elevated);
+    border: 1px solid var(--gold);
+    color: var(--gold-bright);
+    font-family:'Cinzel', serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 50;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .guide-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(6,4,2,0.82);
+    z-index: 100;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+  .guide-card{
+    width: 100%;
+    max-width: 480px;
+    max-height: 82vh;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 18px 18px 0 0;
+    display:flex;
+    flex-direction:column;
+    overflow: hidden;
+  }
+  .guide-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+  .guide-header h2{
+    font-family:'Cinzel', serif;
+    font-size: 18px;
+    color: var(--gold-bright);
+    margin: 0;
+  }
+  #guide-close{
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  .guide-body{
+    padding: 18px 20px 28px;
+    overflow-y: auto;
+  }
+  .guide-item{ margin-bottom: 18px; }
+  .guide-item:last-child{ margin-bottom: 0; }
+  .guide-item-title{
+    font-family:'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gold-bright);
+    margin-bottom: 4px;
+  }
+  .guide-item p{
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .guide-item p b{ color: var(--text); }
+
   header{
     text-align:center;
     margin-bottom: 22px;
@@ -607,6 +692,47 @@
   </div>
 
   <div class="wrap" id="app-wrap" style="display:none;">
+    <button id="guide-btn" aria-label="Abrir guia do app">?</button>
+
+    <div id="guide-modal" class="guide-overlay" style="display:none;">
+      <div class="guide-card">
+        <div class="guide-header">
+          <h2>Guia do App</h2>
+          <button id="guide-close" aria-label="Fechar guia">✕</button>
+        </div>
+        <div class="guide-body">
+          <div class="guide-item">
+            <div class="guide-item-title">👤 Players</div>
+            <p>Lista de todos os players rastreados. Toque num nome pra ver o detalhe: level, progresso do nível (barra), kills de PvP e XP de PvP, com o ganho nas últimas 24h.</p>
+          </div>
+          <div class="guide-item">
+            <div class="guide-item-title">📈 Nível</div>
+            <p>Ranking de quem mais progrediu de nível. Escolha o período no topo: <b>24h</b>, <b>Hoje</b> (desde 00:00), <b>7 dias</b>, <b>30 dias</b>, ou <b>Personalizado</b> (você escolhe data e hora exatas de início e fim — útil pra medir um evento específico, tipo um PvP).</p>
+          </div>
+          <div class="guide-item">
+            <div class="guide-item-title">⚔️ PvP</div>
+            <p>Mesma ideia da aba Nível, mas ranqueando por XP de PvP ganho (e mostra os kills feitos no período também). Tem os mesmos filtros de período.</p>
+          </div>
+          <div class="guide-item">
+            <div class="guide-item-title">💎 Drops</div>
+            <p>Itens que os players droparam. Filtros: <b>Hoje / 7 dias</b>, categoria do item (<b>Fragmentos, Gemas, Sheltons, Outros</b>), e por player específico. Mostra o horário de cada drop.</p>
+          </div>
+          <div class="guide-item">
+            <div class="guide-item-title">🏆 Patentes</div>
+            <p>Hierarquia de kills acumulados (desde sempre, não reseta sozinha). Cada player tem uma patente atual, do "Recém-chegado" até "O Último Pesadelo" — a barra mostra quantos kills faltam pra próxima patente.</p>
+          </div>
+          <div class="guide-item">
+            <div class="guide-item-title">📅 Diário</div>
+            <p>Escolha um dia específico no calendário e veja o pódio (🥇🥈🥉) de quem mais evoluiu naquele dia. Alterne entre ranquear por <b>Nível</b> ou por <b>PvP</b>.</p>
+          </div>
+          <div class="guide-item">
+            <div class="guide-item-title">🔄 Atualizar</div>
+            <p>Botão no rodapé — força buscar os dados mais recentes na hora, sem esperar a próxima coleta automática.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <header>
       <p class="eyebrow">Aorus Tale</p>
       <h1>Rastreador de XP</h1>
@@ -1370,6 +1496,16 @@ async function tryUnlock(){
 document.getElementById("lock-submit").addEventListener("click", tryUnlock);
 document.getElementById("lock-input").addEventListener("keydown", (e) => {
   if(e.key === "Enter") tryUnlock();
+});
+
+document.getElementById("guide-btn").addEventListener("click", () => {
+  document.getElementById("guide-modal").style.display = "flex";
+});
+document.getElementById("guide-close").addEventListener("click", () => {
+  document.getElementById("guide-modal").style.display = "none";
+});
+document.getElementById("guide-modal").addEventListener("click", (e) => {
+  if(e.target.id === "guide-modal") document.getElementById("guide-modal").style.display = "none";
 });
 
 document.getElementById("switch-group").addEventListener("click", (e) => {
