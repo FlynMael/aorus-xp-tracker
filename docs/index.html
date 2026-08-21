@@ -736,7 +736,7 @@
           </div>
           <div class="guide-item">
             <div class="guide-item-title">📈 Nível</div>
-            <p>Ranking de quem mais progrediu de nível. Escolha o período no topo: <b>24h</b>, <b>Hoje</b> (desde 00:00), <b>7 dias</b>, <b>30 dias</b>, ou <b>Personalizado</b> (você escolhe data e hora exatas de início e fim — útil pra medir um evento específico, tipo um PvP).</p>
+            <p>Ranking de quem mais ganhou XP de nível, calculado com a tabela real de XP do jogo — então é comparável de verdade mesmo entre players em levels diferentes (1% no level 150 vale muito mais XP que 1% no level 120). Escolha o período no topo: <b>24h</b>, <b>Hoje</b> (desde 00:00), <b>7 dias</b>, <b>30 dias</b>, ou <b>Personalizado</b> (você escolhe data e hora exatas de início e fim — útil pra medir um evento específico, tipo um PvP).</p>
           </div>
           <div class="guide-item">
             <div class="guide-item-title">⚔️ PvP</div>
@@ -1087,7 +1087,7 @@ function renderDaily(){
     const { past, latest } = result;
     if(dailyMetric === "nivel"){
       const progress = trueProgress(past, latest);
-      return { name: latest.name, sortValue: progress, displayValue: `+${progress.toFixed(2)}`, unitLabel: "% nível" };
+      return { name: latest.name, sortValue: progress, displayValue: `+${Math.round(progress).toLocaleString("pt-BR")}`, unitLabel: " XP" };
     }else{
       const expGain = Number(latest.battleEXP) - Number(past.battleEXP);
       const killsGain = Number(latest.kills) - Number(past.kills);
@@ -1185,14 +1185,80 @@ function selectPlayer(name){
   detail.classList.add("show");
 }
 
+// Tabela real de XP por level (do jogo). "total" = XP acumulada pra chegar
+// nesse level; "next" = XP necessária pra passar pro level seguinte.
+// Fonte: tabela oficial de XP fornecida pelo usuário.
+const LEVEL_XP_TABLE = {
+  110: { total: 239695, next: 47940 },
+  111: { total: 287635, next: 57527 },
+  112: { total: 345162, next: 69032 },
+  113: { total: 414194, next: 82839 },
+  114: { total: 497033, next: 99407 },
+  115: { total: 596440, next: 119288 },
+  116: { total: 715728, next: 143146 },
+  117: { total: 858874, next: 171774 },
+  118: { total: 1030648, next: 206130 },
+  119: { total: 1236778, next: 247356 },
+  120: { total: 1484134, next: 222620 },
+  121: { total: 1706754, next: 256013 },
+  122: { total: 1962767, next: 294415 },
+  123: { total: 2257182, next: 338578 },
+  124: { total: 2595760, next: 389364 },
+  125: { total: 2985124, next: 437769 },
+  126: { total: 3422893, next: 524934 },
+  127: { total: 3947827, next: 592174 },
+  128: { total: 4540001, next: 681000 },
+  129: { total: 5221001, next: 678730 },
+  130: { total: 5899731, next: 766965 },
+  131: { total: 6666696, next: 866671 },
+  132: { total: 7533367, next: 979337 },
+  133: { total: 8512704, next: 1106652 },
+  134: { total: 9619356, next: 1250516 },
+  135: { total: 10869872, next: 1413084 },
+  136: { total: 12282956, next: 1596785 },
+  137: { total: 13879741, next: 1804367 },
+  138: { total: 15684108, next: 2038935 },
+  139: { total: 17723043, next: 1949532 },
+  140: { total: 19672575, next: 2163983 },
+  141: { total: 21836558, next: 2402022 },
+  142: { total: 24238580, next: 2666244 },
+  143: { total: 26904824, next: 2959530 },
+  144: { total: 29864354, next: 3285079 },
+  145: { total: 33149433, next: 3646438 },
+  146: { total: 36795871, next: 4047546 },
+  147: { total: 40843417, next: 4492776 },
+  148: { total: 45336193, next: 4986981 },
+  149: { total: 50323174, next: 5535549 },
+  150: { total: 55858723, next: 7261634 },
+  151: { total: 63120357, next: 8205647 },
+  152: { total: 71326004, next: 9272380 },
+  153: { total: 80598384, next: 10477790 },
+  154: { total: 91076174, next: 11839903 },
+  155: { total: 102916077, next: 13379090 },
+  156: { total: 116295167, next: 15118372 },
+  157: { total: 131413539, next: 17083760 },
+  158: { total: 148497299, next: 19304649 },
+  159: { total: 167801948, next: 21814253 },
+  160: { total: 189616201, next: null },
+};
+
+function getAbsoluteXp(level, percent){
+  const lvl = Math.round(level);
+  const entry = LEVEL_XP_TABLE[lvl];
+  if(entry){
+    return entry.total + (percent / 100) * (entry.next || 0);
+  }
+  // Fora do intervalo conhecido (110-160): usa o extremo mais próximo como aproximação
+  if(lvl < 110) return LEVEL_XP_TABLE[110].total * (lvl / 110);
+  return LEVEL_XP_TABLE[160].total;
+}
+
 function trueProgress(past, latest){
-  // percent é 0-100 dentro do level atual. Se subiu de level no intervalo,
-  // soma 100% por level ganho — assim dá o progresso real, comparável
-  // entre players em levels diferentes (battleEXP bruto não é comparável:
-  // ele só conta XP de combate, e o custo de XP por % varia por level).
-  const levelDiff = Number(latest.level) - Number(past.level);
-  const pctDiff = Number(latest.percent) - Number(past.percent);
-  return levelDiff * 100 + pctDiff;
+  // Converte level+percentual em XP absoluta real (usando a tabela do jogo)
+  // e calcula a diferença — comparável de verdade entre players em levels
+  // diferentes, já que a XP necessária por 1% varia (e muito) por level.
+  return getAbsoluteXp(Number(latest.level), Number(latest.percent))
+       - getAbsoluteXp(Number(past.level), Number(past.percent));
 }
 
 function renderRanking(){
@@ -1217,7 +1283,7 @@ function renderRanking(){
     <div class="rank-row">
       <div class="rank-num">${i+1}</div>
       <div class="rank-name">${r.name}</div>
-      <div class="rank-gain">+${r.progress.toFixed(2)}% nível</div>
+      <div class="rank-gain">+${Math.round(r.progress).toLocaleString("pt-BR")} XP</div>
     </div>
   `).join("");
 }
