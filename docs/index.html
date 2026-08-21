@@ -736,7 +736,7 @@
           </div>
           <div class="guide-item">
             <div class="guide-item-title">📈 Nível</div>
-            <p>Ranking de quem mais ganhou XP de nível, calculado com a tabela real de XP do jogo — então é comparável de verdade mesmo entre players em levels diferentes (1% no level 150 vale muito mais XP que 1% no level 120). Escolha o período no topo: <b>24h</b>, <b>Hoje</b> (desde 00:00), <b>7 dias</b>, <b>30 dias</b>, ou <b>Personalizado</b> (você escolhe data e hora exatas de início e fim — útil pra medir um evento específico, tipo um PvP).</p>
+            <p>Ranking de quem mais progrediu de nível, em <b>%</b> calibrado pela tabela real de XP do jogo — então é comparável de verdade mesmo entre players em levels diferentes (1% no level 150 custa muito mais XP que 1% no level 120, e isso já é levado em conta no cálculo). Escolha o período no topo: <b>24h</b>, <b>Hoje</b> (desde 00:00), <b>7 dias</b>, <b>30 dias</b>, ou <b>Personalizado</b> (você escolhe data e hora exatas de início e fim — útil pra medir um evento específico, tipo um PvP).</p>
           </div>
           <div class="guide-item">
             <div class="guide-item-title">⚔️ PvP</div>
@@ -1087,7 +1087,7 @@ function renderDaily(){
     const { past, latest } = result;
     if(dailyMetric === "nivel"){
       const progress = trueProgress(past, latest);
-      return { name: latest.name, sortValue: progress, displayValue: `+${Math.round(progress).toLocaleString("pt-BR")}`, unitLabel: " XP" };
+      return { name: latest.name, sortValue: progress, displayValue: `+${progress.toFixed(2)}`, unitLabel: "% nível" };
     }else{
       const expGain = Number(latest.battleEXP) - Number(past.battleEXP);
       const killsGain = Number(latest.kills) - Number(past.kills);
@@ -1253,12 +1253,19 @@ function getAbsoluteXp(level, percent){
   return LEVEL_XP_TABLE[160].total;
 }
 
+// Level de referência fixo pra "traduzir" a XP ganha de volta pra %,
+// numa régua igual pra todo mundo (independente do level real de cada um).
+const REFERENCE_LEVEL = 130;
+
 function trueProgress(past, latest){
-  // Converte level+percentual em XP absoluta real (usando a tabela do jogo)
-  // e calcula a diferença — comparável de verdade entre players em levels
-  // diferentes, já que a XP necessária por 1% varia (e muito) por level.
-  return getAbsoluteXp(Number(latest.level), Number(latest.percent))
-       - getAbsoluteXp(Number(past.level), Number(past.percent));
+  // Converte level+percentual em XP absoluta real (usando a tabela do jogo),
+  // calcula a diferença, e converte de volta pra % usando o custo de XP do
+  // level de referência — assim o número continua sendo "%", só que comparável
+  // de verdade entre players em levels diferentes.
+  const xpGain = getAbsoluteXp(Number(latest.level), Number(latest.percent))
+               - getAbsoluteXp(Number(past.level), Number(past.percent));
+  const refNext = LEVEL_XP_TABLE[REFERENCE_LEVEL].next;
+  return (xpGain / refNext) * 100;
 }
 
 function renderRanking(){
@@ -1283,7 +1290,7 @@ function renderRanking(){
     <div class="rank-row">
       <div class="rank-num">${i+1}</div>
       <div class="rank-name">${r.name}</div>
-      <div class="rank-gain">+${Math.round(r.progress).toLocaleString("pt-BR")} XP</div>
+      <div class="rank-gain">+${r.progress.toFixed(2)}% nível</div>
     </div>
   `).join("");
 }
