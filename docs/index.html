@@ -297,14 +297,20 @@
     margin: 0 0 6px 2px;
   }
   .cr-input{
+    width: 100%;
     background: var(--bg-elevated-2);
     border: 1px solid var(--line);
     border-radius: 10px;
-    padding: 9px 10px;
+    padding: 11px 12px;
     color: var(--text);
     font-family:'IBM Plex Mono', monospace;
-    font-size: 13px;
+    font-size: 14px;
     color-scheme: dark;
+    box-sizing: border-box;
+  }
+  .cr-input:focus{
+    outline: none;
+    border-color: var(--gold);
   }
   .cr-apply{
     margin-top: 4px;
@@ -428,24 +434,38 @@
   }
   .podium-spot{
     flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
     background: var(--bg-elevated);
     border: 1px solid var(--line);
     border-radius: 12px 12px 0 0;
     text-align:center;
     padding: 14px 6px 12px;
+    box-sizing: border-box;
   }
-  .podium-spot.first{ border-color: var(--gold); padding-top: 24px; order: 2; }
-  .podium-spot.second{ order: 1; }
-  .podium-spot.third{ order: 3; }
+  .podium-spot.first{
+    border-color: var(--gold);
+    border-width: 2px;
+    min-height: 150px;
+    order: 2;
+    background: linear-gradient(180deg, rgba(201,162,39,0.14), var(--bg-elevated) 60%);
+  }
+  .podium-spot.second{ min-height: 118px; order: 1; }
+  .podium-spot.third{ min-height: 100px; order: 3; }
   .podium-medal{ font-size: 22px; margin-bottom: 6px; }
+  .podium-spot.first .podium-medal{ font-size: 30px; }
   .podium-name{
     font-family:'Cinzel', serif;
     font-weight: 600;
     font-size: 13px;
+    max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .podium-spot.first .podium-name{ font-size: 15px; }
   .podium-value{
     font-family:'IBM Plex Mono', monospace;
     font-size: 11px;
