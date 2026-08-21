@@ -127,19 +127,23 @@
     border-radius: 10px;
     padding: 4px;
     margin-bottom: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
+  .tabs::-webkit-scrollbar{ display:none; }
   .tab{
-    flex:1;
+    flex: 0 0 auto;
     text-align:center;
-    padding: 10px 0;
+    padding: 10px 14px;
     font-family:'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.14em;
+    font-size: 11px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
     border-radius: 7px;
     cursor: pointer;
     user-select: none;
+    white-space: nowrap;
     transition: background .18s ease, color .18s ease;
   }
   .tab.active{
@@ -221,6 +225,95 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     cursor: pointer;
+  }
+
+  /* Patentes */
+  .patente-row{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .patente-row:last-child{ border-bottom: none; }
+  .patente-rank{
+    font-family:'Cinzel', serif;
+    font-weight: 700;
+    font-size: 14px;
+    width: 24px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+  .patente-info{ flex: 1; min-width: 0; }
+  .patente-name{
+    font-family:'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .patente-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--gold-bright);
+    margin-top: 2px;
+  }
+  .patente-kills{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .patente-bar{
+    height: 4px;
+    background: var(--bg-elevated-2);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .patente-bar-fill{
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+  }
+  .patente-next{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 5px;
+  }
+
+  /* Podio diario */
+  .podium{
+    display:flex;
+    align-items:flex-end;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 0 4px;
+  }
+  .podium-spot{
+    flex:1;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 12px 12px 0 0;
+    text-align:center;
+    padding: 14px 6px 12px;
+  }
+  .podium-spot.first{ border-color: var(--gold); padding-top: 24px; order: 2; }
+  .podium-spot.second{ order: 1; }
+  .podium-spot.third{ order: 3; }
+  .podium-medal{ font-size: 22px; margin-bottom: 6px; }
+  .podium-name{
+    font-family:'Cinzel', serif;
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .podium-value{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-bright);
+    margin-top: 3px;
   }
 
   .card{
@@ -482,6 +575,8 @@
       <div class="tab" data-tab="ranking">Nível</div>
       <div class="tab" data-tab="pvp">PvP</div>
       <div class="tab" data-tab="drops">Drops</div>
+      <div class="tab" data-tab="patentes">Patentes</div>
+      <div class="tab" data-tab="daily">Diário</div>
     </div>
 
     <div id="loading" class="loading">Carregando dados…</div>
@@ -535,6 +630,23 @@
       <div class="range-toggle" id="drops-category"></div>
       <div class="range-toggle" id="drops-filter"></div>
       <div class="card" id="drops-list"></div>
+    </section>
+
+    <section id="patentes-view" style="display:none;">
+      <div class="card" id="patentes-list"></div>
+    </section>
+
+    <section id="daily-view" style="display:none;">
+      <div class="custom-range-panel" style="display:flex;">
+        <label class="cr-label">Dia</label>
+        <input type="date" id="daily-date" class="cr-input" />
+      </div>
+      <div class="range-toggle" id="daily-metric-toggle">
+        <button class="range-btn active" data-metric="nivel">Nível</button>
+        <button class="range-btn" data-metric="pvp">PvP</button>
+      </div>
+      <div id="daily-podium"></div>
+      <div class="card" id="daily-list"></div>
     </section>
   </div>
 
@@ -629,6 +741,181 @@ function fmtDelta(val, label="24h"){
   const sign = val > 0 ? "+" : "";
   return `<span class="delta ${cls}">${sign}${val} (${label})</span>`;
 }
+
+// ---------- PATENTES (hierarquia de kills, cumulativa, nunca reseta sozinha) ----------
+const PATENT_TIERS = [
+  { threshold: 0, name: "Recém-chegado", emoji: "" },
+  { threshold: 10, name: "Primeiro Sangue", emoji: "" },
+  { threshold: 25, name: "Encrenqueiro", emoji: "" },
+  { threshold: 50, name: "Caçador de Novatos", emoji: "" },
+  { threshold: 100, name: "Sede de Sangue", emoji: "" },
+  { threshold: 250, name: "Problema Público", emoji: "" },
+  { threshold: 500, name: "Caçador de Cabeças", emoji: "" },
+  { threshold: 1000, name: "Carniceiro", emoji: "" },
+  { threshold: 2500, name: "Dono do Respawn", emoji: "" },
+  { threshold: 5000, name: "Executor", emoji: "" },
+  { threshold: 7500, name: "Pesadelo de Ricarten", emoji: "" },
+  { threshold: 10000, name: "Terror de Pillai", emoji: "" },
+  { threshold: 15000, name: "Ceifador de Almas", emoji: "" },
+  { threshold: 25000, name: "Senhor da Guerra", emoji: "" },
+  { threshold: 50000, name: "Flagelo de Priston", emoji: "" },
+  { threshold: 75000, name: "Lenda da Carnificina", emoji: "" },
+  { threshold: 100000, name: "Imperador do Caos", emoji: "" },
+  { threshold: 250000, name: "A Morte Caminha", emoji: "" },
+  { threshold: 500000, name: "O Último Pesadelo", emoji: "👑" },
+];
+
+function getPatente(kills){
+  let current = PATENT_TIERS[0];
+  let next = PATENT_TIERS[1] || null;
+  for(let i = 0; i < PATENT_TIERS.length; i++){
+    if(kills >= PATENT_TIERS[i].threshold){
+      current = PATENT_TIERS[i];
+      next = PATENT_TIERS[i+1] || null;
+    }else{
+      break;
+    }
+  }
+  return { current, next };
+}
+
+function getLatestRow(name){
+  const rows = allRows.filter(r => r.name.toLowerCase() === name.toLowerCase()).sort((a,b)=>a.ts-b.ts);
+  return rows.length ? rows[rows.length-1] : null;
+}
+
+function renderPatentes(){
+  const el = document.getElementById("patentes-list");
+  const rows = TRACKED_PLAYERS.map(name => {
+    const row = getLatestRow(name);
+    if(!row) return null;
+    const kills = Number(row.kills) || 0;
+    const { current, next } = getPatente(kills);
+    return { name: row.name, kills, current, next };
+  }).filter(Boolean).sort((a,b) => b.kills - a.kills);
+
+  if(rows.length === 0){
+    el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
+    return;
+  }
+
+  el.innerHTML = rows.map((r,i) => {
+    let barHtml = "";
+    if(r.next){
+      const span = r.next.threshold - r.current.threshold;
+      const progress = Math.min(100, Math.max(0, ((r.kills - r.current.threshold) / span) * 100));
+      const missing = r.next.threshold - r.kills;
+      barHtml = `
+        <div class="patente-bar"><div class="patente-bar-fill" style="width:${progress}%"></div></div>
+        <div class="patente-next">Faltam ${missing.toLocaleString("pt-BR")} kills para "${r.next.name}"</div>
+      `;
+    }else{
+      barHtml = `<div class="patente-next">Patente máxima atingida 👑</div>`;
+    }
+    return `
+      <div class="patente-row">
+        <div class="patente-rank">${i+1}</div>
+        <div class="patente-info">
+          <div class="patente-name">${r.name}</div>
+          <div class="patente-title">${r.current.emoji ? r.current.emoji + " " : ""}${r.current.name}</div>
+          ${barHtml}
+        </div>
+        <div class="patente-kills">${r.kills.toLocaleString("pt-BR")}<br>kills</div>
+      </div>
+    `;
+  }).join("");
+}
+
+// ---------- RANKING DIÁRIO (dia específico, com pódio) ----------
+let dailyMetric = "nivel";
+
+function getDayBoundsTs(dateStr){
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const startTs = new Date(y, m-1, d, 0, 0, 0, 0).getTime();
+  const endTs = new Date(y, m-1, d, 23, 59, 59, 999).getTime();
+  return { startTs, endTs };
+}
+
+function getDailyStats(name, dateStr){
+  const rows = allRows.filter(r => r.name.toLowerCase() === name.toLowerCase()).sort((a,b)=>a.ts-b.ts);
+  if(rows.length === 0) return null;
+  const { startTs, endTs } = getDayBoundsTs(dateStr);
+  const past = findSnapshotAtOrBefore(rows, startTs);
+  const latest = findSnapshotAtOrBefore(rows, endTs);
+  return { past, latest };
+}
+
+function renderDailyPodium(rows, unitLabel){
+  const el = document.getElementById("daily-podium");
+  if(rows.length < 1){ el.innerHTML = ""; return; }
+  const medals = ["🥇", "🥈", "🥉"];
+  const spots = ["first", "second", "third"];
+  const top3 = rows.slice(0, 3);
+
+  el.innerHTML = `<div class="podium">
+    ${top3.map((r,i) => `
+      <div class="podium-spot ${spots[i]}">
+        <div class="podium-medal">${medals[i]}</div>
+        <div class="podium-name">${r.name}</div>
+        <div class="podium-value">${r.displayValue}${unitLabel}</div>
+      </div>
+    `).join("")}
+  </div>`;
+}
+
+function renderDaily(){
+  const dateInput = document.getElementById("daily-date");
+  if(!dateInput.value){
+    const today = new Date();
+    dateInput.value = today.toISOString().slice(0, 10);
+  }
+  const dateStr = dateInput.value;
+  const el = document.getElementById("daily-list");
+
+  const rows = TRACKED_PLAYERS.map(name => {
+    const result = getDailyStats(name, dateStr);
+    if(!result) return null;
+    const { past, latest } = result;
+    if(dailyMetric === "nivel"){
+      const progress = trueProgress(past, latest);
+      return { name: latest.name, sortValue: progress, displayValue: `+${progress.toFixed(2)}`, unitLabel: "% nível" };
+    }else{
+      const expGain = Number(latest.battleEXP) - Number(past.battleEXP);
+      const killsGain = Number(latest.kills) - Number(past.kills);
+      return { name: latest.name, sortValue: expGain, displayValue: `+${expGain.toLocaleString("pt-BR")}`, unitLabel: " XP", killsGain };
+    }
+  }).filter(Boolean).sort((a,b) => b.sortValue - a.sortValue);
+
+  if(rows.length === 0){
+    document.getElementById("daily-podium").innerHTML = "";
+    el.innerHTML = `<div class="empty">Sem dados pra esse dia.</div>`;
+    return;
+  }
+
+  renderDailyPodium(rows, rows[0].unitLabel);
+
+  el.innerHTML = rows.map((r,i) => `
+    <div class="rank-row">
+      <div class="rank-num">${i+1}</div>
+      <div class="rank-name">${r.name}</div>
+      <div style="text-align:right;">
+        <div class="rank-gain">${r.displayValue}${r.unitLabel}</div>
+        ${r.killsGain !== undefined ? `<div style="font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-muted);">${r.killsGain >= 0 ? "+" : ""}${r.killsGain} kills</div>` : ""}
+      </div>
+    </div>
+  `).join("");
+}
+
+document.getElementById("daily-date").addEventListener("change", renderDaily);
+document.querySelectorAll("#daily-metric-toggle .range-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    dailyMetric = btn.dataset.metric;
+    document.querySelectorAll("#daily-metric-toggle .range-btn").forEach(b => {
+      b.classList.toggle("active", b.dataset.metric === dailyMetric);
+    });
+    renderDaily();
+  });
+});
 
 function renderPlayerList(){
   const el = document.getElementById("player-list");
@@ -956,6 +1243,10 @@ document.querySelectorAll(".tab").forEach(tab => {
     document.getElementById("ranking-view").style.display = target === "ranking" ? "block" : "none";
     document.getElementById("pvp-view").style.display = target === "pvp" ? "block" : "none";
     document.getElementById("drops-view").style.display = target === "drops" ? "block" : "none";
+    document.getElementById("patentes-view").style.display = target === "patentes" ? "block" : "none";
+    document.getElementById("daily-view").style.display = target === "daily" ? "block" : "none";
+    if(target === "patentes") renderPatentes();
+    if(target === "daily") renderDaily();
   });
 });
 
