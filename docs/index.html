@@ -230,31 +230,67 @@
   /* Patentes */
   .patente-row{
     display:flex;
-    align-items:center;
-    gap: 12px;
-    padding: 14px 4px;
+    align-items:flex-start;
+    gap: 14px;
+    padding: 16px 4px;
     border-bottom: 1px solid var(--line);
   }
   .patente-row:last-child{ border-bottom: none; }
-  .patente-rank{
-    font-family:'Cinzel', serif;
-    font-weight: 700;
-    font-size: 14px;
-    width: 24px;
-    color: var(--text-muted);
+
+  .patente-crest{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     flex-shrink: 0;
+    font-size: 24px;
+    background: var(--bg-elevated-2);
+    border: 2px solid var(--line);
   }
+  .patente-crest-icon{ line-height: 1; }
+
+  .patente-crest.band-bronze{ border-color: #a9713d; box-shadow: 0 0 8px rgba(169,113,61,0.35); }
+  .patente-crest.band-silver{ border-color: #c3c3c3; box-shadow: 0 0 8px rgba(195,195,195,0.35); }
+  .patente-crest.band-gold{ border-color: var(--gold); box-shadow: 0 0 10px rgba(201,162,39,0.45); }
+  .patente-crest.band-legend{ border-color: var(--gold-bright); box-shadow: 0 0 16px rgba(232,194,90,0.65); animation: crest-pulse 2.2s ease-in-out infinite; }
+
+  @keyframes crest-pulse{
+    0%, 100% { box-shadow: 0 0 12px rgba(232,194,90,0.5); }
+    50% { box-shadow: 0 0 22px rgba(232,194,90,0.85); }
+  }
+
   .patente-info{ flex: 1; min-width: 0; }
+  .patente-toprow{
+    display:flex;
+    align-items:baseline;
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+  .patente-rank-badge{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
   .patente-name{
     font-family:'Cinzel', serif;
     font-size: 15px;
     font-weight: 600;
   }
   .patente-title{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: var(--gold-bright);
+    font-family:'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     margin-top: 2px;
+  }
+  .band-text-bronze{ color: #c98f56; }
+  .band-text-silver{ color: #d6d6d6; }
+  .band-text-gold{ color: var(--gold-bright); }
+  .band-text-legend{
+    color: var(--gold-bright);
+    text-shadow: 0 0 10px rgba(232,194,90,0.6);
   }
   .patente-kills{
     font-family:'IBM Plex Mono', monospace;
@@ -264,21 +300,28 @@
     flex-shrink: 0;
   }
   .patente-bar{
-    height: 4px;
+    height: 5px;
     background: var(--bg-elevated-2);
     border-radius: 999px;
     overflow: hidden;
-    margin-top: 8px;
+    margin-top: 9px;
   }
   .patente-bar-fill{
     height: 100%;
-    background: linear-gradient(90deg, var(--gold), var(--gold-bright));
   }
+  .patente-bar-fill.band-bronze{ background: linear-gradient(90deg, #7a5326, #a9713d); }
+  .patente-bar-fill.band-silver{ background: linear-gradient(90deg, #8f8f8f, #c3c3c3); }
+  .patente-bar-fill.band-gold{ background: linear-gradient(90deg, var(--gold), var(--gold-bright)); }
+  .patente-bar-fill.band-legend{ background: linear-gradient(90deg, var(--gold-bright), #fff3d1); }
   .patente-next{
     font-family:'IBM Plex Mono', monospace;
     font-size: 10px;
     color: var(--text-muted);
     margin-top: 5px;
+  }
+  .patente-maxed{
+    color: var(--gold-bright);
+    font-weight: 600;
   }
 
   /* Podio diario */
@@ -744,25 +787,25 @@ function fmtDelta(val, label="24h"){
 
 // ---------- PATENTES (hierarquia de kills, cumulativa, nunca reseta sozinha) ----------
 const PATENT_TIERS = [
-  { threshold: 0, name: "Recém-chegado", emoji: "" },
-  { threshold: 10, name: "Primeiro Sangue", emoji: "" },
-  { threshold: 25, name: "Encrenqueiro", emoji: "" },
-  { threshold: 50, name: "Caçador de Novatos", emoji: "" },
-  { threshold: 100, name: "Sede de Sangue", emoji: "" },
-  { threshold: 250, name: "Problema Público", emoji: "" },
-  { threshold: 500, name: "Caçador de Cabeças", emoji: "" },
-  { threshold: 1000, name: "Carniceiro", emoji: "" },
-  { threshold: 2500, name: "Dono do Respawn", emoji: "" },
-  { threshold: 5000, name: "Executor", emoji: "" },
-  { threshold: 7500, name: "Pesadelo de Ricarten", emoji: "" },
-  { threshold: 10000, name: "Terror de Pillai", emoji: "" },
-  { threshold: 15000, name: "Ceifador de Almas", emoji: "" },
-  { threshold: 25000, name: "Senhor da Guerra", emoji: "" },
-  { threshold: 50000, name: "Flagelo de Priston", emoji: "" },
-  { threshold: 75000, name: "Lenda da Carnificina", emoji: "" },
-  { threshold: 100000, name: "Imperador do Caos", emoji: "" },
-  { threshold: 250000, name: "A Morte Caminha", emoji: "" },
-  { threshold: 500000, name: "O Último Pesadelo", emoji: "👑" },
+  { threshold: 0, name: "Recém-chegado", emoji: "🌱", band: "bronze" },
+  { threshold: 10, name: "Primeiro Sangue", emoji: "🩸", band: "bronze" },
+  { threshold: 25, name: "Encrenqueiro", emoji: "😈", band: "bronze" },
+  { threshold: 50, name: "Caçador de Novatos", emoji: "🎯", band: "bronze" },
+  { threshold: 100, name: "Sede de Sangue", emoji: "🔪", band: "silver" },
+  { threshold: 250, name: "Problema Público", emoji: "⚠️", band: "silver" },
+  { threshold: 500, name: "Caçador de Cabeças", emoji: "🏹", band: "silver" },
+  { threshold: 1000, name: "Carniceiro", emoji: "🪓", band: "silver" },
+  { threshold: 2500, name: "Dono do Respawn", emoji: "💀", band: "silver" },
+  { threshold: 5000, name: "Executor", emoji: "⚔️", band: "gold" },
+  { threshold: 7500, name: "Pesadelo de Ricarten", emoji: "👹", band: "gold" },
+  { threshold: 10000, name: "Terror de Pillai", emoji: "🌪️", band: "gold" },
+  { threshold: 15000, name: "Ceifador de Almas", emoji: "⚰️", band: "gold" },
+  { threshold: 25000, name: "Senhor da Guerra", emoji: "🛡️", band: "gold" },
+  { threshold: 50000, name: "Flagelo de Priston", emoji: "☠️", band: "legend" },
+  { threshold: 75000, name: "Lenda da Carnificina", emoji: "🔥", band: "legend" },
+  { threshold: 100000, name: "Imperador do Caos", emoji: "🌋", band: "legend" },
+  { threshold: 250000, name: "A Morte Caminha", emoji: "⚡", band: "legend" },
+  { threshold: 500000, name: "O Último Pesadelo", emoji: "👑", band: "legend" },
 ];
 
 function getPatente(kills){
@@ -806,18 +849,23 @@ function renderPatentes(){
       const progress = Math.min(100, Math.max(0, ((r.kills - r.current.threshold) / span) * 100));
       const missing = r.next.threshold - r.kills;
       barHtml = `
-        <div class="patente-bar"><div class="patente-bar-fill" style="width:${progress}%"></div></div>
-        <div class="patente-next">Faltam ${missing.toLocaleString("pt-BR")} kills para "${r.next.name}"</div>
+        <div class="patente-bar"><div class="patente-bar-fill band-${r.current.band}" style="width:${progress}%"></div></div>
+        <div class="patente-next">Faltam ${missing.toLocaleString("pt-BR")} kills para "${r.next.emoji} ${r.next.name}"</div>
       `;
     }else{
-      barHtml = `<div class="patente-next">Patente máxima atingida 👑</div>`;
+      barHtml = `<div class="patente-next patente-maxed">👑 Patente máxima atingida</div>`;
     }
     return `
       <div class="patente-row">
-        <div class="patente-rank">${i+1}</div>
+        <div class="patente-crest band-${r.current.band}">
+          <span class="patente-crest-icon">${r.current.emoji}</span>
+        </div>
         <div class="patente-info">
-          <div class="patente-name">${r.name}</div>
-          <div class="patente-title">${r.current.emoji ? r.current.emoji + " " : ""}${r.current.name}</div>
+          <div class="patente-toprow">
+            <span class="patente-rank-badge">#${i+1}</span>
+            <span class="patente-name">${r.name}</span>
+          </div>
+          <div class="patente-title band-text-${r.current.band}">${r.current.name}</div>
           ${barHtml}
         </div>
         <div class="patente-kills">${r.kills.toLocaleString("pt-BR")}<br>kills</div>
