@@ -252,7 +252,7 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 8px 2px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     white-space: nowrap;
   }
@@ -272,11 +272,12 @@
   }
 
   .custom-range-panel{
+    display: flex;
     flex-direction: column;
     gap: 8px;
     background: var(--bg-elevated);
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 14px;
     margin-bottom: 12px;
   }
@@ -287,10 +288,18 @@
     text-transform: uppercase;
     color: var(--text-muted);
   }
+  .filter-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 6px 2px;
+  }
   .cr-input{
     background: var(--bg-elevated-2);
     border: 1px solid var(--line);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 9px 10px;
     color: var(--text);
     font-family:'IBM Plex Mono', monospace;
@@ -301,7 +310,7 @@
     margin-top: 4px;
     background: var(--gold);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 10px 0;
     color: #1A1206;
     font-family:'IBM Plex Mono', monospace;
@@ -672,7 +681,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 7px 12px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
   }
   @media (prefers-reduced-motion: reduce){
@@ -756,6 +765,7 @@
     </section>
 
     <section id="ranking-view" style="display:none;">
+      <p class="filter-label">Período</p>
       <div class="range-toggle">
         <button class="range-btn active" data-mode="24h">24h</button>
         <button class="range-btn" data-mode="today">Hoje</button>
@@ -774,6 +784,7 @@
     </section>
 
     <section id="pvp-view" style="display:none;">
+      <p class="filter-label">Período</p>
       <div class="range-toggle">
         <button class="range-btn active" data-mode="24h">24h</button>
         <button class="range-btn" data-mode="today">Hoje</button>
@@ -792,11 +803,14 @@
     </section>
 
     <section id="drops-view" style="display:none;">
+      <p class="filter-label">Período</p>
       <div class="range-toggle" id="drops-period">
         <button class="range-btn active" data-period="today">Hoje</button>
         <button class="range-btn" data-period="7d">7 dias</button>
       </div>
+      <p class="filter-label">Categoria</p>
       <div class="range-toggle" id="drops-category"></div>
+      <p class="filter-label">Jogador</p>
       <div class="range-toggle" id="drops-filter"></div>
       <div class="card" id="drops-list"></div>
     </section>
@@ -806,10 +820,11 @@
     </section>
 
     <section id="daily-view" style="display:none;">
-      <div class="custom-range-panel" style="display:flex;">
+      <div class="custom-range-panel">
         <label class="cr-label">Dia</label>
         <input type="date" id="daily-date" class="cr-input" />
       </div>
+      <p class="filter-label">Ranquear por</p>
       <div class="range-toggle" id="daily-metric-toggle">
         <button class="range-btn active" data-metric="nivel">Nível</button>
         <button class="range-btn" data-metric="pvp">PvP</button>
