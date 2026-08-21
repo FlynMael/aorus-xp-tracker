@@ -27,6 +27,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/history.csv data/drops.csv
+          git add data/history.csv data/drops.csv data/history_grupo2.csv data/drops_grupo2.csv
           git diff --staged --quiet || git commit -m "Atualiza historico de XP e drops"
           git push
