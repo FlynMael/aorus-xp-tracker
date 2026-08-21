@@ -32,6 +32,58 @@
     min-height: 100vh;
     padding-bottom: 40px;
   }
+  .lock-wrap{
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 70px 24px 0;
+  }
+  .lock-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0 0 14px;
+  }
+  .lock-input{
+    width: 100%;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 13px 14px;
+    color: var(--text);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+  }
+  .lock-input:focus{
+    outline: none;
+    border-color: var(--gold);
+  }
+  .lock-submit{
+    width: 100%;
+    background: var(--gold);
+    border: none;
+    border-radius: 10px;
+    padding: 13px 0;
+    color: #1A1206;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .lock-error{
+    text-align: center;
+    color: var(--negative);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
   .wrap{
     max-width: 480px;
     margin: 0 auto;
@@ -367,7 +419,17 @@
 </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="lock-wrap" id="lock-screen">
+    <p class="eyebrow" style="text-align:center;">Aorus Tale</p>
+    <h1 style="text-align:center;">Rastreador de XP</h1>
+    <div class="divider" style="margin:14px auto 26px;"></div>
+    <p class="lock-label">Digite a palavra-chave do seu grupo</p>
+    <input type="password" id="lock-input" class="lock-input" placeholder="Palavra-chave" autocomplete="off" />
+    <button id="lock-submit" class="lock-submit">Entrar</button>
+    <p class="lock-error" id="lock-error" style="display:none;">Palavra-chave incorreta.</p>
+  </div>
+
+  <div class="wrap" id="app-wrap" style="display:none;">
     <header>
       <p class="eyebrow">Aorus Tale</p>
       <h1>Rastreador de XP</h1>
@@ -419,15 +481,31 @@
     </section>
   </div>
 
-  <footer>
+  <footer id="app-footer" style="display:none;">
     <span id="updated-at">—</span>
-    <button id="refresh">Atualizar</button>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <a href="#" id="switch-group" style="font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--text-muted); text-decoration:underline;">trocar grupo</a>
+      <button id="refresh">Atualizar</button>
+    </div>
   </footer>
 
 <script>
-const CSV_URL = "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history.csv";
-const DROPS_CSV_URL = "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops.csv";
-const TRACKED_PLAYERS = ["Tempest", "DarkFury", "midnightpurple", "SrVittar", "Secret", "LekJhonson95"];
+const ACCESS_CONFIG = {
+  "dmx": {
+    players: ["Tempest", "DarkFury", "midnightpurple", "SrVittar", "Secret", "LekJhonson95"],
+    csvUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history.csv",
+    dropsUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops.csv",
+  },
+  "pt2": {
+    players: ["LiMaO", "SafaBosS", "Psych0", "Stelar", "PaoNaSchapa", "Hewitt"],
+    csvUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history_grupo2.csv",
+    dropsUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops_grupo2.csv",
+  },
+};
+
+let CSV_URL = "";
+let DROPS_CSV_URL = "";
+let TRACKED_PLAYERS = [];
 
 let allRows = [];
 let selectedPlayer = null;
@@ -793,7 +871,57 @@ document.querySelectorAll(".tab").forEach(tab => {
 
 document.getElementById("refresh").addEventListener("click", loadData);
 
-loadData();
+function unlockWithKeyword(keyword){
+  const config = ACCESS_CONFIG[keyword.trim().toLowerCase()];
+  if(!config) return false;
+
+  TRACKED_PLAYERS = config.players;
+  CSV_URL = config.csvUrl;
+  DROPS_CSV_URL = config.dropsUrl;
+
+  document.getElementById("lock-screen").style.display = "none";
+  document.getElementById("app-wrap").style.display = "block";
+  document.getElementById("app-footer").style.display = "flex";
+
+  loadData();
+  return true;
+}
+
+function tryUnlock(){
+  const input = document.getElementById("lock-input");
+  const errorEl = document.getElementById("lock-error");
+  const keyword = input.value;
+
+  if(unlockWithKeyword(keyword)){
+    localStorage.setItem("aorus_keyword", keyword.trim().toLowerCase());
+    errorEl.style.display = "none";
+  }else{
+    errorEl.style.display = "block";
+    input.value = "";
+    input.focus();
+  }
+}
+
+document.getElementById("lock-submit").addEventListener("click", tryUnlock);
+document.getElementById("lock-input").addEventListener("keydown", (e) => {
+  if(e.key === "Enter") tryUnlock();
+});
+
+document.getElementById("switch-group").addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.removeItem("aorus_keyword");
+  document.getElementById("app-wrap").style.display = "none";
+  document.getElementById("app-footer").style.display = "none";
+  document.getElementById("lock-screen").style.display = "block";
+  document.getElementById("lock-input").value = "";
+  document.getElementById("lock-input").focus();
+});
+
+// Se já desbloqueou antes nesse aparelho, entra direto sem pedir de novo
+const savedKeyword = localStorage.getItem("aorus_keyword");
+if(savedKeyword && ACCESS_CONFIG[savedKeyword]){
+  unlockWithKeyword(savedKeyword);
+}
 
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => {
