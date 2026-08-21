@@ -182,6 +182,47 @@
     padding: 7px 12px;
   }
 
+  .custom-range-panel{
+    flex-direction: column;
+    gap: 8px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .cr-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .cr-input{
+    background: var(--bg-elevated-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 9px 10px;
+    color: var(--text);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color-scheme: dark;
+  }
+  .cr-apply{
+    margin-top: 4px;
+    background: var(--gold);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    color: #1A1206;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
   .card{
     background: var(--bg-elevated);
     border: 1px solid var(--line);
@@ -456,6 +497,14 @@
         <button class="range-btn" data-mode="today">Hoje</button>
         <button class="range-btn" data-mode="7d">7 dias</button>
         <button class="range-btn" data-mode="30d">30 dias</button>
+        <button class="range-btn" data-mode="custom">Personalizado</button>
+      </div>
+      <div class="custom-range-panel" id="custom-panel-ranking" style="display:none;">
+        <label class="cr-label">De</label>
+        <input type="datetime-local" id="cr-start-ranking" class="cr-input" />
+        <label class="cr-label">Até</label>
+        <input type="datetime-local" id="cr-end-ranking" class="cr-input" />
+        <button class="cr-apply" id="cr-apply-ranking">Aplicar</button>
       </div>
       <div class="card" id="ranking-list"></div>
     </section>
@@ -466,6 +515,14 @@
         <button class="range-btn" data-mode="today">Hoje</button>
         <button class="range-btn" data-mode="7d">7 dias</button>
         <button class="range-btn" data-mode="30d">30 dias</button>
+        <button class="range-btn" data-mode="custom">Personalizado</button>
+      </div>
+      <div class="custom-range-panel" id="custom-panel-pvp" style="display:none;">
+        <label class="cr-label">De</label>
+        <input type="datetime-local" id="cr-start-pvp" class="cr-input" />
+        <label class="cr-label">Até</label>
+        <input type="datetime-local" id="cr-end-pvp" class="cr-input" />
+        <button class="cr-apply" id="cr-apply-pvp">Aplicar</button>
       </div>
       <div class="card" id="pvp-list"></div>
     </section>
@@ -540,9 +597,26 @@ function getBaselineTs(latestTs, mode){
   return latestTs - 24*60*60*1000; // "24h"
 }
 
+let customStartTs = null;
+let customEndTs = null;
+
+function findSnapshotAtOrBefore(rows, targetTs){
+  let result = rows[0];
+  for(const r of rows){ if(r.ts <= targetTs) result = r; else break; }
+  return result;
+}
+
 function latestAndPast(name, mode="24h"){
   const rows = allRows.filter(r => r.name.toLowerCase() === name.toLowerCase()).sort((a,b)=>a.ts-b.ts);
   if(rows.length===0) return null;
+
+  if(mode === "custom"){
+    if(customStartTs == null || customEndTs == null) return null;
+    const past = findSnapshotAtOrBefore(rows, customStartTs);
+    const latest = findSnapshotAtOrBefore(rows, customEndTs);
+    return { latest, past };
+  }
+
   const latest = rows[rows.length-1];
   const targetTs = getBaselineTs(latest.ts, mode);
   let past = rows[0];
@@ -635,7 +709,11 @@ function renderRanking(){
   }).filter(Boolean).sort((a,b)=>b.progress-a.progress);
 
   if(rows.length===0){
-    el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
+    if(rangeMode === "custom" && (customStartTs == null || customEndTs == null)){
+      el.innerHTML = `<div class="empty">Escolha o período acima e clique em Aplicar.</div>`;
+    }else{
+      el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
+    }
     return;
   }
 
@@ -659,7 +737,11 @@ function renderPvpRanking(){
   }).filter(Boolean).sort((a,b)=>b.expGain-a.expGain);
 
   if(rows.length===0){
-    el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
+    if(rangeMode === "custom" && (customStartTs == null || customEndTs == null)){
+      el.innerHTML = `<div class="empty">Escolha o período acima e clique em Aplicar.</div>`;
+    }else{
+      el.innerHTML = `<div class="empty">Ainda sem dados suficientes.</div>`;
+    }
     return;
   }
 
@@ -680,6 +762,8 @@ function setRangeMode(mode){
   document.querySelectorAll(".range-btn[data-mode]").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.mode === mode);
   });
+  document.getElementById("custom-panel-ranking").style.display = mode === "custom" ? "flex" : "none";
+  document.getElementById("custom-panel-pvp").style.display = mode === "custom" ? "flex" : "none";
   renderRanking();
   renderPvpRanking();
 }
@@ -873,6 +957,41 @@ document.querySelectorAll(".tab").forEach(tab => {
     document.getElementById("pvp-view").style.display = target === "pvp" ? "block" : "none";
     document.getElementById("drops-view").style.display = target === "drops" ? "block" : "none";
   });
+});
+
+function applyCustomRange(startInputId, endInputId){
+  const startVal = document.getElementById(startInputId).value;
+  const endVal = document.getElementById(endInputId).value;
+
+  if(!startVal || !endVal){
+    alert("Preencha data/hora de início e fim.");
+    return;
+  }
+  const startTs = new Date(startVal).getTime();
+  const endTs = new Date(endVal).getTime();
+  if(startTs >= endTs){
+    alert("O início precisa ser antes do fim.");
+    return;
+  }
+
+  customStartTs = startTs;
+  customEndTs = endTs;
+
+  // mantém os dois painéis (aba Nível e aba PvP) sincronizados
+  document.getElementById("cr-start-ranking").value = startVal;
+  document.getElementById("cr-end-ranking").value = endVal;
+  document.getElementById("cr-start-pvp").value = startVal;
+  document.getElementById("cr-end-pvp").value = endVal;
+
+  renderRanking();
+  renderPvpRanking();
+}
+
+document.getElementById("cr-apply-ranking").addEventListener("click", () => {
+  applyCustomRange("cr-start-ranking", "cr-end-ranking");
+});
+document.getElementById("cr-apply-pvp").addEventListener("click", () => {
+  applyCustomRange("cr-start-pvp", "cr-end-pvp");
 });
 
 document.getElementById("refresh").addEventListener("click", loadData);
