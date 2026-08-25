@@ -111,6 +111,28 @@
     justify-content:center;
   }
 
+  #notif-btn{
+    position: fixed;
+    top: 16px;
+    left: max(16px, calc(50% - 240px + 16px));
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    color: var(--text-muted);
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 50;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  #notif-btn.active{
+    border-color: var(--gold);
+    color: var(--gold-bright);
+  }
+
   #boss-float{
     position: fixed;
     left: 50%;
@@ -803,6 +825,7 @@
     .cartouche-fill{ transition: none; }
   }
 </style>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 </head>
 <body>
   <div class="lock-wrap" id="lock-screen">
@@ -817,6 +840,7 @@
 
   <div class="wrap" id="app-wrap" style="display:none;">
     <button id="guide-btn" aria-label="Abrir guia do app">?</button>
+    <button id="notif-btn" aria-label="Ativar notificações de boss">🔔</button>
 
     <div id="guide-modal" class="guide-overlay" style="display:none;">
       <div class="guide-card">
@@ -852,6 +876,10 @@
           <div class="guide-item">
             <div class="guide-item-title">👹 Boss</div>
             <p>Lista todos os bosses com horário, ordenados pelo mais próximo. A barrinha flutuante no rodapé sempre mostra o próximo boss e quanto falta — toque nela pra abrir essa aba direto.</p>
+          </div>
+          <div class="guide-item">
+            <div class="guide-item-title">🔔 Notificações</div>
+            <p>Botão no canto superior esquerdo — ativa avisos push 5 minutos antes de cada boss nascer, mesmo com o app fechado. Precisa aceitar a permissão do navegador na primeira vez. Toque de novo pra desativar.</p>
           </div>
           <div class="guide-item">
             <div class="guide-item-title">🔄 Atualizar</div>
@@ -975,6 +1003,34 @@
   </footer>
 
 <script>
+// ---------- Notificações (OneSignal) ----------
+// Cole aqui o "OneSignal App ID" (não é sensível, pode ficar no código).
+const ONESIGNAL_APP_ID = "79b38c88-8bb1-41c4-9557-aa79d3b35178";
+
+window.OneSignalDeferred = window.OneSignalDeferred || [];
+OneSignalDeferred.push(async function(OneSignal) {
+  if(ONESIGNAL_APP_ID === "COLE_SEU_APP_ID_AQUI") return;
+  await OneSignal.init({ appId: ONESIGNAL_APP_ID });
+
+  const updateNotifBtn = async () => {
+    const btn = document.getElementById("notif-btn");
+    const enabled = OneSignal.User.PushSubscription.optedIn;
+    btn.classList.toggle("active", !!enabled);
+  };
+  updateNotifBtn();
+  OneSignal.User.PushSubscription.addEventListener("change", updateNotifBtn);
+
+  document.getElementById("notif-btn").addEventListener("click", async () => {
+    const enabled = OneSignal.User.PushSubscription.optedIn;
+    if(enabled){
+      await OneSignal.User.PushSubscription.optOut();
+    }else{
+      await OneSignal.Notifications.requestPermission();
+      await OneSignal.User.PushSubscription.optIn();
+    }
+  });
+});
+
 const ACCESS_CONFIG = {
   "ae497696da1da05581774c71b7c2ecc77f219f3e7914b02fe340c4eabaa17252": {
     players: ["Tempest", "DarkFury", "midnightpurple", "SrVittar", "Secret", "LekJhonson95"],
