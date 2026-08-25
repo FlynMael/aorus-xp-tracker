@@ -136,35 +136,39 @@
   #boss-float{
     position: fixed;
     left: 50%;
-    bottom: 18px;
+    bottom: 70px;
     transform: translateX(-50%);
     z-index: 60;
     display:flex;
     align-items:center;
-    gap: 10px;
+    gap: 8px;
     background: var(--bg-elevated);
     border: 1px solid var(--gold);
     border-radius: 999px;
-    padding: 9px 18px 9px 12px;
+    padding: 7px 14px 7px 10px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.5), 0 0 14px rgba(201,162,39,0.25);
-    cursor: pointer;
+    cursor: grab;
     max-width: calc(100% - 32px);
     box-sizing: border-box;
+    touch-action: none;
+    user-select: none;
   }
-  #boss-float-icon{ font-size: 20px; flex-shrink:0; }
+  #boss-float.dragging{ cursor: grabbing; opacity: 0.9; }
+  #boss-float-icon{ font-size: 17px; flex-shrink:0; }
   .boss-float-text{ min-width:0; }
   .boss-float-name{
     font-family:'Cinzel', serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 44vw;
   }
   .boss-float-time{
     font-family:'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--gold-bright);
   }
 
@@ -875,7 +879,7 @@
           </div>
           <div class="guide-item">
             <div class="guide-item-title">👹 Boss</div>
-            <p>Lista todos os bosses com horário, ordenados pelo mais próximo. A barrinha flutuante no rodapé sempre mostra o próximo boss e quanto falta — toque nela pra abrir essa aba direto.</p>
+            <p>Lista todos os bosses com horário, ordenados pelo mais próximo. A barrinha flutuante sempre mostra o próximo boss e quanto falta — toque nela pra abrir essa aba direto, ou <b>arraste</b> pra qualquer canto da tela (a posição fica salva nesse aparelho).</p>
           </div>
           <div class="guide-item">
             <div class="guide-item-title">🔔 Notificações</div>
@@ -1996,9 +2000,73 @@ function renderBosses(){
   });
 }
 
-document.getElementById("boss-float").addEventListener("click", () => {
-  document.querySelector('.tab[data-tab="bosses"]').click();
-});
+// Barra de boss arrastável — salva a posição escolhida pelo usuário
+(function setupBossFloatDrag(){
+  const el = document.getElementById("boss-float");
+  let dragging = false;
+  let moved = false;
+  let startX = 0, startY = 0;
+  let startLeft = 0, startTop = 0;
+
+  function applyPosition(left, top){
+    const rect = el.getBoundingClientRect();
+    const maxLeft = window.innerWidth - rect.width - 8;
+    const maxTop = window.innerHeight - rect.height - 8;
+    left = Math.max(8, Math.min(left, maxLeft));
+    top = Math.max(8, Math.min(top, maxTop));
+    el.style.left = left + "px";
+    el.style.top = top + "px";
+    el.style.bottom = "auto";
+    el.style.transform = "none";
+  }
+
+  // Restaura posição salva (se já foi movido antes nesse aparelho)
+  const saved = localStorage.getItem("aorus_boss_float_pos");
+  if(saved){
+    try{
+      const { left, top } = JSON.parse(saved);
+      requestAnimationFrame(() => applyPosition(left, top));
+    }catch(e){}
+  }
+
+  el.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    moved = false;
+    el.classList.add("dragging");
+    el.setPointerCapture(e.pointerId);
+    const rect = el.getBoundingClientRect();
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = rect.left;
+    startTop = rect.top;
+  });
+
+  el.addEventListener("pointermove", (e) => {
+    if(!dragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    if(Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+    if(moved) applyPosition(startLeft + dx, startTop + dy);
+  });
+
+  function endDrag(){
+    if(!dragging) return;
+    dragging = false;
+    el.classList.remove("dragging");
+    if(moved){
+      const rect = el.getBoundingClientRect();
+      localStorage.setItem("aorus_boss_float_pos", JSON.stringify({ left: rect.left, top: rect.top }));
+    }
+  }
+
+  el.addEventListener("pointerup", (e) => {
+    endDrag();
+    if(!moved){
+      document.querySelector('.tab[data-tab="bosses"]').click();
+    }
+  });
+  el.addEventListener("pointercancel", endDrag);
+})();
 
 // Atualiza a barra flutuante e a contagem regressiva a cada 30s
 setInterval(() => {
