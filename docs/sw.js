@@ -1,3 +1,7 @@
+// Importa o worker do OneSignal (necessario pra push notifications
+// funcionarem), combinado com nosso proprio worker "no-op" de PWA.
+importScripts("https://cdn.onesignal.com/sdks/web/v16/OneSignalSDKWorker.js");
+
 // Service worker "no-op": nao guarda nada em cache, so existe pra permitir
 // instalar o app na tela inicial. Assim toda atualizacao aparece na hora,
 // sem precisar desinstalar/reinstalar.
