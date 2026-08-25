@@ -1031,12 +1031,17 @@ OneSignalDeferred.push(async function(OneSignal) {
     OneSignal.User.PushSubscription.addEventListener("change", updateNotifBtn);
   }catch(err){
     console.error("Erro ao iniciar OneSignal:", err);
+    window.__oneSignalInitError = String(err && err.message ? err.message : err);
   }
 });
 
 document.getElementById("notif-btn").addEventListener("click", async () => {
   if(!oneSignalReady){
-    alert("As notificações ainda estão carregando — espera uns segundos e tenta de novo.");
+    if(window.__oneSignalInitError){
+      alert("Erro ao carregar notificações: " + window.__oneSignalInitError);
+    }else{
+      alert("As notificações ainda estão carregando — espera uns segundos e tenta de novo.");
+    }
     return;
   }
   try{
