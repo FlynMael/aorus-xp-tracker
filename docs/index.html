@@ -30,7 +30,7 @@
     color: var(--text);
     font-family: 'IBM Plex Sans', sans-serif;
     min-height: 100vh;
-    padding-bottom: 40px;
+    padding-bottom: 76px;
   }
   .lock-wrap{
     max-width: 340px;
@@ -109,6 +109,101 @@
     display:flex;
     align-items:center;
     justify-content:center;
+  }
+
+  #boss-float{
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 60;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    padding: 9px 18px 9px 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.5), 0 0 14px rgba(201,162,39,0.25);
+    cursor: pointer;
+    max-width: calc(100% - 32px);
+    box-sizing: border-box;
+  }
+  #boss-float-icon{ font-size: 20px; flex-shrink:0; }
+  .boss-float-text{ min-width:0; }
+  .boss-float-name{
+    font-family:'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .boss-float-time{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-bright);
+  }
+
+  .boss-row{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 13px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .boss-row:last-child{ border-bottom: none; }
+  .boss-row-info{ flex:1; min-width:0; }
+  .boss-row-name{
+    font-family:'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .boss-row-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .boss-row-when{
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .boss-row-time{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--gold-bright);
+    font-weight: 600;
+  }
+  .boss-row-countdown{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .boss-log-btn{
+    background: var(--gold);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #1A1206;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .boss-clear-btn{
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 9px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 3px;
   }
 
   .guide-overlay{
@@ -755,6 +850,10 @@
             <p>Escolha um dia específico no calendário e veja o pódio (🥇🥈🥉) de quem mais evoluiu naquele dia. Alterne entre ranquear por <b>Nível</b> ou por <b>PvP</b>.</p>
           </div>
           <div class="guide-item">
+            <div class="guide-item-title">👹 Boss</div>
+            <p>Lista todos os bosses com horário, ordenados pelo mais próximo. A barrinha flutuante no rodapé sempre mostra o próximo boss e quanto falta — toque nela pra abrir essa aba direto.</p>
+          </div>
+          <div class="guide-item">
             <div class="guide-item-title">🔄 Atualizar</div>
             <p>Botão no rodapé — força buscar os dados mais recentes na hora, sem esperar a próxima coleta automática.</p>
           </div>
@@ -775,6 +874,7 @@
       <div class="tab" data-tab="drops">Drops</div>
       <div class="tab" data-tab="patentes">Patentes</div>
       <div class="tab" data-tab="daily">Diário</div>
+      <div class="tab" data-tab="bosses">Boss</div>
     </div>
 
     <div id="loading" class="loading">Carregando dados…</div>
@@ -852,6 +952,18 @@
       <div id="daily-podium"></div>
       <div class="card" id="daily-list"></div>
     </section>
+
+    <section id="bosses-view" style="display:none;">
+      <div class="card" id="bosses-list"></div>
+    </section>
+  </div>
+
+  <div id="boss-float" style="display:none;">
+    <span id="boss-float-icon">👹</span>
+    <div class="boss-float-text">
+      <div class="boss-float-name" id="boss-float-name"></div>
+      <div class="boss-float-time" id="boss-float-time"></div>
+    </div>
   </div>
 
   <footer id="app-footer" style="display:none;">
@@ -1527,8 +1639,10 @@ document.querySelectorAll(".tab").forEach(tab => {
     document.getElementById("drops-view").style.display = target === "drops" ? "block" : "none";
     document.getElementById("patentes-view").style.display = target === "patentes" ? "block" : "none";
     document.getElementById("daily-view").style.display = target === "daily" ? "block" : "none";
+    document.getElementById("bosses-view").style.display = target === "bosses" ? "block" : "none";
     if(target === "patentes") renderPatentes();
     if(target === "daily") renderDaily();
+    if(target === "bosses") renderBosses();
   });
 });
 
@@ -1582,6 +1696,7 @@ function unlockWithHash(hash){
   document.getElementById("app-footer").style.display = "flex";
 
   loadData();
+  renderBossFloat();
   return true;
 }
 
@@ -1605,6 +1720,207 @@ document.getElementById("lock-submit").addEventListener("click", tryUnlock);
 document.getElementById("lock-input").addEventListener("keydown", (e) => {
   if(e.key === "Enter") tryUnlock();
 });
+
+// ---------- BOSSES ----------
+
+// Bosses com horário fixo (calculados automaticamente)
+const SCHEDULED_BOSSES = [
+  { nome: "Babel", local: "Railway of Chaos", frequencia: "diaria", horarios: ["02:30", "08:30", "14:30", "18:30"] },
+  { nome: "Valento", local: "Gallubia Valey", frequencia: "diaria", horarios: ["04:30", "10:30", "16:30", "20:30"] },
+  { nome: "Kelvezu", local: "Kelvezu Cave", frequencia: "diaria", horarios: ["00:30", "06:30", "12:30", "18:30"] },
+  { nome: "Mokova", local: "Lost Temple", frequencia: "diaria", horarios: ["02:30", "10:30", "14:30", "20:30"] },
+  { nome: "Fury", local: "Endless Tower 1°", frequencia: "diaria", horarios: ["04:30", "08:30", "16:30", "22:30"] },
+  { nome: "Shy", local: "Endless Tower 3°", frequencia: "diaria", horarios: ["00:30", "06:30", "12:30", "22:30"] },
+  { nome: "Tulla", local: "Ice Mine", frequencia: "diaria", horarios: ["09:00", "15:00", "22:00"] },
+  { nome: "Aorus God", local: "Pyramid", frequencia: "fim_de_semana", horarios_sabado: ["13:00", "20:30"], horarios_domingo: ["09:30", "19:30"] },
+  { nome: "Antrallos", local: "Expedição", frequencia: "terca_quinta", horarios: ["13:00", "21:30"] },
+  { nome: "Flame Maiden", local: "Firelands", frequencia: "evento_firelands", horarios_sabado: ["15:30"], horarios_domingo: ["20:30"] },
+  { nome: "King Devil Bird", local: null, frequencia: "diaria", horarios: ["11:15", "21:15"] },
+  { nome: "Queen Chaos Cara", local: null, frequencia: "diaria", horarios: ["13:15", "23:15"] },
+];
+
+// Bosses de respawn por timer (precisa registrar quando morreu)
+// Bosses de respawn por timer (vazio por enquanto — nenhum boss desse tipo
+// confirmado ainda; adicione aqui se precisar no futuro, no formato:
+// { nome: "...", intervalo_min: 000 }
+const TIMER_BOSSES = [];
+
+function getBossTimesForDate(boss, dateObj){
+  const dow = dateObj.getDay(); // 0=domingo ... 6=sábado
+  if(boss.frequencia === "diaria") return boss.horarios || [];
+  if(boss.frequencia === "fim_de_semana" || boss.frequencia === "evento_firelands"){
+    if(dow === 6) return boss.horarios_sabado || [];
+    if(dow === 0) return boss.horarios_domingo || [];
+    return [];
+  }
+  if(boss.frequencia === "terca_quinta"){
+    if(dow === 2 || dow === 4) return boss.horarios || [];
+    return [];
+  }
+  return [];
+}
+
+function getNextScheduledOccurrence(boss, now){
+  for(let addDays = 0; addDays <= 8; addDays++){
+    const d = new Date(now);
+    d.setDate(d.getDate() + addDays);
+    d.setHours(0, 0, 0, 0);
+    const times = getBossTimesForDate(boss, d);
+    for(const t of times){
+      const [h, m] = t.split(":").map(Number);
+      const candidate = new Date(d);
+      candidate.setHours(h, m, 0, 0);
+      if(candidate.getTime() > now.getTime()) return candidate;
+    }
+  }
+  return null;
+}
+
+function getTimerBossDeath(nome){
+  const raw = localStorage.getItem("aorus_boss_death_" + nome);
+  return raw ? Number(raw) : null;
+}
+function setTimerBossDeath(nome, ts){
+  localStorage.setItem("aorus_boss_death_" + nome, String(ts));
+}
+function clearTimerBossDeath(nome){
+  localStorage.removeItem("aorus_boss_death_" + nome);
+}
+
+function formatCountdown(diffMs){
+  if(diffMs <= 0) return "agora";
+  const totalMin = Math.floor(diffMs / 60000);
+  const h = Math.floor(totalMin / 60);
+  const m = totalMin % 60;
+  if(h <= 0) return `${m}min`;
+  return `${h}h ${m}min`;
+}
+
+function formatWhen(date, now){
+  const sameDay = date.toDateString() === now.toDateString();
+  const tomorrow = new Date(now);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const isTomorrow = date.toDateString() === tomorrow.toDateString();
+  const time = date.toTimeString().slice(0, 5);
+  const weekday = date.toLocaleDateString("pt-BR", { weekday: "short" });
+  if(sameDay) return `Hoje ${time}`;
+  if(isTomorrow) return `Amanhã ${time}`;
+  return `${weekday} ${time}`;
+}
+
+function getAllBossOccurrences(){
+  const now = new Date();
+  const list = [];
+
+  SCHEDULED_BOSSES.forEach(boss => {
+    const next = getNextScheduledOccurrence(boss, now);
+    list.push({
+      nome: boss.nome,
+      local: boss.local,
+      next,
+      isTimer: false,
+    });
+  });
+
+  TIMER_BOSSES.forEach(boss => {
+    const death = getTimerBossDeath(boss.nome);
+    const next = death ? new Date(death + boss.intervalo_min * 60000) : null;
+    list.push({
+      nome: boss.nome,
+      local: null,
+      next,
+      isTimer: true,
+      intervaloMin: boss.intervalo_min,
+    });
+  });
+
+  return { now, list };
+}
+
+function renderBossFloat(){
+  if(document.getElementById("app-wrap").style.display === "none") return;
+
+  const { now, list } = getAllBossOccurrences();
+  const upcoming = list.filter(b => b.next && b.next.getTime() > now.getTime())
+                        .sort((a, b) => a.next - b.next);
+
+  const floatEl = document.getElementById("boss-float");
+  if(upcoming.length === 0){
+    floatEl.style.display = "none";
+    return;
+  }
+  const next = upcoming[0];
+  document.getElementById("boss-float-name").textContent = next.nome;
+  document.getElementById("boss-float-time").textContent =
+    `${formatWhen(next.next, now)} · em ${formatCountdown(next.next - now)}`;
+  floatEl.style.display = "flex";
+}
+
+function renderBosses(){
+  const { now, list } = getAllBossOccurrences();
+
+  const withTime = list.filter(b => b.next).sort((a, b) => a.next - b.next);
+  const withoutTime = list.filter(b => !b.next);
+  const sorted = [...withTime, ...withoutTime];
+
+  const el = document.getElementById("bosses-list");
+  el.innerHTML = sorted.map(b => {
+    const metaParts = [];
+    if(b.local) metaParts.push(b.local);
+    if(b.isTimer) metaParts.push(`respawn ${Math.round(b.intervaloMin/60*10)/10}h`);
+    const meta = metaParts.join(" · ");
+
+    let rightHtml = "";
+    if(b.next){
+      rightHtml = `
+        <div class="boss-row-when">
+          <div class="boss-row-time">${formatWhen(b.next, now)}</div>
+          <div class="boss-row-countdown">em ${formatCountdown(b.next - now)}</div>
+          ${b.isTimer ? `<button class="boss-clear-btn" data-clear="${b.nome}">limpar</button>` : ""}
+        </div>
+      `;
+    }else{
+      rightHtml = `<button class="boss-log-btn" data-log="${b.nome}">Morreu agora</button>`;
+    }
+
+    return `
+      <div class="boss-row">
+        <div class="boss-row-info">
+          <div class="boss-row-name">${b.nome}</div>
+          ${meta ? `<div class="boss-row-meta">${meta}</div>` : ""}
+        </div>
+        ${rightHtml}
+      </div>
+    `;
+  }).join("");
+
+  el.querySelectorAll("[data-log]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setTimerBossDeath(btn.dataset.log, Date.now());
+      renderBosses();
+      renderBossFloat();
+    });
+  });
+  el.querySelectorAll("[data-clear]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      clearTimerBossDeath(btn.dataset.clear);
+      renderBosses();
+      renderBossFloat();
+    });
+  });
+}
+
+document.getElementById("boss-float").addEventListener("click", () => {
+  document.querySelector('.tab[data-tab="bosses"]').click();
+});
+
+// Atualiza a barra flutuante e a contagem regressiva a cada 30s
+setInterval(() => {
+  renderBossFloat();
+  if(document.getElementById("bosses-view").style.display !== "none"){
+    renderBosses();
+  }
+}, 30000);
 
 document.getElementById("guide-btn").addEventListener("click", () => {
   document.getElementById("guide-modal").style.display = "flex";
