@@ -98,6 +98,11 @@ def main():
     log = load_log()
     log_set = set(log)
 
+    # Garante que o arquivo exista desde a primeira execução (mesmo vazio),
+    # senão o "git add" no workflow falha por o arquivo não existir ainda.
+    if not os.path.exists(LOG_FILE):
+        save_log(log)
+
     # Agrupa bosses que nascem no mesmo horário
     by_time = {}
     for boss in SCHEDULED_BOSSES:
