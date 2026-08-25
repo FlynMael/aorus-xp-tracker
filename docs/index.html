@@ -1006,29 +1006,51 @@
 // ---------- Notificações (OneSignal) ----------
 // Cole aqui o "OneSignal App ID" (não é sensível, pode ficar no código).
 const ONESIGNAL_APP_ID = "79b38c88-8bb1-41c4-9557-aa79d3b35178";
+let oneSignalReady = null; // referência ao objeto OneSignal quando pronto
 
 window.OneSignalDeferred = window.OneSignalDeferred || [];
 OneSignalDeferred.push(async function(OneSignal) {
   if(ONESIGNAL_APP_ID === "COLE_SEU_APP_ID_AQUI") return;
-  await OneSignal.init({ appId: ONESIGNAL_APP_ID });
+  try{
+    await OneSignal.init({
+      appId: ONESIGNAL_APP_ID,
+      // Nosso site fica numa subpasta do domínio (github.io/aorus-xp-tracker/),
+      // então precisa apontar o worker certo — senão o OneSignal tenta
+      // registrar na raiz do domínio e falha silenciosamente.
+      serviceWorkerParam: { scope: "/aorus-xp-tracker/" },
+      serviceWorkerPath: "sw.js",
+    });
+    oneSignalReady = OneSignal;
 
-  const updateNotifBtn = async () => {
-    const btn = document.getElementById("notif-btn");
-    const enabled = OneSignal.User.PushSubscription.optedIn;
-    btn.classList.toggle("active", !!enabled);
-  };
-  updateNotifBtn();
-  OneSignal.User.PushSubscription.addEventListener("change", updateNotifBtn);
+    const updateNotifBtn = () => {
+      const btn = document.getElementById("notif-btn");
+      const enabled = OneSignal.User.PushSubscription.optedIn;
+      btn.classList.toggle("active", !!enabled);
+    };
+    updateNotifBtn();
+    OneSignal.User.PushSubscription.addEventListener("change", updateNotifBtn);
+  }catch(err){
+    console.error("Erro ao iniciar OneSignal:", err);
+  }
+});
 
-  document.getElementById("notif-btn").addEventListener("click", async () => {
-    const enabled = OneSignal.User.PushSubscription.optedIn;
+document.getElementById("notif-btn").addEventListener("click", async () => {
+  if(!oneSignalReady){
+    alert("As notificações ainda estão carregando — espera uns segundos e tenta de novo.");
+    return;
+  }
+  try{
+    const enabled = oneSignalReady.User.PushSubscription.optedIn;
     if(enabled){
-      await OneSignal.User.PushSubscription.optOut();
+      await oneSignalReady.User.PushSubscription.optOut();
     }else{
-      await OneSignal.Notifications.requestPermission();
-      await OneSignal.User.PushSubscription.optIn();
+      await oneSignalReady.Notifications.requestPermission();
+      await oneSignalReady.User.PushSubscription.optIn();
     }
-  });
+  }catch(err){
+    console.error("Erro ao ativar notificações:", err);
+    alert("Não consegui ativar as notificações. Confere se seu navegador não está bloqueando (ícone de sino/cadeado na barra de endereço).");
+  }
 });
 
 const ACCESS_CONFIG = {
