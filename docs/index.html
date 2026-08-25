@@ -1812,18 +1812,23 @@ document.getElementById("lock-input").addEventListener("keydown", (e) => {
 
 // Bosses com horário fixo (calculados automaticamente)
 const SCHEDULED_BOSSES = [
-  { nome: "Babel", local: "Railway of Chaos", frequencia: "diaria", horarios: ["02:30", "08:30", "14:30", "18:30"] },
-  { nome: "Valento", local: "Gallubia Valey", frequencia: "diaria", horarios: ["04:30", "10:30", "16:30", "20:30"] },
-  { nome: "Kelvezu", local: "Kelvezu Cave", frequencia: "diaria", horarios: ["00:30", "06:30", "12:30", "18:30"] },
-  { nome: "Mokova", local: "Lost Temple", frequencia: "diaria", horarios: ["02:30", "10:30", "14:30", "20:30"] },
-  { nome: "Fury", local: "Endless Tower 1°", frequencia: "diaria", horarios: ["04:30", "08:30", "16:30", "22:30"] },
-  { nome: "Shy", local: "Endless Tower 3°", frequencia: "diaria", horarios: ["00:30", "06:30", "12:30", "22:30"] },
-  { nome: "Tulla", local: "Ice Mine", frequencia: "diaria", horarios: ["09:00", "15:00", "22:00"] },
-  { nome: "Aorus God", local: "Pyramid", frequencia: "fim_de_semana", horarios_sabado: ["13:00", "20:30"], horarios_domingo: ["09:30", "19:30"] },
-  { nome: "Antrallos", local: "Expedição", frequencia: "terca_quinta", horarios: ["13:00", "21:30"] },
-  { nome: "Flame Maiden", local: "Firelands", frequencia: "evento_firelands", horarios_sabado: ["15:30"], horarios_domingo: ["20:30"] },
-  { nome: "King Devil Bird", local: null, frequencia: "diaria", horarios: ["11:15", "21:15"] },
-  { nome: "Queen Chaos Cara", local: null, frequencia: "diaria", horarios: ["13:15", "23:15"] },
+  { nome: "Babel", local: "Railway of Chaos", frequencia: "diaria", horarios: ["02:30", "08:30", "14:30", "18:30"], notifyMinutes: 5 },
+  { nome: "Valento", local: "Gallubia Valey", frequencia: "diaria", horarios: ["04:30", "10:30", "16:30", "20:30"], notifyMinutes: 5 },
+  { nome: "Kelvezu", local: "Kelvezu Cave", frequencia: "diaria", horarios: ["00:30", "06:30", "12:30", "18:30"], notifyMinutes: 5 },
+  { nome: "Mokova", local: "Lost Temple", frequencia: "diaria", horarios: ["02:30", "10:30", "14:30", "20:30"], notifyMinutes: 5 },
+  { nome: "Fury", local: "Endless Tower 1°", frequencia: "diaria", horarios: ["04:30", "08:30", "16:30", "22:30"], notifyMinutes: 5 },
+  { nome: "Shy", local: "Endless Tower 3°", frequencia: "diaria", horarios: ["00:30", "06:30", "12:30", "22:30"], notifyMinutes: 5 },
+  { nome: "Tulla", local: "Ice Mine", frequencia: "diaria", horarios: ["09:00", "15:00", "22:00"], notifyMinutes: 5 },
+  { nome: "Aorus God", local: "Pyramid", frequencia: "fim_de_semana", horarios_sabado: ["13:00", "20:30"], horarios_domingo: ["09:30", "19:30"], notifyMinutes: 5 },
+  { nome: "Antrallos", local: "Expedição", frequencia: "terca_quinta", horarios: ["13:00", "21:30"], notifyMinutes: 5 },
+  { nome: "Flame Maiden", local: "Firelands", frequencia: "evento_firelands", horarios_sabado: ["15:30"], horarios_domingo: ["20:30"], notifyMinutes: 5 },
+  { nome: "King Devil Bird", local: null, frequencia: "diaria", horarios: ["11:15", "21:15"], notifyMinutes: 5 },
+  { nome: "Queen Chaos Cara", local: null, frequencia: "diaria", horarios: ["13:15", "23:15"], notifyMinutes: 5 },
+  { nome: "Hells Gate", local: null, frequencia: "diaria", horarios: ["12:00", "20:00"], notifyMinutes: 5 },
+  { nome: "Battlegrounds", local: null, frequencia: "diaria", horarios: ["12:30", "21:30"], notifyMinutes: 5 },
+  { nome: "Infernal Abyss - Firelands", local: null, frequencia: "evento_firelands", horarios_sabado: ["15:30"], horarios_domingo: ["20:30"], notifyMinutes: 5 },
+  { nome: "Crystal Cave - Expedition", local: "Ricartem", frequencia: "terca_quinta", horarios: ["13:00", "21:00"], notifyMinutes: 5 },
+  { nome: "Bless Castle", local: null, frequencia: "semanal", dias_semana: [0], horarios: ["10:00"], notifyMinutes: 30 },
 ];
 
 // Bosses de respawn por timer (precisa registrar quando morreu)
@@ -1842,6 +1847,10 @@ function getBossTimesForDate(boss, dateObj){
   }
   if(boss.frequencia === "terca_quinta"){
     if(dow === 2 || dow === 4) return boss.horarios || [];
+    return [];
+  }
+  if(boss.frequencia === "semanal"){
+    if((boss.dias_semana || []).includes(dow)) return boss.horarios || [];
     return [];
   }
   return [];
@@ -1906,6 +1915,7 @@ function getAllBossOccurrences(){
       local: boss.local,
       next,
       isTimer: false,
+      notifyMinutes: boss.notifyMinutes || 5,
     });
   });
 
@@ -1958,6 +1968,7 @@ function renderBosses(){
     const metaParts = [];
     if(b.local) metaParts.push(b.local);
     if(b.isTimer) metaParts.push(`respawn ${Math.round(b.intervaloMin/60*10)/10}h`);
+    if(!b.isTimer && b.notifyMinutes !== 5) metaParts.push(`aviso ${b.notifyMinutes}min antes`);
     const meta = metaParts.join(" · ");
 
     let rightHtml = "";
