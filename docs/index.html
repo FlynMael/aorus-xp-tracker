@@ -1849,10 +1849,13 @@ function renderBossFloat(){
     floatEl.style.display = "none";
     return;
   }
-  const next = upcoming[0];
-  document.getElementById("boss-float-name").textContent = next.nome;
+  const soonestTs = upcoming[0].next.getTime();
+  const sameTime = upcoming.filter(b => b.next.getTime() === soonestTs);
+  const names = sameTime.map(b => b.nome).join(", ");
+
+  document.getElementById("boss-float-name").textContent = names;
   document.getElementById("boss-float-time").textContent =
-    `${formatWhen(next.next, now)} · em ${formatCountdown(next.next - now)}`;
+    `${formatWhen(upcoming[0].next, now)} · em ${formatCountdown(upcoming[0].next - now)}`;
   floatEl.style.display = "flex";
 }
 
