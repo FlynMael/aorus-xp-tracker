@@ -9,9 +9,10 @@ FIELDNAMES = ["date", "horario", "nick", "classe", "item", "monster", "mapa"]
 
 # Cada grupo tem sua propria lista de players e seu proprio arquivo de drops,
 # totalmente separados um do outro.
+# Grupo 2 desativado (nao esta em uso) - os arquivos players_grupo2.txt e
+# data/drops_grupo2.csv continuam intactos, e' so' reativar aqui se precisar.
 GROUPS = [
     {"players_file": "players.txt", "data_file": "data/drops.csv"},
-    {"players_file": "players_grupo2.txt", "data_file": "data/drops_grupo2.csv"},
 ]
 
 
