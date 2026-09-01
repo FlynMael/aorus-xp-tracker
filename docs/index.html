@@ -1064,15 +1064,17 @@ document.getElementById("notif-btn").addEventListener("click", async () => {
 
 const ACCESS_CONFIG = {
   "ae497696da1da05581774c71b7c2ecc77f219f3e7914b02fe340c4eabaa17252": {
-    players: ["Tempest", "DarkFury", "midnightpurple", "SrVittar", "Secret", "LekJhonson95"],
+    players: ["Katinga", "DarkFury", "Stelar", "SrVittar", "Curse", "LekJhonson95"],
     csvUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history.csv",
     dropsUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops.csv",
   },
-  "8787b68d6cef24c6755d8f72555835cbd2d7bfe1b629e87011f7197e278e0abb": {
-    players: ["LiMaO", "SafaBosS", "Psych0", "Stelar", "PaoNaSchapa", "Hewitt"],
-    csvUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history_grupo2.csv",
-    dropsUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops_grupo2.csv",
-  },
+  // Grupo 2 desativado (nao esta em uso). Dados continuam em
+  // data/history_grupo2.csv e data/drops_grupo2.csv - reative aqui se precisar:
+  // "8787b68d6cef24c6755d8f72555835cbd2d7bfe1b629e87011f7197e278e0abb": {
+  //   players: ["LiMaO", "SafaBosS", "Psych0", "Stelar", "PaoNaSchapa", "Hewitt"],
+  //   csvUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/history_grupo2.csv",
+  //   dropsUrl: "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/drops_grupo2.csv",
+  // },
 };
 
 async function sha256Hex(text){
@@ -1100,11 +1102,36 @@ function esc(str){
     .replace(/'/g, "&#039;");
 }
 
+// Parser de linha CSV que respeita campos entre aspas (evita desalinhar
+// colunas se algum valor vier com vírgula dentro).
+function parseCSVLine(line){
+  const values = [];
+  let cur = "";
+  let inQuotes = false;
+  for(let i = 0; i < line.length; i++){
+    const c = line[i];
+    if(inQuotes){
+      if(c === '"'){
+        if(line[i+1] === '"'){ cur += '"'; i++; }
+        else inQuotes = false;
+      } else {
+        cur += c;
+      }
+    } else {
+      if(c === '"') inQuotes = true;
+      else if(c === ','){ values.push(cur); cur = ""; }
+      else cur += c;
+    }
+  }
+  values.push(cur);
+  return values;
+}
+
 function parseCSV(text){
   const lines = text.trim().split("\n");
-  const headers = lines[0].split(",");
+  const headers = parseCSVLine(lines[0]);
   return lines.slice(1).map(line => {
-    const values = line.split(",");
+    const values = parseCSVLine(line);
     const row = {};
     headers.forEach((h,i) => row[h.trim()] = (values[i]||"").trim());
     row.ts = new Date(row.created_at).getTime();
@@ -1573,11 +1600,15 @@ const DROP_CATEGORIES = [
   { key: "other", label: "Outros" },
 ];
 
+// Itens do conjunto "Shelton" - nao tem "shelton" no proprio nome, entao
+// listamos os nomes reais conhecidos. Adicione outros aqui se aparecerem.
+const SHELTON_ITEMS = ["mirage", "inferna", "bellum", "enigma", "ordo"];
+
 function categorizeItem(name){
   const n = (name || "").toLowerCase();
   if(n.includes("fragment")) return "fragment";
   if(n.includes("gem")) return "gem";
-  if(n.includes("shelton")) return "shelton";
+  if(SHELTON_ITEMS.includes(n)) return "shelton";
   return "other";
 }
 
@@ -1661,9 +1692,9 @@ function renderDropsList(){
 function parseDropsCSV(text){
   const lines = text.trim().split("\n");
   if(lines.length <= 1) return [];
-  const headers = lines[0].split(",");
+  const headers = parseCSVLine(lines[0]);
   return lines.slice(1).map(line => {
-    const values = line.split(",");
+    const values = parseCSVLine(line);
     const row = {};
     headers.forEach((h,i) => row[h.trim()] = (values[i]||"").trim());
     return row;
