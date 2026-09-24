@@ -866,6 +866,10 @@
             <p>Mesma ideia da aba Nível, mas ranqueando por XP de PvP ganho (e mostra os kills feitos no período também). Tem os mesmos filtros de período.</p>
           </div>
           <div class="guide-item">
+            <div class="guide-item-title">🏆 Rank</div>
+            <p>Ranking PvP de <b>todos os players do servidor</b>. <b>Geral</b>: top 30 por battle XP. <b>Do dia</b>: quem mais fez kills ou battle XP hoje. ⭐ marca os players do grupo.</p>
+          </div>
+          <div class="guide-item">
             <div class="guide-item-title">💎 Drops</div>
             <p>Itens que os players droparam. Filtros: <b>Hoje / 7 dias</b>, categoria do item (<b>Fragmentos, Gemas, Sheltons, Outros</b>), e por player específico. Mostra o horário de cada drop.</p>
           </div>
@@ -903,6 +907,7 @@
       <div class="tab active" data-tab="players">Players</div>
       <div class="tab" data-tab="ranking">Nível</div>
       <div class="tab" data-tab="pvp">PvP</div>
+      <div class="tab" data-tab="rankpvp">Rank</div>
       <div class="tab" data-tab="drops">Drops</div>
       <div class="tab" data-tab="patentes">Patentes</div>
       <div class="tab" data-tab="daily">Diário</div>
@@ -952,6 +957,21 @@
         <button class="cr-apply" id="cr-apply-pvp">Aplicar</button>
       </div>
       <div class="card" id="pvp-list"></div>
+    </section>
+
+    <section id="rankpvp-view" style="display:none;">
+      <div class="range-toggle" id="rankpvp-sub">
+        <button class="range-btn active" data-sub="geral">Geral (Top 30)</button>
+        <button class="range-btn" data-sub="dia">Do dia</button>
+      </div>
+      <div id="rankpvp-dia-controls" style="display:none;">
+        <p class="filter-label">Ranquear por</p>
+        <div class="range-toggle" id="rankpvp-metric">
+          <button class="range-btn active" data-metric="kills">Kills</button>
+          <button class="range-btn" data-metric="xp">Battle XP</button>
+        </div>
+      </div>
+      <div class="card" id="rankpvp-list"></div>
     </section>
 
     <section id="drops-view" style="display:none;">
@@ -1314,7 +1334,7 @@ function renderDaily(){
   const dateInput = document.getElementById("daily-date");
   if(!dateInput.value){
     const today = new Date();
-    dateInput.value = today.toISOString().slice(0, 10);
+    dateInput.value = localISODate(today);
   }
   const dateStr = dateInput.value;
   const el = document.getElementById("daily-list");
@@ -1612,12 +1632,16 @@ function categorizeItem(name){
   return "other";
 }
 
+function localISODate(d){
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+}
+
 function getDropsCutoffDate(period){
   const now = new Date();
   if(period === "7d"){
     now.setDate(now.getDate() - 6); // hoje + 6 dias atrás = 7 dias
   }
-  return now.toISOString().slice(0, 10);
+  return localISODate(now);
 }
 
 function renderDropsPeriodToggle(){
@@ -1738,6 +1762,76 @@ document.querySelectorAll("#drops-period .range-btn[data-period]").forEach(btn =
   });
 });
 
+// ---------- RANK PVP (todos os players do servidor) ----------
+const RANK_PVP_URL = "https://raw.githubusercontent.com/FlynMael/aorus-xp-tracker/main/data/pvp_rank.json";
+let rankPvpData = null;
+let rankPvpSub = "geral";
+let rankPvpMetric = "kills";
+
+async function fetchRankPvp(){
+  try{
+    const res = await fetch(RANK_PVP_URL, { cache: "no-store" });
+    rankPvpData = res.ok ? await res.json() : null;
+  }catch(err){
+    rankPvpData = null;
+  }
+  renderRankPvp();
+}
+
+function renderRankPvp(){
+  const el = document.getElementById("rankpvp-list");
+  document.querySelectorAll("#rankpvp-sub .range-btn").forEach(b => b.classList.toggle("active", b.dataset.sub === rankPvpSub));
+  document.querySelectorAll("#rankpvp-metric .range-btn").forEach(b => b.classList.toggle("active", b.dataset.metric === rankPvpMetric));
+  document.getElementById("rankpvp-dia-controls").style.display = rankPvpSub === "dia" ? "block" : "none";
+
+  if(!rankPvpData){
+    el.innerHTML = `<div class="empty">Rank ainda não coletado. Volta em instantes.</div>`;
+    return;
+  }
+  const today = localISODate(new Date());
+  let rows;
+  if(rankPvpSub === "geral"){
+    rows = rankPvpData.geral || [];
+  }else{
+    rows = rankPvpData.day === today ? (rankPvpMetric === "kills" ? rankPvpData.dia_kills : rankPvpData.dia_xp) || [] : [];
+  }
+  if(rows.length === 0){
+    el.innerHTML = `<div class="empty">${rankPvpSub === "geral" ? "Sem dados." : "Ninguém pontuou hoje ainda."}</div>`;
+    return;
+  }
+  const mono = "font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-muted);";
+  el.innerHTML = rows.map((r,i) => {
+    let main, sub;
+    if(rankPvpSub === "geral"){
+      main = `${Number(r.battleEXP).toLocaleString("pt-BR")} XP`;
+      sub = `${r.kills} kills`;
+    }else if(rankPvpMetric === "kills"){
+      main = `+${r.killsDia} kills`;
+      sub = `${r.xpDia >= 0 ? "+" : ""}${Number(r.xpDia).toLocaleString("pt-BR")} XP`;
+    }else{
+      main = `+${Number(r.xpDia).toLocaleString("pt-BR")} XP`;
+      sub = `${r.killsDia >= 0 ? "+" : ""}${r.killsDia} kills`;
+    }
+    const tracked = TRACKED_PLAYERS.some(n => n.toLowerCase() === String(r.name).toLowerCase());
+    return `
+    <div class="rank-row">
+      <div class="rank-num">${i+1}</div>
+      <div class="rank-name">${tracked ? "⭐ " : ""}${esc(r.name)}<div style="${mono}">${esc(r.clan)} · Lv ${esc(r.level)}</div></div>
+      <div style="text-align:right;">
+        <div class="rank-gain">${main}</div>
+        <div style="${mono}">${sub}</div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+document.querySelectorAll("#rankpvp-sub .range-btn").forEach(btn => {
+  btn.addEventListener("click", () => { rankPvpSub = btn.dataset.sub; renderRankPvp(); });
+});
+document.querySelectorAll("#rankpvp-metric .range-btn").forEach(btn => {
+  btn.addEventListener("click", () => { rankPvpMetric = btn.dataset.metric; renderRankPvp(); });
+});
+
 async function loadData(){
   document.getElementById("loading").style.display = "block";
   try{
@@ -1756,6 +1850,7 @@ async function loadData(){
     document.getElementById("loading").style.display = "none";
   }
   fetchDrops();
+  fetchRankPvp();
 }
 
 document.querySelectorAll(".tab").forEach(tab => {
@@ -1767,12 +1862,14 @@ document.querySelectorAll(".tab").forEach(tab => {
     document.getElementById("ranking-view").style.display = target === "ranking" ? "block" : "none";
     document.getElementById("pvp-view").style.display = target === "pvp" ? "block" : "none";
     document.getElementById("drops-view").style.display = target === "drops" ? "block" : "none";
+    document.getElementById("rankpvp-view").style.display = target === "rankpvp" ? "block" : "none";
     document.getElementById("patentes-view").style.display = target === "patentes" ? "block" : "none";
     document.getElementById("daily-view").style.display = target === "daily" ? "block" : "none";
     document.getElementById("bosses-view").style.display = target === "bosses" ? "block" : "none";
     if(target === "patentes") renderPatentes();
     if(target === "daily") renderDaily();
     if(target === "bosses") renderBosses();
+    if(target === "rankpvp") renderRankPvp();
   });
 });
 
