@@ -1,10 +1,12 @@
 import csv
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 
 DROPS_API = "https://aorus-drops-analytics.vercel.app/api/drops"
+TZ = ZoneInfo("America/Sao_Paulo")
 FIELDNAMES = ["date", "horario", "nick", "classe", "item", "monster", "mapa"]
 
 # Cada grupo tem sua propria lista de players e seu proprio arquivo de drops,
@@ -31,12 +33,11 @@ def load_existing_keys(data_file):
     return seen
 
 
-def fetch_today_drops():
-    now = datetime.now(timezone.utc)
-    params = {"day": now.day, "month": now.month, "year": now.year, "t": int(now.timestamp() * 1000)}
+def fetch_drops_for(day):
+    params = {"day": day.day, "month": day.month, "year": day.year, "t": int(datetime.now().timestamp() * 1000)}
     resp = requests.get(DROPS_API, params=params, timeout=30)
     resp.raise_for_status()
-    return now.strftime("%Y-%m-%d"), resp.json()
+    return day.strftime("%Y-%m-%d"), resp.json()
 
 
 def process_group(group, date_str, drops):
@@ -84,9 +85,12 @@ def process_group(group, date_str, drops):
 
 
 def main():
-    date_str, drops = fetch_today_drops()
-    for group in GROUPS:
-        process_group(group, date_str, drops)
+    today = datetime.now(TZ)
+    # busca ontem tambem, pra pegar drops dos ultimos minutos antes da meia-noite
+    for day in (today - timedelta(days=1), today):
+        date_str, drops = fetch_drops_for(day)
+        for group in GROUPS:
+            process_group(group, date_str, drops)
 
 
 if __name__ == "__main__":
