@@ -1,9 +1,11 @@
 name: Aorus XP Tracker
 
 on:
-  schedule:
-    - cron: "5,35 * * * *"
   workflow_dispatch:
+
+concurrency:
+  group: track
+  cancel-in-progress: false
 
 jobs:
   track:
@@ -23,10 +25,18 @@ jobs:
 
       - run: python scripts/fetch_drops.py
 
+      - run: python scripts/fetch_pvp_rank.py
+        continue-on-error: true
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/history.csv data/drops.csv data/history_grupo2.csv data/drops_grupo2.csv
-          git diff --staged --quiet || git commit -m "Atualiza historico de XP e drops"
-          git push
+          git add data/
+          git diff --staged --quiet && exit 0
+          git commit -m "Atualiza historico de XP, drops e rank PvP"
+          for i in 1 2 3 4 5; do
+            git pull --rebase && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
