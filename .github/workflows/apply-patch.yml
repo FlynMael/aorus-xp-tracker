@@ -1,0 +1,36 @@
+name: Aplica patches
+
+on:
+  push:
+    branches: [main]
+    paths: ["patches/**"]
+
+concurrency:
+  group: track
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Aplica e remove os patches
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          shopt -s nullglob
+          for p in patches/*.patch; do
+            git apply --recount --whitespace=nowarn "$p"
+            git rm -q "$p"
+          done
+          git add -A
+          git diff --staged --quiet && exit 0
+          git commit -m "Aplica patch"
+          for i in 1 2 3 4 5; do
+            git pull --rebase && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
