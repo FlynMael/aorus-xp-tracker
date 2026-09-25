@@ -24,8 +24,11 @@ jobs:
           shopt -s nullglob
           for p in patches/*.patch; do
             git apply --recount --whitespace=nowarn "$p"
-            git rm -q "$p"
           done
+          for p in patches/*.py; do
+            python3 "$p"
+          done
+          if [ -d patches ]; then git rm -rq patches; fi
           git add -A
           git diff --staged --quiet && exit 0
           git commit -m "Aplica patch"
