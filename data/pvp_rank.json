@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-25T01:00:07.384946+00:00",
+ "updated_at": "2026-09-25T02:00:03.067233+00:00",
  "day": "2026-09-24",
  "total_players": 1000,
  "geral": [
@@ -351,6 +351,15 @@
    "xpDia": 1205
   },
   {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 2064,
+   "kills": 80,
+   "killsDia": 37,
+   "xpDia": 909
+  },
+  {
    "name": "Rinoa",
    "clan": "Loading",
    "level": 131,
@@ -367,15 +376,6 @@
    "kills": 74,
    "killsDia": 34,
    "xpDia": 1002
-  },
-  {
-   "name": "Duraso",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 1947,
-   "kills": 75,
-   "killsDia": 32,
-   "xpDia": 792
   },
   {
    "name": "Stelar",
@@ -641,6 +641,15 @@
    "xpDia": 1002
   },
   {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 2064,
+   "kills": 80,
+   "killsDia": 37,
+   "xpDia": 909
+  },
+  {
    "name": "m0rbius",
    "clan": "Loading",
    "level": 132,
@@ -666,15 +675,6 @@
    "kills": 157,
    "killsDia": 30,
    "xpDia": 795
-  },
-  {
-   "name": "Duraso",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 1947,
-   "kills": 75,
-   "killsDia": 32,
-   "xpDia": 792
   },
   {
    "name": "BaLaBoss",
