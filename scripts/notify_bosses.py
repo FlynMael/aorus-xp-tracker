@@ -96,7 +96,7 @@ def send_push(title, message):
         json={
             "app_id": ONESIGNAL_APP_ID,
             "target_channel": "push",
-            "included_segments": ["Subscribed Users"],
+            "included_segments": ["Total Subscriptions"],
             "headings": {"en": title, "pt": title},
             "contents": {"en": message, "pt": message},
         },
