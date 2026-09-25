@@ -977,7 +977,9 @@
   .bh-main{ display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-bottom:14px; }
   .bh-name{ font-family:'Cinzel', serif; font-weight:700; font-size:24px; line-height:1.1; }
   .bh-meta{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-muted); margin-top:4px; }
-  .bh-time{ font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:32px; color:var(--gold); }
+  .bh-time{ flex-shrink:0; font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:28px; color:var(--gold); }
+  .bh-main > div:first-child{ flex:1; min-width:0; }
+  .bh-name{ overflow-wrap:anywhere; }
   .bh-notif{ width:100%; min-height:44px; display:flex; align-items:center; justify-content:center; gap:8px; border-radius:12px; border:1px solid var(--line); background:var(--bg-elevated); color:var(--text); font-family:'IBM Plex Mono', monospace; font-size:12px; cursor:pointer; }
 </style>
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
