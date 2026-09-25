@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-25T09:00:08.332101+00:00",
+ "updated_at": "2026-09-25T10:00:04.550236+00:00",
  "day": "2026-09-25",
  "total_players": 1000,
  "geral": [
@@ -270,6 +270,24 @@
    "xpDia": 69
   },
   {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1723,
+   "kills": 62,
+   "killsDia": 2,
+   "xpDia": 21
+  },
+  {
+   "name": "MantoNegro",
+   "clan": "Sem Clan",
+   "level": 131,
+   "battleEXP": 175,
+   "kills": 6,
+   "killsDia": 1,
+   "xpDia": 50
+  },
+  {
    "name": "Rinoa",
    "clan": "Loading",
    "level": 131,
@@ -335,6 +353,15 @@
    "xpDia": 69
   },
   {
+   "name": "MantoNegro",
+   "clan": "Sem Clan",
+   "level": 131,
+   "battleEXP": 175,
+   "kills": 6,
+   "killsDia": 1,
+   "xpDia": 50
+  },
+  {
    "name": "Rinoa",
    "clan": "Loading",
    "level": 131,
@@ -342,6 +369,15 @@
    "kills": 413,
    "killsDia": 1,
    "xpDia": 43
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1723,
+   "kills": 62,
+   "killsDia": 2,
+   "xpDia": 21
   }
  ]
 }
