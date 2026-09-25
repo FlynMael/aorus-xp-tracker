@@ -1,0 +1,21 @@
+--- a/scripts/notify_bosses.py
++++ b/scripts/notify_bosses.py
+@@ -8,6 +8,7 @@
+ TZ = ZoneInfo("America/Bahia")
+ DEFAULT_NOTIFY_MINUTES = 5
+ LOG_FILE = "data/boss_notify_log.json"
++DIAG_FILE = "data/onesignal_last.json"
+ 
+ ONESIGNAL_APP_ID = os.environ.get("ONESIGNAL_APP_ID", "")
+ ONESIGNAL_REST_API_KEY = os.environ.get("ONESIGNAL_REST_API_KEY", "")
+@@ -102,6 +103,10 @@
+         timeout=20,
+     )
+     print("OneSignal status:", resp.status_code, resp.text[:300])
++    # guarda a ultima resposta do OneSignal no repo, pra diagnosticar entregas
++    with open(DIAG_FILE, "w", encoding="utf-8") as f:
++        json.dump({"em": datetime.now(TZ).isoformat(timespec="seconds"), "titulo": title,
++                   "status": resp.status_code, "resposta": resp.text[:1000]}, f, ensure_ascii=False, indent=1)
+ 
+ 
+ def main():
