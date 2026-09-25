@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-25T03:00:07.988139+00:00",
+ "updated_at": "2026-09-25T04:00:02.87348+00:00",
  "day": "2026-09-25",
  "total_players": 1000,
  "geral": [
@@ -21,8 +21,8 @@
    "name": "Rinoa",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 11634,
-   "kills": 412
+   "battleEXP": 11677,
+   "kills": 413
   },
   {
    "name": "Hewitt",
@@ -214,6 +214,26 @@
    "kills": 111
   }
  ],
- "dia_kills": [],
- "dia_xp": []
+ "dia_kills": [
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 11677,
+   "kills": 413,
+   "killsDia": 1,
+   "xpDia": 43
+  }
+ ],
+ "dia_xp": [
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 11677,
+   "kills": 413,
+   "killsDia": 1,
+   "xpDia": 43
+  }
+ ]
 }
