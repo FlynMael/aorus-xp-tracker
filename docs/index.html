@@ -2717,9 +2717,9 @@ renderBosses = function(){
   el.innerHTML = `<div class="boss-hero">
     <div class="bh-top"><span class="sum-label">Próximo</span><span class="bh-badge">em ${formatCountdown(nb.first.next - nb.now)}</span></div>
     <div class="bh-main"><div><div class="bh-name">${esc(nb.names)}</div><div class="bh-meta">${esc(nb.first.local || formatWhen(nb.first.next, nb.now))}</div></div><div class="bh-time">${hh}</div></div>
-    <button class="bh-notif" id="bh-notif">${on ? "Avisos de boss ligados" : "Ativar avisos de boss"}</button>
+    <button class="bh-notif" id="bh-notif">${on ? "Avisos ligados · toque para desligar" : "Ativar avisos de boss"}</button>
   </div>`;
-  document.getElementById("bh-notif").addEventListener("click", () => document.getElementById("notif-btn").click());
+  document.getElementById("bh-notif").addEventListener("click", () => { document.getElementById("notif-btn").click(); setTimeout(renderBosses, 2500); });
 };
 
 const _origRenderBossFloat = renderBossFloat;
