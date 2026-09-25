@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-25T06:00:05.764775+00:00",
+ "updated_at": "2026-09-25T07:00:06.37152+00:00",
  "day": "2026-09-25",
  "total_players": 1000,
  "geral": [
@@ -84,8 +84,8 @@
    "name": "Secret",
    "clan": "LegacY",
    "level": 131,
-   "battleEXP": 7314,
-   "kills": 261
+   "battleEXP": 7402,
+   "kills": 265
   },
   {
    "name": "DarkFury",
@@ -107,6 +107,13 @@
    "level": 130,
    "battleEXP": 6743,
    "kills": 233
+  },
+  {
+   "name": "Madory",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 6658,
+   "kills": 247
   },
   {
    "name": "Batman",
@@ -133,15 +140,8 @@
    "name": "PaoNaSchapa",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 5930,
-   "kills": 206
-  },
-  {
-   "name": "Madory",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 5785,
-   "kills": 215
+   "battleEXP": 6017,
+   "kills": 210
   },
   {
    "name": "Psych0",
@@ -216,6 +216,60 @@
  ],
  "dia_kills": [
   {
+   "name": "Madory",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 6658,
+   "kills": 247,
+   "killsDia": 32,
+   "xpDia": 873
+  },
+  {
+   "name": "ArrogantZ",
+   "clan": "NexuS",
+   "level": 129,
+   "battleEXP": 796,
+   "kills": 32,
+   "killsDia": 28,
+   "xpDia": 706
+  },
+  {
+   "name": "Biomedica",
+   "clan": "Sem Clan",
+   "level": 130,
+   "battleEXP": 168,
+   "kills": 6,
+   "killsDia": 5,
+   "xpDia": 124
+  },
+  {
+   "name": "Secret",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 7402,
+   "kills": 265,
+   "killsDia": 4,
+   "xpDia": 88
+  },
+  {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6017,
+   "kills": 210,
+   "killsDia": 4,
+   "xpDia": 87
+  },
+  {
+   "name": "Bicudeira",
+   "clan": "Sem Clan",
+   "level": 130,
+   "battleEXP": 91,
+   "kills": 4,
+   "killsDia": 3,
+   "xpDia": 69
+  },
+  {
    "name": "Rinoa",
    "clan": "Loading",
    "level": 131,
@@ -226,6 +280,60 @@
   }
  ],
  "dia_xp": [
+  {
+   "name": "Madory",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 6658,
+   "kills": 247,
+   "killsDia": 32,
+   "xpDia": 873
+  },
+  {
+   "name": "ArrogantZ",
+   "clan": "NexuS",
+   "level": 129,
+   "battleEXP": 796,
+   "kills": 32,
+   "killsDia": 28,
+   "xpDia": 706
+  },
+  {
+   "name": "Biomedica",
+   "clan": "Sem Clan",
+   "level": 130,
+   "battleEXP": 168,
+   "kills": 6,
+   "killsDia": 5,
+   "xpDia": 124
+  },
+  {
+   "name": "Secret",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 7402,
+   "kills": 265,
+   "killsDia": 4,
+   "xpDia": 88
+  },
+  {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6017,
+   "kills": 210,
+   "killsDia": 4,
+   "xpDia": 87
+  },
+  {
+   "name": "Bicudeira",
+   "clan": "Sem Clan",
+   "level": 130,
+   "battleEXP": 91,
+   "kills": 4,
+   "killsDia": 3,
+   "xpDia": 69
+  },
   {
    "name": "Rinoa",
    "clan": "Loading",
