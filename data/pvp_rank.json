@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-25T20:00:23.102353+00:00",
+ "updated_at": "2026-09-25T21:00:21.191139+00:00",
  "day": "2026-09-25",
  "total_players": 1000,
  "geral": [
@@ -97,7 +97,7 @@
   {
    "name": "Secret",
    "clan": "LegacY",
-   "level": 131,
+   "level": 132,
    "battleEXP": 7584,
    "kills": 272
   },
@@ -154,8 +154,8 @@
    "name": "Stelar",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 5062,
-   "kills": 187
+   "battleEXP": 5106,
+   "kills": 189
   },
   {
    "name": "Dookie",
@@ -309,10 +309,10 @@
    "name": "Stelar",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 5062,
-   "kills": 187,
-   "killsDia": 30,
-   "xpDia": 850
+   "battleEXP": 5106,
+   "kills": 189,
+   "killsDia": 32,
+   "xpDia": 894
   },
   {
    "name": "Azz0th",
@@ -342,6 +342,15 @@
    "xpDia": 719
   },
   {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2424,
+   "kills": 87,
+   "killsDia": 27,
+   "xpDia": 722
+  },
+  {
    "name": "Dookie",
    "clan": "Loading",
    "level": 130,
@@ -357,15 +366,6 @@
    "battleEXP": 6701,
    "kills": 227,
    "killsDia": 24,
-   "xpDia": 646
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 2348,
-   "kills": 83,
-   "killsDia": 23,
    "xpDia": 646
   },
   {
@@ -479,7 +479,7 @@
   {
    "name": "Secret",
    "clan": "LegacY",
-   "level": 131,
+   "level": 132,
    "battleEXP": 7584,
    "kills": 272,
    "killsDia": 11,
@@ -590,10 +590,10 @@
    "name": "Stelar",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 5062,
-   "kills": 187,
-   "killsDia": 30,
-   "xpDia": 850
+   "battleEXP": 5106,
+   "kills": 189,
+   "killsDia": 32,
+   "xpDia": 894
   },
   {
    "name": "Brytani",
@@ -603,6 +603,15 @@
    "kills": 878,
    "killsDia": 29,
    "xpDia": 785
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2424,
+   "kills": 87,
+   "killsDia": 27,
+   "xpDia": 722
   },
   {
    "name": "Dookie",
@@ -638,15 +647,6 @@
    "battleEXP": 6701,
    "kills": 227,
    "killsDia": 24,
-   "xpDia": 646
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 2348,
-   "kills": 83,
-   "killsDia": 23,
    "xpDia": 646
   },
   {
