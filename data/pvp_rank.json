@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-26T14:00:03.878448+00:00",
+ "updated_at": "2026-09-26T15:00:04.314438+00:00",
  "day": "2026-09-26",
  "total_players": 1000,
  "geral": [
@@ -63,8 +63,8 @@
    "name": "Curse",
    "clan": "LegacY",
    "level": 131,
-   "battleEXP": 9965,
-   "kills": 364
+   "battleEXP": 10063,
+   "kills": 367
   },
   {
    "name": "Secret",
@@ -116,6 +116,13 @@
    "kills": 273
   },
   {
+   "name": "TxBoss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 7548,
+   "kills": 255
+  },
+  {
    "name": "PaoNaSchapa",
    "clan": "LegacY",
    "level": 133,
@@ -133,15 +140,8 @@
    "name": "DarkFury",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 7210,
-   "kills": 261
-  },
-  {
-   "name": "TxBoss",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 6960,
-   "kills": 234
+   "battleEXP": 7220,
+   "kills": 262
   },
   {
    "name": "Psych0",
@@ -219,10 +219,19 @@
    "name": "CharlieBrownJR",
    "clan": "NexuS",
    "level": 130,
-   "battleEXP": 1279,
-   "kills": 44,
-   "killsDia": 15,
-   "xpDia": 443
+   "battleEXP": 1519,
+   "kills": 53,
+   "killsDia": 24,
+   "xpDia": 683
+  },
+  {
+   "name": "TxBoss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 7548,
+   "kills": 255,
+   "killsDia": 21,
+   "xpDia": 588
   },
   {
    "name": "TgU",
@@ -241,6 +250,15 @@
    "kills": 107,
    "killsDia": 6,
    "xpDia": 149
+  },
+  {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 10063,
+   "kills": 367,
+   "killsDia": 6,
+   "xpDia": 143
   },
   {
    "name": "ArrogantZ",
@@ -306,15 +324,6 @@
    "xpDia": 62
   },
   {
-   "name": "Curse",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 9965,
-   "kills": 364,
-   "killsDia": 3,
-   "xpDia": 45
-  },
-  {
    "name": "ASMODEUS",
    "clan": "NexuS",
    "level": 130,
@@ -324,6 +333,15 @@
    "xpDia": 73
   },
   {
+   "name": "DarkFury",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 7220,
+   "kills": 262,
+   "killsDia": 2,
+   "xpDia": 60
+  },
+  {
    "name": "TremDoOdio",
    "clan": "LegacY",
    "level": 128,
@@ -331,15 +349,6 @@
    "kills": 223,
    "killsDia": 2,
    "xpDia": 26
-  },
-  {
-   "name": "DarkFury",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 7210,
-   "kills": 261,
-   "killsDia": 1,
-   "xpDia": 50
   },
   {
    "name": "Massacre",
@@ -394,6 +403,15 @@
    "kills": 122,
    "killsDia": 1,
    "xpDia": 24
+  },
+  {
+   "name": "Azz0th",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 3155,
+   "kills": 114,
+   "killsDia": 1,
+   "xpDia": 22
   },
   {
    "name": "MitoPS",
@@ -410,10 +428,19 @@
    "name": "CharlieBrownJR",
    "clan": "NexuS",
    "level": 130,
-   "battleEXP": 1279,
-   "kills": 44,
-   "killsDia": 15,
-   "xpDia": 443
+   "battleEXP": 1519,
+   "kills": 53,
+   "killsDia": 24,
+   "xpDia": 683
+  },
+  {
+   "name": "TxBoss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 7548,
+   "kills": 255,
+   "killsDia": 21,
+   "xpDia": 588
   },
   {
    "name": "TgU",
@@ -432,6 +459,15 @@
    "kills": 107,
    "killsDia": 6,
    "xpDia": 149
+  },
+  {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 10063,
+   "kills": 367,
+   "killsDia": 6,
+   "xpDia": 143
   },
   {
    "name": "ArrogantZ",
@@ -509,19 +545,10 @@
    "name": "DarkFury",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 7210,
-   "kills": 261,
-   "killsDia": 1,
-   "xpDia": 50
-  },
-  {
-   "name": "Curse",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 9965,
-   "kills": 364,
-   "killsDia": 3,
-   "xpDia": 45
+   "battleEXP": 7220,
+   "kills": 262,
+   "killsDia": 2,
+   "xpDia": 60
   },
   {
    "name": "Massacre",
@@ -585,6 +612,15 @@
    "kills": 122,
    "killsDia": 1,
    "xpDia": 24
+  },
+  {
+   "name": "Azz0th",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 3155,
+   "kills": 114,
+   "killsDia": 1,
+   "xpDia": 22
   },
   {
    "name": "MitoPS",
