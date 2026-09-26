@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-25T23:00:04.504445+00:00",
+ "updated_at": "2026-09-26T00:00:04.756277+00:00",
  "day": "2026-09-25",
  "total_players": 1000,
  "geral": [
@@ -77,8 +77,8 @@
    "name": "2bad4you",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 8726,
-   "kills": 296
+   "battleEXP": 8743,
+   "kills": 297
   },
   {
    "name": "m0rbius",
@@ -200,18 +200,18 @@
    "kills": 141
   },
   {
+   "name": "FiNN",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 4082,
+   "kills": 145
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
    "battleEXP": 4067,
    "kills": 144
-  },
-  {
-   "name": "FiNN",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 3944,
-   "kills": 139
   }
  ],
  "dia_kills": [
@@ -324,6 +324,15 @@
    "xpDia": 936
   },
   {
+   "name": "FiNN",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 4082,
+   "kills": 145,
+   "killsDia": 34,
+   "xpDia": 857
+  },
+  {
    "name": "Rinoa",
    "clan": "Loading",
    "level": 131,
@@ -358,15 +367,6 @@
    "kills": 113,
    "killsDia": 29,
    "xpDia": 902
-  },
-  {
-   "name": "FiNN",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 3944,
-   "kills": 139,
-   "killsDia": 28,
-   "xpDia": 719
   },
   {
    "name": "PumpHell",
@@ -623,6 +623,15 @@
    "xpDia": 894
   },
   {
+   "name": "FiNN",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 4082,
+   "kills": 145,
+   "killsDia": 34,
+   "xpDia": 857
+  },
+  {
    "name": "BMarch1",
    "clan": "LegacY",
    "level": 131,
@@ -630,15 +639,6 @@
    "kills": 90,
    "killsDia": 30,
    "xpDia": 786
-  },
-  {
-   "name": "FiNN",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 3944,
-   "kills": 139,
-   "killsDia": 28,
-   "xpDia": 719
   },
   {
    "name": "PumpHell",
