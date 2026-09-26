@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-26T04:00:03.411431+00:00",
+ "updated_at": "2026-09-26T05:00:04.463404+00:00",
  "day": "2026-09-26",
  "total_players": 1000,
  "geral": [
@@ -168,8 +168,8 @@
    "name": "HazeL",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 5962,
-   "kills": 210
+   "battleEXP": 6021,
+   "kills": 212
   },
   {
    "name": "Stelar",
@@ -216,6 +216,33 @@
  ],
  "dia_kills": [
   {
+   "name": "TgU",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 3682,
+   "kills": 130,
+   "killsDia": 9,
+   "xpDia": 216
+  },
+  {
+   "name": "Heaven",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 2995,
+   "kills": 107,
+   "killsDia": 6,
+   "xpDia": 149
+  },
+  {
+   "name": "ArrogantZ",
+   "clan": "NexuS",
+   "level": 129,
+   "battleEXP": 1148,
+   "kills": 45,
+   "killsDia": 5,
+   "xpDia": 122
+  },
+  {
    "name": "BMarch1",
    "clan": "LegacY",
    "level": 131,
@@ -234,13 +261,13 @@
    "xpDia": 107
   },
   {
-   "name": "ArrogantZ",
-   "clan": "NexuS",
-   "level": 129,
-   "battleEXP": 1119,
-   "kills": 44,
-   "killsDia": 4,
-   "xpDia": 93
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 6021,
+   "kills": 212,
+   "killsDia": 3,
+   "xpDia": 90
   },
   {
    "name": "PowerMonster",
@@ -261,22 +288,13 @@
    "xpDia": 45
   },
   {
-   "name": "TgU",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 3547,
-   "kills": 123,
-   "killsDia": 2,
-   "xpDia": 81
-  },
-  {
-   "name": "Heaven",
+   "name": "ASMODEUS",
    "clan": "NexuS",
    "level": 130,
-   "battleEXP": 2903,
-   "kills": 103,
+   "battleEXP": 748,
+   "kills": 30,
    "killsDia": 2,
-   "xpDia": 57
+   "xpDia": 73
   },
   {
    "name": "SteelFury",
@@ -342,15 +360,6 @@
    "xpDia": 32
   },
   {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 5962,
-   "kills": 210,
-   "killsDia": 1,
-   "xpDia": 31
-  },
-  {
    "name": "KillShott",
    "clan": "LegacY",
    "level": 131,
@@ -371,6 +380,33 @@
  ],
  "dia_xp": [
   {
+   "name": "TgU",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 3682,
+   "kills": 130,
+   "killsDia": 9,
+   "xpDia": 216
+  },
+  {
+   "name": "Heaven",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 2995,
+   "kills": 107,
+   "killsDia": 6,
+   "xpDia": 149
+  },
+  {
+   "name": "ArrogantZ",
+   "clan": "NexuS",
+   "level": 129,
+   "battleEXP": 1148,
+   "kills": 45,
+   "killsDia": 5,
+   "xpDia": 122
+  },
+  {
    "name": "BMarch1",
    "clan": "LegacY",
    "level": 131,
@@ -389,22 +425,13 @@
    "xpDia": 107
   },
   {
-   "name": "ArrogantZ",
-   "clan": "NexuS",
-   "level": 129,
-   "battleEXP": 1119,
-   "kills": 44,
-   "killsDia": 4,
-   "xpDia": 93
-  },
-  {
-   "name": "TgU",
+   "name": "HazeL",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 3547,
-   "kills": 123,
-   "killsDia": 2,
-   "xpDia": 81
+   "battleEXP": 6021,
+   "kills": 212,
+   "killsDia": 3,
+   "xpDia": 90
   },
   {
    "name": "PowerMonster",
@@ -416,13 +443,13 @@
    "xpDia": 75
   },
   {
-   "name": "Heaven",
+   "name": "ASMODEUS",
    "clan": "NexuS",
    "level": 130,
-   "battleEXP": 2903,
-   "kills": 103,
+   "battleEXP": 748,
+   "kills": 30,
    "killsDia": 2,
-   "xpDia": 57
+   "xpDia": 73
   },
   {
    "name": "SteelFury",
@@ -486,15 +513,6 @@
    "kills": 74,
    "killsDia": 1,
    "xpDia": 32
-  },
-  {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 5962,
-   "kills": 210,
-   "killsDia": 1,
-   "xpDia": 31
   },
   {
    "name": "TremDoOdio",
