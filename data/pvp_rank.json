@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-26T17:00:03.755306+00:00",
+ "updated_at": "2026-09-26T18:00:04.124518+00:00",
  "day": "2026-09-26",
  "total_players": 1000,
  "geral": [
@@ -42,8 +42,8 @@
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 13511,
-   "kills": 489
+   "battleEXP": 13541,
+   "kills": 490
   },
   {
    "name": "MitoPS",
@@ -333,6 +333,15 @@
    "xpDia": 567
   },
   {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 13541,
+   "kills": 490,
+   "killsDia": 18,
+   "xpDia": 429
+  },
+  {
    "name": "Madory",
    "clan": "LegacY",
    "level": 132,
@@ -349,15 +358,6 @@
    "kills": 57,
    "killsDia": 17,
    "xpDia": 471
-  },
-  {
-   "name": "Hewitt",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 13511,
-   "kills": 489,
-   "killsDia": 17,
-   "xpDia": 399
   },
   {
    "name": "KillShott",
@@ -403,6 +403,15 @@
    "kills": 130,
    "killsDia": 9,
    "xpDia": 216
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2697,
+   "kills": 99,
+   "killsDia": 9,
+   "xpDia": 209
   },
   {
    "name": "HeiusCapone",
@@ -475,15 +484,6 @@
    "kills": 4,
    "killsDia": 4,
    "xpDia": 172
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 2609,
-   "kills": 94,
-   "killsDia": 4,
-   "xpDia": 121
   }
  ],
  "dia_xp": [
@@ -623,6 +623,15 @@
    "xpDia": 471
   },
   {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 13541,
+   "kills": 490,
+   "killsDia": 18,
+   "xpDia": 429
+  },
+  {
    "name": "MIB",
    "clan": "Loading",
    "level": 129,
@@ -630,15 +639,6 @@
    "kills": 59,
    "killsDia": 13,
    "xpDia": 423
-  },
-  {
-   "name": "Hewitt",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 13511,
-   "kills": 489,
-   "killsDia": 17,
-   "xpDia": 399
   },
   {
    "name": "KillShott",
@@ -704,6 +704,15 @@
    "xpDia": 216
   },
   {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2697,
+   "kills": 99,
+   "killsDia": 9,
+   "xpDia": 209
+  },
+  {
    "name": "LekJhonson95",
    "clan": "Sem Clan",
    "level": 130,
@@ -738,15 +747,6 @@
    "kills": 104,
    "killsDia": 5,
    "xpDia": 139
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 2609,
-   "kills": 94,
-   "killsDia": 4,
-   "xpDia": 121
   },
   {
    "name": "Azz0th",
