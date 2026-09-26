@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-26T11:00:03.886706+00:00",
+ "updated_at": "2026-09-26T12:00:03.593267+00:00",
  "day": "2026-09-26",
  "total_players": 1000,
  "geral": [
@@ -35,8 +35,8 @@
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 13112,
-   "kills": 472
+   "battleEXP": 13174,
+   "kills": 475
   },
   {
    "name": "PowerMonster",
@@ -133,8 +133,8 @@
    "name": "DarkFury",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 7160,
-   "kills": 260
+   "battleEXP": 7210,
+   "kills": 261
   },
   {
    "name": "TxBoss",
@@ -216,6 +216,15 @@
  ],
  "dia_kills": [
   {
+   "name": "CharlieBrownJR",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 1279,
+   "kills": 44,
+   "killsDia": 15,
+   "xpDia": 443
+  },
+  {
    "name": "TgU",
    "clan": "Loading",
    "level": 131,
@@ -279,6 +288,15 @@
    "xpDia": 75
   },
   {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 13174,
+   "kills": 475,
+   "killsDia": 3,
+   "xpDia": 62
+  },
+  {
    "name": "SteelFury",
    "clan": "LegacY",
    "level": 133,
@@ -306,15 +324,6 @@
    "xpDia": 73
   },
   {
-   "name": "CharlieBrownJR",
-   "clan": "NexuS",
-   "level": 130,
-   "battleEXP": 895,
-   "kills": 31,
-   "killsDia": 2,
-   "xpDia": 59
-  },
-  {
    "name": "TremDoOdio",
    "clan": "LegacY",
    "level": 128,
@@ -322,6 +331,15 @@
    "kills": 223,
    "killsDia": 2,
    "xpDia": 26
+  },
+  {
+   "name": "DarkFury",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 7210,
+   "kills": 261,
+   "killsDia": 1,
+   "xpDia": 50
   },
   {
    "name": "Massacre",
@@ -389,6 +407,15 @@
  ],
  "dia_xp": [
   {
+   "name": "CharlieBrownJR",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 1279,
+   "kills": 44,
+   "killsDia": 15,
+   "xpDia": 443
+  },
+  {
    "name": "TgU",
    "clan": "Loading",
    "level": 131,
@@ -461,6 +488,15 @@
    "xpDia": 73
   },
   {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 13174,
+   "kills": 475,
+   "killsDia": 3,
+   "xpDia": 62
+  },
+  {
    "name": "SteelFury",
    "clan": "LegacY",
    "level": 133,
@@ -470,13 +506,13 @@
    "xpDia": 62
   },
   {
-   "name": "CharlieBrownJR",
-   "clan": "NexuS",
-   "level": 130,
-   "battleEXP": 895,
-   "kills": 31,
-   "killsDia": 2,
-   "xpDia": 59
+   "name": "DarkFury",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 7210,
+   "kills": 261,
+   "killsDia": 1,
+   "xpDia": 50
   },
   {
    "name": "Curse",
