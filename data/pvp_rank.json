@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-27T12:00:05.23329+00:00",
+ "updated_at": "2026-09-27T13:00:13.964405+00:00",
  "day": "2026-09-27",
  "total_players": 1000,
  "geral": [
@@ -7,8 +7,8 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 33943,
-   "kills": 1195
+   "battleEXP": 33975,
+   "kills": 1196
   },
   {
    "name": "Pocary",
@@ -246,10 +246,10 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 33943,
-   "kills": 1195,
-   "killsDia": 19,
-   "xpDia": 434
+   "battleEXP": 33975,
+   "kills": 1196,
+   "killsDia": 20,
+   "xpDia": 466
   },
   {
    "name": "m0rbius",
@@ -385,6 +385,15 @@
    "kills": 368,
    "killsDia": 2,
    "xpDia": 55
+  },
+  {
+   "name": "Milionario",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2421,
+   "kills": 80,
+   "killsDia": 1,
+   "xpDia": 45
   },
   {
    "name": "OnePunchGirl",
@@ -455,10 +464,10 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 33943,
-   "kills": 1195,
-   "killsDia": 19,
-   "xpDia": 434
+   "battleEXP": 33975,
+   "kills": 1196,
+   "killsDia": 20,
+   "xpDia": 466
   },
   {
    "name": "Duraso",
@@ -576,6 +585,15 @@
    "kills": 368,
    "killsDia": 2,
    "xpDia": 55
+  },
+  {
+   "name": "Milionario",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2421,
+   "kills": 80,
+   "killsDia": 1,
+   "xpDia": 45
   },
   {
    "name": "OnePunchGirl",
