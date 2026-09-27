@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-27T06:00:04.151932+00:00",
+ "updated_at": "2026-09-27T07:00:04.724663+00:00",
  "day": "2026-09-27",
  "total_players": 1000,
  "geral": [
@@ -14,8 +14,8 @@
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20254,
-   "kills": 699
+   "battleEXP": 20557,
+   "kills": 709
   },
   {
    "name": "LiMaO",
@@ -28,15 +28,15 @@
    "name": "Rinoa",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 17263,
-   "kills": 612
+   "battleEXP": 17388,
+   "kills": 616
   },
   {
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15514,
-   "kills": 547
+   "battleEXP": 15590,
+   "kills": 550
   },
   {
    "name": "Hewitt",
@@ -225,6 +225,24 @@
    "xpDia": 754
   },
   {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15590,
+   "kills": 550,
+   "killsDia": 20,
+   "xpDia": 550
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 20557,
+   "kills": 709,
+   "killsDia": 19,
+   "xpDia": 525
+  },
+  {
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
@@ -250,15 +268,6 @@
    "kills": 185,
    "killsDia": 18,
    "xpDia": 501
-  },
-  {
-   "name": "MitoPS",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 15514,
-   "kills": 547,
-   "killsDia": 17,
-   "xpDia": 474
   },
   {
    "name": "Duraso",
@@ -297,15 +306,6 @@
    "xpDia": 259
   },
   {
-   "name": "Pocary",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 20254,
-   "kills": 699,
-   "killsDia": 9,
-   "xpDia": 222
-  },
-  {
    "name": "Mawu",
    "clan": "Loading",
    "level": 131,
@@ -340,6 +340,15 @@
    "kills": 153,
    "killsDia": 4,
    "xpDia": 128
+  },
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 17388,
+   "kills": 616,
+   "killsDia": 4,
+   "xpDia": 125
   },
   {
    "name": "Kaya",
@@ -416,6 +425,24 @@
    "xpDia": 599
   },
   {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15590,
+   "kills": 550,
+   "killsDia": 20,
+   "xpDia": 550
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 20557,
+   "kills": 709,
+   "killsDia": 19,
+   "xpDia": 525
+  },
+  {
    "name": "Azz0th",
    "clan": "LegacY",
    "level": 131,
@@ -423,15 +450,6 @@
    "kills": 185,
    "killsDia": 18,
    "xpDia": 501
-  },
-  {
-   "name": "MitoPS",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 15514,
-   "kills": 547,
-   "killsDia": 17,
-   "xpDia": 474
   },
   {
    "name": "Brytani",
@@ -479,15 +497,6 @@
    "xpDia": 259
   },
   {
-   "name": "Pocary",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 20254,
-   "kills": 699,
-   "killsDia": 9,
-   "xpDia": 222
-  },
-  {
    "name": "Mawu",
    "clan": "Loading",
    "level": 131,
@@ -522,6 +531,15 @@
    "kills": 153,
    "killsDia": 4,
    "xpDia": 128
+  },
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 17388,
+   "kills": 616,
+   "killsDia": 4,
+   "xpDia": 125
   },
   {
    "name": "Ceeke",
