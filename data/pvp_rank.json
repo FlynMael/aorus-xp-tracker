@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-27T07:00:04.724663+00:00",
+ "updated_at": "2026-09-27T08:00:04.984852+00:00",
  "day": "2026-09-27",
  "total_players": 1000,
  "geral": [
@@ -14,8 +14,8 @@
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20557,
-   "kills": 709
+   "battleEXP": 20581,
+   "kills": 710
   },
   {
    "name": "LiMaO",
@@ -35,8 +35,8 @@
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15590,
-   "kills": 550
+   "battleEXP": 15603,
+   "kills": 551
   },
   {
    "name": "Hewitt",
@@ -228,19 +228,19 @@
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15590,
-   "kills": 550,
-   "killsDia": 20,
-   "xpDia": 550
+   "battleEXP": 15603,
+   "kills": 551,
+   "killsDia": 21,
+   "xpDia": 563
   },
   {
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20557,
-   "kills": 709,
-   "killsDia": 19,
-   "xpDia": 525
+   "battleEXP": 20581,
+   "kills": 710,
+   "killsDia": 20,
+   "xpDia": 549
   },
   {
    "name": "Brytani",
@@ -428,19 +428,19 @@
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15590,
-   "kills": 550,
-   "killsDia": 20,
-   "xpDia": 550
+   "battleEXP": 15603,
+   "kills": 551,
+   "killsDia": 21,
+   "xpDia": 563
   },
   {
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20557,
-   "kills": 709,
-   "killsDia": 19,
-   "xpDia": 525
+   "battleEXP": 20581,
+   "kills": 710,
+   "killsDia": 20,
+   "xpDia": 549
   },
   {
    "name": "Azz0th",
