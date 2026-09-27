@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-27T03:00:08.164562+00:00",
+ "updated_at": "2026-09-27T04:00:08.336882+00:00",
  "day": "2026-09-27",
  "total_players": 1000,
  "geral": [
@@ -7,36 +7,36 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 33509,
-   "kills": 1176
+   "battleEXP": 33943,
+   "kills": 1195
   },
   {
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20032,
-   "kills": 690
-  },
-  {
-   "name": "Rinoa",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 17263,
-   "kills": 612
+   "battleEXP": 20254,
+   "kills": 699
   },
   {
    "name": "LiMaO",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 17242,
-   "kills": 598
+   "battleEXP": 17996,
+   "kills": 623
+  },
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 17263,
+   "kills": 612
   },
   {
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15040,
-   "kills": 530
+   "battleEXP": 15514,
+   "kills": 547
   },
   {
    "name": "Hewitt",
@@ -56,8 +56,8 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 12191,
-   "kills": 416
+   "battleEXP": 12354,
+   "kills": 421
   },
   {
    "name": "Secret",
@@ -77,8 +77,8 @@
    "name": "Batman",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 10862,
-   "kills": 366
+   "battleEXP": 10917,
+   "kills": 368
   },
   {
    "name": "Curse",
@@ -88,18 +88,18 @@
    "kills": 367
   },
   {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 10063,
+   "kills": 342
+  },
+  {
    "name": "Madory",
    "clan": "LegacY",
    "level": 132,
    "battleEXP": 9956,
    "kills": 362
-  },
-  {
-   "name": "m0rbius",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 9464,
-   "kills": 324
   },
   {
    "name": "TxBoss",
@@ -175,8 +175,15 @@
    "name": "Stelar",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 6076,
-   "kills": 221
+   "battleEXP": 6341,
+   "kills": 231
+  },
+  {
+   "name": "Azz0th",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 5265,
+   "kills": 185
   },
   {
    "name": "Dookie",
@@ -184,13 +191,6 @@
    "level": 130,
    "battleEXP": 5190,
    "kills": 189
-  },
-  {
-   "name": "Azz0th",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 4764,
-   "kills": 167
   },
   {
    "name": "Muka",
@@ -214,6 +214,368 @@
    "kills": 152
   }
  ],
- "dia_kills": [],
- "dia_xp": []
+ "dia_kills": [
+  {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 17996,
+   "kills": 623,
+   "killsDia": 25,
+   "xpDia": 754
+  },
+  {
+   "name": "Brytani",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 33943,
+   "kills": 1195,
+   "killsDia": 19,
+   "xpDia": 434
+  },
+  {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 10063,
+   "kills": 342,
+   "killsDia": 18,
+   "xpDia": 599
+  },
+  {
+   "name": "Azz0th",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 5265,
+   "kills": 185,
+   "killsDia": 18,
+   "xpDia": 501
+  },
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15514,
+   "kills": 547,
+   "killsDia": 17,
+   "xpDia": 474
+  },
+  {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4130,
+   "kills": 151,
+   "killsDia": 12,
+   "xpDia": 353
+  },
+  {
+   "name": "Leviathan",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 2871,
+   "kills": 107,
+   "killsDia": 11,
+   "xpDia": 311
+  },
+  {
+   "name": "Stelar",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 6341,
+   "kills": 231,
+   "killsDia": 10,
+   "xpDia": 265
+  },
+  {
+   "name": "GuimaL",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 3476,
+   "kills": 114,
+   "killsDia": 9,
+   "xpDia": 259
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 20254,
+   "kills": 699,
+   "killsDia": 9,
+   "xpDia": 222
+  },
+  {
+   "name": "Mawu",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4272,
+   "kills": 157,
+   "killsDia": 9,
+   "xpDia": 221
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 3036,
+   "kills": 113,
+   "killsDia": 9,
+   "xpDia": 194
+  },
+  {
+   "name": "GodStopMe",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 12354,
+   "kills": 421,
+   "killsDia": 5,
+   "xpDia": 163
+  },
+  {
+   "name": "KillShott",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 4321,
+   "kills": 153,
+   "killsDia": 4,
+   "xpDia": 128
+  },
+  {
+   "name": "Kaya",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 90,
+   "kills": 4,
+   "killsDia": 4,
+   "xpDia": 90
+  },
+  {
+   "name": "Ceeke",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 164,
+   "kills": 5,
+   "killsDia": 3,
+   "xpDia": 95
+  },
+  {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1512,
+   "kills": 59,
+   "killsDia": 2,
+   "xpDia": 62
+  },
+  {
+   "name": "Batman",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 10917,
+   "kills": 368,
+   "killsDia": 2,
+   "xpDia": 55
+  },
+  {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4103,
+   "kills": 145,
+   "killsDia": 1,
+   "xpDia": 36
+  },
+  {
+   "name": "StayHungryorDie",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 52,
+   "kills": 2,
+   "killsDia": 1,
+   "xpDia": 27
+  }
+ ],
+ "dia_xp": [
+  {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 17996,
+   "kills": 623,
+   "killsDia": 25,
+   "xpDia": 754
+  },
+  {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 10063,
+   "kills": 342,
+   "killsDia": 18,
+   "xpDia": 599
+  },
+  {
+   "name": "Azz0th",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 5265,
+   "kills": 185,
+   "killsDia": 18,
+   "xpDia": 501
+  },
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15514,
+   "kills": 547,
+   "killsDia": 17,
+   "xpDia": 474
+  },
+  {
+   "name": "Brytani",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 33943,
+   "kills": 1195,
+   "killsDia": 19,
+   "xpDia": 434
+  },
+  {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4130,
+   "kills": 151,
+   "killsDia": 12,
+   "xpDia": 353
+  },
+  {
+   "name": "Leviathan",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 2871,
+   "kills": 107,
+   "killsDia": 11,
+   "xpDia": 311
+  },
+  {
+   "name": "Stelar",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 6341,
+   "kills": 231,
+   "killsDia": 10,
+   "xpDia": 265
+  },
+  {
+   "name": "GuimaL",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 3476,
+   "kills": 114,
+   "killsDia": 9,
+   "xpDia": 259
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 20254,
+   "kills": 699,
+   "killsDia": 9,
+   "xpDia": 222
+  },
+  {
+   "name": "Mawu",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4272,
+   "kills": 157,
+   "killsDia": 9,
+   "xpDia": 221
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 3036,
+   "kills": 113,
+   "killsDia": 9,
+   "xpDia": 194
+  },
+  {
+   "name": "GodStopMe",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 12354,
+   "kills": 421,
+   "killsDia": 5,
+   "xpDia": 163
+  },
+  {
+   "name": "KillShott",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 4321,
+   "kills": 153,
+   "killsDia": 4,
+   "xpDia": 128
+  },
+  {
+   "name": "Ceeke",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 164,
+   "kills": 5,
+   "killsDia": 3,
+   "xpDia": 95
+  },
+  {
+   "name": "Kaya",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 90,
+   "kills": 4,
+   "killsDia": 4,
+   "xpDia": 90
+  },
+  {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1512,
+   "kills": 59,
+   "killsDia": 2,
+   "xpDia": 62
+  },
+  {
+   "name": "Batman",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 10917,
+   "kills": 368,
+   "killsDia": 2,
+   "xpDia": 55
+  },
+  {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4103,
+   "kills": 145,
+   "killsDia": 1,
+   "xpDia": 36
+  },
+  {
+   "name": "StayHungryorDie",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 52,
+   "kills": 2,
+   "killsDia": 1,
+   "xpDia": 27
+  }
+ ]
 }
