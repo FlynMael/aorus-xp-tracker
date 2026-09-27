@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-27T19:00:04.899171+00:00",
+ "updated_at": "2026-09-27T20:00:03.249789+00:00",
  "day": "2026-09-27",
  "total_players": 1000,
  "geral": [
@@ -49,8 +49,8 @@
    "name": "Batman",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15053,
-   "kills": 501
+   "battleEXP": 15178,
+   "kills": 505
   },
   {
    "name": "PowerMonster",
@@ -186,18 +186,18 @@
    "kills": 220
   },
   {
+   "name": "Dookie",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 6050,
+   "kills": 218
+  },
+  {
    "name": "Azz0th",
    "clan": "LegacY",
    "level": 131,
    "battleEXP": 6031,
    "kills": 211
-  },
-  {
-   "name": "Dookie",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 5613,
-   "kills": 203
   },
   {
    "name": "BaLaBoss",
@@ -228,10 +228,10 @@
    "name": "Batman",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15053,
-   "kills": 501,
-   "killsDia": 135,
-   "xpDia": 4191
+   "battleEXP": 15178,
+   "kills": 505,
+   "killsDia": 139,
+   "xpDia": 4316
   },
   {
    "name": "Stelar",
@@ -369,6 +369,15 @@
    "xpDia": 1434
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 2743,
+   "kills": 106,
+   "killsDia": 49,
+   "xpDia": 1293
+  },
+  {
    "name": "Azz0th",
    "clan": "LegacY",
    "level": 131,
@@ -376,15 +385,6 @@
    "kills": 211,
    "killsDia": 44,
    "xpDia": 1267
-  },
-  {
-   "name": "ASMODEUS",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 2555,
-   "kills": 99,
-   "killsDia": 42,
-   "xpDia": 1105
   },
   {
    "name": "GodStopMe",
@@ -468,6 +468,15 @@
    "xpDia": 921
   },
   {
+   "name": "Dookie",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 6050,
+   "kills": 218,
+   "killsDia": 29,
+   "xpDia": 860
+  },
+  {
    "name": "Mawu",
    "clan": "Loading",
    "level": 131,
@@ -475,15 +484,6 @@
    "kills": 176,
    "killsDia": 28,
    "xpDia": 787
-  },
-  {
-   "name": "PaoNaSchapa",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 8288,
-   "kills": 288,
-   "killsDia": 28,
-   "xpDia": 746
   }
  ],
  "dia_xp": [
@@ -500,10 +500,10 @@
    "name": "Batman",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15053,
-   "kills": 501,
-   "killsDia": 135,
-   "xpDia": 4191
+   "battleEXP": 15178,
+   "kills": 505,
+   "killsDia": 139,
+   "xpDia": 4316
   },
   {
    "name": "Stelar",
@@ -641,6 +641,15 @@
    "xpDia": 1434
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 2743,
+   "kills": 106,
+   "killsDia": 49,
+   "xpDia": 1293
+  },
+  {
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
@@ -657,15 +666,6 @@
    "kills": 211,
    "killsDia": 44,
    "xpDia": 1267
-  },
-  {
-   "name": "ASMODEUS",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 2555,
-   "kills": 99,
-   "killsDia": 42,
-   "xpDia": 1105
   },
   {
    "name": "Leviathan",
@@ -720,6 +720,15 @@
    "kills": 92,
    "killsDia": 34,
    "xpDia": 905
+  },
+  {
+   "name": "Dookie",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 6050,
+   "kills": 218,
+   "killsDia": 29,
+   "xpDia": 860
   },
   {
    "name": "Empoderado",
@@ -747,15 +756,6 @@
    "kills": 428,
    "killsDia": 30,
    "xpDia": 835
-  },
-  {
-   "name": "Mawu",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 4838,
-   "kills": 176,
-   "killsDia": 28,
-   "xpDia": 787
   }
  ]
 }
