@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-28T17:00:04.071451+00:00",
+ "updated_at": "2026-09-28T18:00:38.40853+00:00",
  "day": "2026-09-28",
  "total_players": 1000,
  "geral": [
@@ -7,15 +7,15 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 7606,
-   "kills": 261
+   "battleEXP": 7627,
+   "kills": 262
   },
   {
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 6719,
-   "kills": 237
+   "battleEXP": 6898,
+   "kills": 245
   },
   {
    "name": "Pocary",
@@ -35,8 +35,8 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 4620,
-   "kills": 166
+   "battleEXP": 4775,
+   "kills": 171
   },
   {
    "name": "Batman",
@@ -219,19 +219,19 @@
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 6719,
-   "kills": 237,
-   "killsDia": 237,
-   "xpDia": 6719
+   "battleEXP": 6898,
+   "kills": 245,
+   "killsDia": 245,
+   "xpDia": 6898
   },
   {
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 7606,
-   "kills": 261,
-   "killsDia": 223,
-   "xpDia": 6535
+   "battleEXP": 7627,
+   "kills": 262,
+   "killsDia": 224,
+   "xpDia": 6556
   },
   {
    "name": "Pocary",
@@ -255,10 +255,10 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 4620,
-   "kills": 166,
-   "killsDia": 145,
-   "xpDia": 4016
+   "battleEXP": 4775,
+   "kills": 171,
+   "killsDia": 150,
+   "xpDia": 4171
   },
   {
    "name": "Dookie",
@@ -491,19 +491,19 @@
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 6719,
-   "kills": 237,
-   "killsDia": 237,
-   "xpDia": 6719
+   "battleEXP": 6898,
+   "kills": 245,
+   "killsDia": 245,
+   "xpDia": 6898
   },
   {
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 7606,
-   "kills": 261,
-   "killsDia": 223,
-   "xpDia": 6535
+   "battleEXP": 7627,
+   "kills": 262,
+   "killsDia": 224,
+   "xpDia": 6556
   },
   {
    "name": "Pocary",
@@ -527,10 +527,10 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 4620,
-   "kills": 166,
-   "killsDia": 145,
-   "xpDia": 4016
+   "battleEXP": 4775,
+   "kills": 171,
+   "killsDia": 150,
+   "xpDia": 4171
   },
   {
    "name": "Dookie",
