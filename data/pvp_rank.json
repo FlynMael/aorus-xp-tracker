@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-28T05:00:05.390906+00:00",
+ "updated_at": "2026-09-28T06:00:09.460873+00:00",
  "day": "2026-09-28",
  "total_players": 1000,
  "geral": [
@@ -153,7 +153,7 @@
   {
    "name": "Khazard",
    "clan": "NexuS",
-   "level": 132,
+   "level": 133,
    "battleEXP": 351,
    "kills": 15
   },
