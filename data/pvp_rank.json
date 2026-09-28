@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-28T20:00:04.276268+00:00",
+ "updated_at": "2026-09-28T21:00:43.480016+00:00",
  "day": "2026-09-28",
  "total_players": 1000,
  "geral": [
@@ -7,8 +7,8 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 8676,
-   "kills": 299
+   "battleEXP": 8704,
+   "kills": 301
   },
   {
    "name": "PowerMonster",
@@ -173,7 +173,7 @@
   },
   {
    "name": "Trumpetao",
-   "clan": "LegacY",
+   "clan": "Sem Clan",
    "level": 132,
    "battleEXP": 505,
    "kills": 17
@@ -228,10 +228,10 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 8676,
-   "kills": 299,
-   "killsDia": 261,
-   "xpDia": 7605
+   "battleEXP": 8704,
+   "kills": 301,
+   "killsDia": 263,
+   "xpDia": 7633
   },
   {
    "name": "m0rbius",
@@ -488,6 +488,15 @@
  ],
  "dia_xp": [
   {
+   "name": "Brytani",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 8704,
+   "kills": 301,
+   "killsDia": 263,
+   "xpDia": 7633
+  },
+  {
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 132,
@@ -495,15 +504,6 @@
    "kills": 270,
    "killsDia": 270,
    "xpDia": 7627
-  },
-  {
-   "name": "Brytani",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 8676,
-   "kills": 299,
-   "killsDia": 261,
-   "xpDia": 7605
   },
   {
    "name": "Pocary",
