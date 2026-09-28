@@ -1,8 +1,15 @@
 {
- "updated_at": "2026-09-28T01:00:04.799761+00:00",
+ "updated_at": "2026-09-28T02:00:11.792552+00:00",
  "day": "2026-09-27",
  "total_players": 1000,
  "geral": [
+  {
+   "name": "ASMYY",
+   "clan": "Sem Clan",
+   "level": 122,
+   "battleEXP": 77,
+   "kills": 2
+  },
   {
    "name": "JvFBoss",
    "clan": "LegacY",
@@ -205,15 +212,28 @@
    "level": 132,
    "battleEXP": 0,
    "kills": 0
-  },
-  {
-   "name": "Katinga",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
   }
  ],
- "dia_kills": [],
- "dia_xp": []
+ "dia_kills": [
+  {
+   "name": "ASMYY",
+   "clan": "Sem Clan",
+   "level": 122,
+   "battleEXP": 77,
+   "kills": 2,
+   "killsDia": 2,
+   "xpDia": 77
+  }
+ ],
+ "dia_xp": [
+  {
+   "name": "ASMYY",
+   "clan": "Sem Clan",
+   "level": 122,
+   "battleEXP": 77,
+   "kills": 2,
+   "killsDia": 2,
+   "xpDia": 77
+  }
+ ]
 }
