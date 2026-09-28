@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-28T16:00:04.593881+00:00",
+ "updated_at": "2026-09-28T17:00:04.071451+00:00",
  "day": "2026-09-28",
  "total_players": 1000,
  "geral": [
@@ -55,7 +55,7 @@
   {
    "name": "Dookie",
    "clan": "Loading",
-   "level": 130,
+   "level": 131,
    "battleEXP": 1528,
    "kills": 57
   },
@@ -263,7 +263,7 @@
   {
    "name": "Dookie",
    "clan": "Loading",
-   "level": 130,
+   "level": 131,
    "battleEXP": 1528,
    "kills": 57,
    "killsDia": 57,
@@ -535,7 +535,7 @@
   {
    "name": "Dookie",
    "clan": "Loading",
-   "level": 130,
+   "level": 131,
    "battleEXP": 1528,
    "kills": 57,
    "killsDia": 57,
