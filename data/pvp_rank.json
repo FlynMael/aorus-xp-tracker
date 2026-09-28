@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-28T19:00:37.775755+00:00",
+ "updated_at": "2026-09-28T20:00:04.276268+00:00",
  "day": "2026-09-28",
  "total_players": 1000,
  "geral": [
@@ -7,8 +7,8 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 8492,
-   "kills": 292
+   "battleEXP": 8676,
+   "kills": 299
   },
   {
    "name": "PowerMonster",
@@ -35,8 +35,8 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 4775,
-   "kills": 171
+   "battleEXP": 5078,
+   "kills": 182
   },
   {
    "name": "Batman",
@@ -228,10 +228,10 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 8492,
-   "kills": 292,
-   "killsDia": 254,
-   "xpDia": 7421
+   "battleEXP": 8676,
+   "kills": 299,
+   "killsDia": 261,
+   "xpDia": 7605
   },
   {
    "name": "m0rbius",
@@ -255,10 +255,10 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 4775,
-   "kills": 171,
-   "killsDia": 150,
-   "xpDia": 4171
+   "battleEXP": 5078,
+   "kills": 182,
+   "killsDia": 161,
+   "xpDia": 4474
   },
   {
    "name": "Dookie",
@@ -500,10 +500,10 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 8492,
-   "kills": 292,
-   "killsDia": 254,
-   "xpDia": 7421
+   "battleEXP": 8676,
+   "kills": 299,
+   "killsDia": 261,
+   "xpDia": 7605
   },
   {
    "name": "Pocary",
@@ -527,10 +527,10 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 4775,
-   "kills": 171,
-   "killsDia": 150,
-   "xpDia": 4171
+   "battleEXP": 5078,
+   "kills": 182,
+   "killsDia": 161,
+   "xpDia": 4474
   },
   {
    "name": "Dookie",
