@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-29T12:00:28.894295+00:00",
+ "updated_at": "2026-09-29T13:00:02.711361+00:00",
  "day": "2026-09-29",
  "total_players": 1000,
  "geral": [
@@ -49,8 +49,8 @@
    "name": "LiMaO",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 5114,
-   "kills": 176
+   "battleEXP": 5275,
+   "kills": 187
   },
   {
    "name": "SteelFury",
@@ -165,6 +165,13 @@
    "kills": 59
   },
   {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 1697,
+   "kills": 64
+  },
+  {
    "name": "FiNN",
    "clan": "LegacY",
    "level": 132,
@@ -177,13 +184,6 @@
    "level": 131,
    "battleEXP": 1621,
    "kills": 58
-  },
-  {
-   "name": "Hewitt",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 1538,
-   "kills": 54
   },
   {
    "name": "Mawu",
@@ -243,6 +243,15 @@
    "xpDia": 723
   },
   {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 5275,
+   "kills": 187,
+   "killsDia": 18,
+   "xpDia": 438
+  },
+  {
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
@@ -297,6 +306,15 @@
    "xpDia": 286
   },
   {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 1697,
+   "kills": 64,
+   "killsDia": 10,
+   "xpDia": 159
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -304,15 +322,6 @@
    "kills": 16,
    "killsDia": 9,
    "xpDia": 219
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 5114,
-   "kills": 176,
-   "killsDia": 7,
-   "xpDia": 277
   },
   {
    "name": "HazeL",
@@ -403,6 +412,15 @@
    "kills": 25,
    "killsDia": 1,
    "xpDia": 29
+  },
+  {
+   "name": "Oxxy",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 272,
+   "kills": 9,
+   "killsDia": 1,
+   "xpDia": 24
   },
   {
    "name": "Mawu",
@@ -461,6 +479,15 @@
    "xpDia": 537
   },
   {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 5275,
+   "kills": 187,
+   "killsDia": 18,
+   "xpDia": 438
+  },
+  {
    "name": "Valdivia",
    "clan": "Loading",
    "level": 129,
@@ -495,15 +522,6 @@
    "kills": 28,
    "killsDia": 11,
    "xpDia": 286
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 5114,
-   "kills": 176,
-   "killsDia": 7,
-   "xpDia": 277
   },
   {
    "name": "Heaven",
@@ -549,6 +567,15 @@
    "kills": 214,
    "killsDia": 6,
    "xpDia": 177
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 1697,
+   "kills": 64,
+   "killsDia": 10,
+   "xpDia": 159
   },
   {
    "name": "ArrogantZ",
@@ -612,6 +639,15 @@
    "kills": 25,
    "killsDia": 1,
    "xpDia": 29
+  },
+  {
+   "name": "Oxxy",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 272,
+   "kills": 9,
+   "killsDia": 1,
+   "xpDia": 24
   },
   {
    "name": "Mawu",
