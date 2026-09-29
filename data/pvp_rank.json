@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-29T13:00:02.711361+00:00",
+ "updated_at": "2026-09-29T14:00:03.53308+00:00",
  "day": "2026-09-29",
  "total_players": 1000,
  "geral": [
@@ -7,8 +7,8 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 15526,
-   "kills": 542
+   "battleEXP": 15762,
+   "kills": 551
   },
   {
    "name": "Pocary",
@@ -193,18 +193,18 @@
    "kills": 52
   },
   {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 1423,
+   "kills": 43
+  },
+  {
    "name": "PumpHell",
    "clan": "LegacY",
    "level": 133,
    "battleEXP": 1353,
    "kills": 52
-  },
-  {
-   "name": "PaoNaSchapa",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 1346,
-   "kills": 41
   },
   {
    "name": "KillShott",
@@ -315,6 +315,15 @@
    "xpDia": 159
   },
   {
+   "name": "Brytani",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15762,
+   "kills": 551,
+   "killsDia": 9,
+   "xpDia": 236
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -331,6 +340,15 @@
    "kills": 113,
    "killsDia": 7,
    "xpDia": 219
+  },
+  {
+   "name": "ArrogantZ",
+   "clan": "Loading",
+   "level": 129,
+   "battleEXP": 168,
+   "kills": 7,
+   "killsDia": 7,
+   "xpDia": 168
   },
   {
    "name": "Batman",
@@ -351,15 +369,6 @@
    "xpDia": 177
   },
   {
-   "name": "ArrogantZ",
-   "clan": "Loading",
-   "level": 129,
-   "battleEXP": 112,
-   "kills": 4,
-   "killsDia": 4,
-   "xpDia": 112
-  },
-  {
    "name": "Trumpetao",
    "clan": "LegacY",
    "level": 132,
@@ -367,6 +376,15 @@
    "kills": 88,
    "killsDia": 3,
    "xpDia": 88
+  },
+  {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 1423,
+   "kills": 43,
+   "killsDia": 2,
+   "xpDia": 77
   },
   {
    "name": "PowerMonster",
@@ -421,6 +439,15 @@
    "kills": 9,
    "killsDia": 1,
    "xpDia": 24
+  },
+  {
+   "name": "Madory",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 1143,
+   "kills": 40,
+   "killsDia": 1,
+   "xpDia": 16
   },
   {
    "name": "Mawu",
@@ -524,6 +551,15 @@
    "xpDia": 286
   },
   {
+   "name": "Brytani",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15762,
+   "kills": 551,
+   "killsDia": 9,
+   "xpDia": 236
+  },
+  {
    "name": "Heaven",
    "clan": "Loading",
    "level": 130,
@@ -569,6 +605,15 @@
    "xpDia": 177
   },
   {
+   "name": "ArrogantZ",
+   "clan": "Loading",
+   "level": 129,
+   "battleEXP": 168,
+   "kills": 7,
+   "killsDia": 7,
+   "xpDia": 168
+  },
+  {
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
@@ -578,15 +623,6 @@
    "xpDia": 159
   },
   {
-   "name": "ArrogantZ",
-   "clan": "Loading",
-   "level": 129,
-   "battleEXP": 112,
-   "kills": 4,
-   "killsDia": 4,
-   "xpDia": 112
-  },
-  {
    "name": "Trumpetao",
    "clan": "LegacY",
    "level": 132,
@@ -594,6 +630,15 @@
    "kills": 88,
    "killsDia": 3,
    "xpDia": 88
+  },
+  {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 1423,
+   "kills": 43,
+   "killsDia": 2,
+   "xpDia": 77
   },
   {
    "name": "PowerMonster",
@@ -648,6 +693,15 @@
    "kills": 9,
    "killsDia": 1,
    "xpDia": 24
+  },
+  {
+   "name": "Madory",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 1143,
+   "kills": 40,
+   "killsDia": 1,
+   "xpDia": 16
   },
   {
    "name": "Mawu",
