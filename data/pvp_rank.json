@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-29T18:00:04.989523+00:00",
+ "updated_at": "2026-09-29T19:00:07.931219+00:00",
  "day": "2026-09-29",
  "total_players": 1000,
  "geral": [
@@ -49,8 +49,8 @@
    "name": "LiMaO",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 6161,
-   "kills": 217
+   "battleEXP": 6410,
+   "kills": 226
   },
   {
    "name": "SteelFury",
@@ -77,8 +77,8 @@
    "name": "Dookie",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 3981,
-   "kills": 153
+   "battleEXP": 4080,
+   "kills": 156
   },
   {
    "name": "2bad4you",
@@ -234,6 +234,15 @@
    "xpDia": 2001
   },
   {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6410,
+   "kills": 226,
+   "killsDia": 57,
+   "xpDia": 1573
+  },
+  {
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
@@ -241,15 +250,6 @@
    "kills": 590,
    "killsDia": 48,
    "xpDia": 1358
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 6161,
-   "kills": 217,
-   "killsDia": 48,
-   "xpDia": 1324
   },
   {
    "name": "Rinoa",
@@ -369,6 +369,15 @@
    "xpDia": 644
   },
   {
+   "name": "Dookie",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4080,
+   "kills": 156,
+   "killsDia": 21,
+   "xpDia": 477
+  },
+  {
    "name": "TnDevill",
    "clan": "Loading",
    "level": 130,
@@ -385,15 +394,6 @@
    "kills": 27,
    "killsDia": 19,
    "xpDia": 599
-  },
-  {
-   "name": "Dookie",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 3981,
-   "kills": 153,
-   "killsDia": 18,
-   "xpDia": 378
   },
   {
    "name": "TremDoOdio",
@@ -506,6 +506,15 @@
    "xpDia": 2001
   },
   {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6410,
+   "kills": 226,
+   "killsDia": 57,
+   "xpDia": 1573
+  },
+  {
    "name": "Rinoa",
    "clan": "Loading",
    "level": 132,
@@ -522,15 +531,6 @@
    "kills": 590,
    "killsDia": 48,
    "xpDia": 1358
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 6161,
-   "kills": 217,
-   "killsDia": 48,
-   "xpDia": 1324
   },
   {
    "name": "MitoPS",
@@ -668,6 +668,15 @@
    "xpDia": 505
   },
   {
+   "name": "Dookie",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4080,
+   "kills": 156,
+   "killsDia": 21,
+   "xpDia": 477
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -693,15 +702,6 @@
    "kills": 37,
    "killsDia": 13,
    "xpDia": 389
-  },
-  {
-   "name": "Dookie",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 3981,
-   "kills": 153,
-   "killsDia": 18,
-   "xpDia": 378
   },
   {
    "name": "Azz0th",
