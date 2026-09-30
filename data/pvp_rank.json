@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-30T10:00:04.663256+00:00",
+ "updated_at": "2026-09-30T11:00:03.335627+00:00",
  "day": "2026-09-30",
  "total_players": 1000,
  "geral": [
@@ -21,8 +21,8 @@
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 133,
-   "battleEXP": 10758,
-   "kills": 379
+   "battleEXP": 11489,
+   "kills": 405
   },
   {
    "name": "GodStopMe",
@@ -214,6 +214,26 @@
    "kills": 67
   }
  ],
- "dia_kills": [],
- "dia_xp": []
+ "dia_kills": [
+  {
+   "name": "PowerMonster",
+   "clan": "Loading",
+   "level": 133,
+   "battleEXP": 11489,
+   "kills": 405,
+   "killsDia": 26,
+   "xpDia": 731
+  }
+ ],
+ "dia_xp": [
+  {
+   "name": "PowerMonster",
+   "clan": "Loading",
+   "level": 133,
+   "battleEXP": 11489,
+   "kills": 405,
+   "killsDia": 26,
+   "xpDia": 731
+  }
+ ]
 }
