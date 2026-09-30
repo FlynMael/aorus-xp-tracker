@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-30T14:00:02.615638+00:00",
+ "updated_at": "2026-09-30T15:00:07.663641+00:00",
  "day": "2026-09-30",
  "total_players": 1000,
  "geral": [
@@ -7,8 +7,8 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20667,
-   "kills": 718
+   "battleEXP": 20773,
+   "kills": 722
   },
   {
    "name": "Pocary",
@@ -42,8 +42,8 @@
    "name": "LiMaO",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 7540,
-   "kills": 265
+   "battleEXP": 7545,
+   "kills": 266
   },
   {
    "name": "m0rbius",
@@ -228,10 +228,10 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20667,
-   "kills": 718,
-   "killsDia": 46,
-   "xpDia": 1316
+   "battleEXP": 20773,
+   "kills": 722,
+   "killsDia": 50,
+   "xpDia": 1422
   },
   {
    "name": "Hewitt",
@@ -261,6 +261,15 @@
    "xpDia": 124
   },
   {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 7545,
+   "kills": 266,
+   "killsDia": 5,
+   "xpDia": 80
+  },
+  {
    "name": "Oxxy",
    "clan": "LegacY",
    "level": 131,
@@ -268,15 +277,6 @@
    "kills": 35,
    "killsDia": 4,
    "xpDia": 117
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 7540,
-   "kills": 265,
-   "killsDia": 4,
-   "xpDia": 75
   },
   {
    "name": "Stelar",
@@ -288,6 +288,15 @@
    "xpDia": 90
   },
   {
+   "name": "Secret",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 1809,
+   "kills": 65,
+   "killsDia": 3,
+   "xpDia": 88
+  },
+  {
    "name": "ASMODEUS",
    "clan": "Loading",
    "level": 130,
@@ -295,15 +304,6 @@
    "kills": 38,
    "killsDia": 2,
    "xpDia": 97
-  },
-  {
-   "name": "Secret",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 1798,
-   "kills": 64,
-   "killsDia": 2,
-   "xpDia": 77
   },
   {
    "name": "CirosBlack",
@@ -365,10 +365,10 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20667,
-   "kills": 718,
-   "killsDia": 46,
-   "xpDia": 1316
+   "battleEXP": 20773,
+   "kills": 722,
+   "killsDia": 50,
+   "xpDia": 1422
   },
   {
    "name": "Hewitt",
@@ -428,19 +428,19 @@
    "name": "Secret",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 1798,
-   "kills": 64,
-   "killsDia": 2,
-   "xpDia": 77
+   "battleEXP": 1809,
+   "kills": 65,
+   "killsDia": 3,
+   "xpDia": 88
   },
   {
    "name": "LiMaO",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 7540,
-   "kills": 265,
-   "killsDia": 4,
-   "xpDia": 75
+   "battleEXP": 7545,
+   "kills": 266,
+   "killsDia": 5,
+   "xpDia": 80
   },
   {
    "name": "CirosBlack",
