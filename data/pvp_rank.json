@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-30T11:00:03.335627+00:00",
+ "updated_at": "2026-09-30T12:00:05.740628+00:00",
  "day": "2026-09-30",
  "total_players": 1000,
  "geral": [
@@ -132,7 +132,7 @@
   {
    "name": "JvFBoss",
    "clan": "LegacY",
-   "level": 133,
+   "level": 134,
    "battleEXP": 2846,
    "kills": 96
   },
