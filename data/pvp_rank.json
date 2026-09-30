@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-30T15:00:07.663641+00:00",
+ "updated_at": "2026-09-30T16:00:10.108176+00:00",
  "day": "2026-09-30",
  "total_players": 1000,
  "geral": [
@@ -182,8 +182,8 @@
    "name": "TremDoOdio",
    "clan": "LegacY",
    "level": 129,
-   "battleEXP": 2269,
-   "kills": 77
+   "battleEXP": 2293,
+   "kills": 78
   },
   {
    "name": "Massacre",
@@ -297,6 +297,15 @@
    "xpDia": 88
   },
   {
+   "name": "DracO",
+   "clan": "Umbrella",
+   "level": 129,
+   "battleEXP": 1423,
+   "kills": 50,
+   "killsDia": 3,
+   "xpDia": 74
+  },
+  {
    "name": "ASMODEUS",
    "clan": "Loading",
    "level": 130,
@@ -322,6 +331,15 @@
    "kills": 40,
    "killsDia": 1,
    "xpDia": 37
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2293,
+   "kills": 78,
+   "killsDia": 1,
+   "xpDia": 24
   },
   {
    "name": "PumpHell",
@@ -443,6 +461,15 @@
    "xpDia": 80
   },
   {
+   "name": "DracO",
+   "clan": "Umbrella",
+   "level": 129,
+   "battleEXP": 1423,
+   "kills": 50,
+   "killsDia": 3,
+   "xpDia": 74
+  },
+  {
    "name": "CirosBlack",
    "clan": "LegacY",
    "level": 132,
@@ -459,6 +486,15 @@
    "kills": 40,
    "killsDia": 1,
    "xpDia": 37
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2293,
+   "kills": 78,
+   "killsDia": 1,
+   "xpDia": 24
   },
   {
    "name": "PumpHell",
