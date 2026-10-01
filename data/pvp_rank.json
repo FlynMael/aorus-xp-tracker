@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T05:00:04.615688+00:00",
+ "updated_at": "2026-10-01T06:00:04.382639+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -28,8 +28,8 @@
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 9048,
-   "kills": 323
+   "battleEXP": 9286,
+   "kills": 332
   },
   {
    "name": "Rinoa",
@@ -261,6 +261,15 @@
    "xpDia": 283
   },
   {
+   "name": "GodStopMe",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9286,
+   "kills": 332,
+   "killsDia": 9,
+   "xpDia": 238
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -423,6 +432,15 @@
    "kills": 108,
    "killsDia": 9,
    "xpDia": 283
+  },
+  {
+   "name": "GodStopMe",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9286,
+   "kills": 332,
+   "killsDia": 9,
+   "xpDia": 238
   },
   {
    "name": "OnePunchGirl",
