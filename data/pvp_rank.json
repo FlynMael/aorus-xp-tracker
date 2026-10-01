@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T20:00:03.960941+00:00",
+ "updated_at": "2026-10-01T21:00:05.528317+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -158,18 +158,18 @@
    "kills": 109
   },
   {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2884,
+   "kills": 98
+  },
+  {
    "name": "PaoNaSchapa",
    "clan": "LegacY",
    "level": 133,
    "battleEXP": 2810,
    "kills": 94
-  },
-  {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 2778,
-   "kills": 95
   },
   {
    "name": "Heaven",
@@ -288,6 +288,15 @@
    "xpDia": 602
   },
   {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2884,
+   "kills": 98,
+   "killsDia": 20,
+   "xpDia": 591
+  },
+  {
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 133,
@@ -313,15 +322,6 @@
    "kills": 210,
    "killsDia": 18,
    "xpDia": 405
-  },
-  {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 2778,
-   "kills": 95,
-   "killsDia": 17,
-   "xpDia": 485
   },
   {
    "name": "OnePunchGirl",
@@ -551,6 +551,15 @@
    "xpDia": 602
   },
   {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2884,
+   "kills": 98,
+   "killsDia": 20,
+   "xpDia": 591
+  },
+  {
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 133,
@@ -576,15 +585,6 @@
    "kills": 19,
    "killsDia": 19,
    "xpDia": 487
-  },
-  {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 2778,
-   "kills": 95,
-   "killsDia": 17,
-   "xpDia": 485
   },
   {
    "name": "OnePunchGirl",
