@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T14:00:04.533976+00:00",
+ "updated_at": "2026-10-01T15:00:04.260162+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -172,18 +172,18 @@
    "kills": 79
   },
   {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2348,
+   "kills": 80
+  },
+  {
    "name": "Valdivia",
    "clan": "Loading",
    "level": 129,
    "battleEXP": 2335,
    "kills": 89
-  },
-  {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 2293,
-   "kills": 78
   },
   {
    "name": "Madory",
@@ -306,6 +306,15 @@
    "xpDia": 204
   },
   {
+   "name": "PatixaTelo",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 1148,
+   "kills": 43,
+   "killsDia": 6,
+   "xpDia": 163
+  },
+  {
    "name": "Leviathan",
    "clan": "Loading",
    "level": 131,
@@ -369,15 +378,6 @@
    "xpDia": 78
   },
   {
-   "name": "PatixaTelo",
-   "clan": "NexuS",
-   "level": 130,
-   "battleEXP": 1060,
-   "kills": 40,
-   "killsDia": 3,
-   "xpDia": 75
-  },
-  {
    "name": "ArrogantZ",
    "clan": "Loading",
    "level": 129,
@@ -387,6 +387,15 @@
    "xpDia": 56
   },
   {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2348,
+   "kills": 80,
+   "killsDia": 2,
+   "xpDia": 55
+  },
+  {
    "name": "Empoderado",
    "clan": "LegacY",
    "level": 130,
@@ -394,6 +403,15 @@
    "kills": 29,
    "killsDia": 1,
    "xpDia": 50
+  },
+  {
+   "name": "SafaFininDoOdio",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 33,
+   "kills": 1,
+   "killsDia": 1,
+   "xpDia": 33
   },
   {
    "name": "GordaoF0guete",
@@ -506,6 +524,15 @@
    "xpDia": 183
   },
   {
+   "name": "PatixaTelo",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 1148,
+   "kills": 43,
+   "killsDia": 6,
+   "xpDia": 163
+  },
+  {
    "name": "GuimaL",
    "clan": "LegacY",
    "level": 131,
@@ -560,15 +587,6 @@
    "xpDia": 78
   },
   {
-   "name": "PatixaTelo",
-   "clan": "NexuS",
-   "level": 130,
-   "battleEXP": 1060,
-   "kills": 40,
-   "killsDia": 3,
-   "xpDia": 75
-  },
-  {
    "name": "ArrogantZ",
    "clan": "Loading",
    "level": 129,
@@ -576,6 +594,15 @@
    "kills": 28,
    "killsDia": 2,
    "xpDia": 56
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 2348,
+   "kills": 80,
+   "killsDia": 2,
+   "xpDia": 55
   },
   {
    "name": "Empoderado",
@@ -594,6 +621,15 @@
    "kills": 183,
    "killsDia": 5,
    "xpDia": 45
+  },
+  {
+   "name": "SafaFininDoOdio",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 33,
+   "kills": 1,
+   "killsDia": 1,
+   "xpDia": 33
   },
   {
    "name": "GordaoF0guete",
