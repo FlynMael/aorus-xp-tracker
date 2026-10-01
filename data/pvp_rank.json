@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T10:00:04.264571+00:00",
+ "updated_at": "2026-10-01T11:00:05.121029+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -270,6 +270,15 @@
    "xpDia": 238
   },
   {
+   "name": "Educadora",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 221,
+   "kills": 8,
+   "killsDia": 8,
+   "xpDia": 221
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -286,15 +295,6 @@
    "kills": 103,
    "killsDia": 7,
    "xpDia": 204
-  },
-  {
-   "name": "Educadora",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 175,
-   "kills": 7,
-   "killsDia": 7,
-   "xpDia": 175
   },
   {
    "name": "Leviathan",
@@ -333,6 +333,15 @@
    "xpDia": 129
   },
   {
+   "name": "MystroN",
+   "clan": "NexuS",
+   "level": 131,
+   "battleEXP": 447,
+   "kills": 16,
+   "killsDia": 4,
+   "xpDia": 117
+  },
+  {
    "name": "TimCrocO",
    "clan": "NexuS",
    "level": 129,
@@ -342,13 +351,13 @@
    "xpDia": 95
   },
   {
-   "name": "MystroN",
-   "clan": "NexuS",
-   "level": 131,
-   "battleEXP": 407,
-   "kills": 15,
+   "name": "KingLks",
+   "clan": "Sem Clan",
+   "level": 130,
+   "battleEXP": 78,
+   "kills": 3,
    "killsDia": 3,
-   "xpDia": 77
+   "xpDia": 78
   },
   {
    "name": "PatixaTelo",
@@ -367,6 +376,15 @@
    "kills": 28,
    "killsDia": 2,
    "xpDia": 56
+  },
+  {
+   "name": "Empoderado",
+   "clan": "LegacY",
+   "level": 130,
+   "battleEXP": 960,
+   "kills": 29,
+   "killsDia": 1,
+   "xpDia": 50
   },
   {
    "name": "GordaoF0guete",
@@ -443,6 +461,15 @@
    "xpDia": 238
   },
   {
+   "name": "Educadora",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 221,
+   "kills": 8,
+   "killsDia": 8,
+   "xpDia": 221
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -459,15 +486,6 @@
    "kills": 103,
    "killsDia": 7,
    "xpDia": 204
-  },
-  {
-   "name": "Educadora",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 175,
-   "kills": 7,
-   "killsDia": 7,
-   "xpDia": 175
   },
   {
    "name": "GuimaL",
@@ -497,6 +515,15 @@
    "xpDia": 129
   },
   {
+   "name": "MystroN",
+   "clan": "NexuS",
+   "level": 131,
+   "battleEXP": 447,
+   "kills": 16,
+   "killsDia": 4,
+   "xpDia": 117
+  },
+  {
    "name": "Madory",
    "clan": "LegacY",
    "level": 132,
@@ -515,13 +542,13 @@
    "xpDia": 95
   },
   {
-   "name": "MystroN",
-   "clan": "NexuS",
-   "level": 131,
-   "battleEXP": 407,
-   "kills": 15,
+   "name": "KingLks",
+   "clan": "Sem Clan",
+   "level": 130,
+   "battleEXP": 78,
+   "kills": 3,
    "killsDia": 3,
-   "xpDia": 77
+   "xpDia": 78
   },
   {
    "name": "PatixaTelo",
@@ -540,6 +567,15 @@
    "kills": 28,
    "killsDia": 2,
    "xpDia": 56
+  },
+  {
+   "name": "Empoderado",
+   "clan": "LegacY",
+   "level": 130,
+   "battleEXP": 960,
+   "kills": 29,
+   "killsDia": 1,
+   "xpDia": 50
   },
   {
    "name": "GordaoF0guete",
