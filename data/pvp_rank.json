@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T03:00:03.641939+00:00",
+ "updated_at": "2026-10-01T04:00:04.085517+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -14,8 +14,8 @@
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 13820,
-   "kills": 463
+   "battleEXP": 13832,
+   "kills": 464
   },
   {
    "name": "PowerMonster",
@@ -63,8 +63,8 @@
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 5539,
-   "kills": 192
+   "battleEXP": 5606,
+   "kills": 194
   },
   {
    "name": "Batman",
@@ -214,6 +214,80 @@
    "kills": 67
   }
  ],
- "dia_kills": [],
- "dia_xp": []
+ "dia_kills": [
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 5606,
+   "kills": 194,
+   "killsDia": 2,
+   "xpDia": 67
+  },
+  {
+   "name": "GuimaL",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1478,
+   "kills": 51,
+   "killsDia": 1,
+   "xpDia": 44
+  },
+  {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 641,
+   "kills": 25,
+   "killsDia": 1,
+   "xpDia": 14
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 13832,
+   "kills": 464,
+   "killsDia": 1,
+   "xpDia": 12
+  }
+ ],
+ "dia_xp": [
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 5606,
+   "kills": 194,
+   "killsDia": 2,
+   "xpDia": 67
+  },
+  {
+   "name": "GuimaL",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1478,
+   "kills": 51,
+   "killsDia": 1,
+   "xpDia": 44
+  },
+  {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 641,
+   "kills": 25,
+   "killsDia": 1,
+   "xpDia": 14
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 13832,
+   "kills": 464,
+   "killsDia": 1,
+   "xpDia": 12
+  }
+ ]
 }
