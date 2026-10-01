@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T11:00:05.121029+00:00",
+ "updated_at": "2026-10-01T12:00:03.906648+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -77,8 +77,8 @@
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 5061,
-   "kills": 178
+   "battleEXP": 5106,
+   "kills": 183
   },
   {
    "name": "Dookie",
@@ -189,8 +189,8 @@
    "name": "Madory",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 2149,
-   "kills": 77
+   "battleEXP": 2229,
+   "kills": 82
   },
   {
    "name": "Massacre",
@@ -250,6 +250,15 @@
    "kills": 474,
    "killsDia": 11,
    "xpDia": 295
+  },
+  {
+   "name": "Madory",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 2229,
+   "kills": 82,
+   "killsDia": 10,
+   "xpDia": 183
   },
   {
    "name": "FiNN",
@@ -315,13 +324,13 @@
    "xpDia": 160
   },
   {
-   "name": "Madory",
+   "name": "Hewitt",
    "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 2149,
-   "kills": 77,
+   "level": 133,
+   "battleEXP": 5106,
+   "kills": 183,
    "killsDia": 5,
-   "xpDia": 103
+   "xpDia": 45
   },
   {
    "name": "m0rbius",
@@ -488,6 +497,15 @@
    "xpDia": 204
   },
   {
+   "name": "Madory",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 2229,
+   "kills": 82,
+   "killsDia": 10,
+   "xpDia": 183
+  },
+  {
    "name": "GuimaL",
    "clan": "LegacY",
    "level": 131,
@@ -522,15 +540,6 @@
    "kills": 16,
    "killsDia": 4,
    "xpDia": 117
-  },
-  {
-   "name": "Madory",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 2149,
-   "kills": 77,
-   "killsDia": 5,
-   "xpDia": 103
   },
   {
    "name": "TimCrocO",
@@ -576,6 +585,15 @@
    "kills": 29,
    "killsDia": 1,
    "xpDia": 50
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 5106,
+   "kills": 183,
+   "killsDia": 5,
+   "xpDia": 45
   },
   {
    "name": "GordaoF0guete",
