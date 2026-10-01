@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T19:00:03.470885+00:00",
+ "updated_at": "2026-10-01T20:00:03.960941+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -88,6 +88,13 @@
    "kills": 189
   },
   {
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4732,
+   "kills": 159
+  },
+  {
    "name": "TxBoss",
    "clan": "LegacY",
    "level": 133,
@@ -100,13 +107,6 @@
    "level": 132,
    "battleEXP": 4597,
    "kills": 155
-  },
-  {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 4582,
-   "kills": 153
   },
   {
    "name": "Psych0",
@@ -234,6 +234,15 @@
    "xpDia": 1191
   },
   {
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4732,
+   "kills": 159,
+   "killsDia": 31,
+   "xpDia": 814
+  },
+  {
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
@@ -241,15 +250,6 @@
    "kills": 122,
    "killsDia": 26,
    "xpDia": 788
-  },
-  {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 4582,
-   "kills": 153,
-   "killsDia": 25,
-   "xpDia": 664
   },
   {
    "name": "Hewitt",
@@ -506,6 +506,15 @@
    "xpDia": 1191
   },
   {
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 4732,
+   "kills": 159,
+   "killsDia": 31,
+   "xpDia": 814
+  },
+  {
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
@@ -513,15 +522,6 @@
    "kills": 122,
    "killsDia": 26,
    "xpDia": 788
-  },
-  {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 4582,
-   "kills": 153,
-   "killsDia": 25,
-   "xpDia": 664
   },
   {
    "name": "Curse",
