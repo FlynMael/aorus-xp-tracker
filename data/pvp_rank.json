@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T13:00:04.147521+00:00",
+ "updated_at": "2026-10-02T14:00:12.787412+00:00",
  "day": "2026-10-02",
  "total_players": 1000,
  "geral": [
@@ -234,6 +234,15 @@
    "xpDia": 439
   },
   {
+   "name": "PatixaTelo",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 1533,
+   "kills": 55,
+   "killsDia": 12,
+   "xpDia": 385
+  },
+  {
    "name": "ASMODEUS",
    "clan": "Loading",
    "level": 130,
@@ -351,6 +360,15 @@
    "kills": 102,
    "killsDia": 19,
    "xpDia": 439
+  },
+  {
+   "name": "PatixaTelo",
+   "clan": "NexuS",
+   "level": 130,
+   "battleEXP": 1533,
+   "kills": 55,
+   "killsDia": 12,
+   "xpDia": 385
   },
   {
    "name": "ASMODEUS",
