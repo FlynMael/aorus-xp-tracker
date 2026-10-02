@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T00:00:04.323962+00:00",
+ "updated_at": "2026-10-02T01:00:06.334621+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -7,8 +7,8 @@
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 20773,
-   "kills": 722
+   "battleEXP": 21982,
+   "kills": 764
   },
   {
    "name": "Pocary",
@@ -21,15 +21,29 @@
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 133,
-   "battleEXP": 12747,
-   "kills": 452
+   "battleEXP": 13388,
+   "kills": 476
   },
   {
    "name": "GodStopMe",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 9286,
-   "kills": 332
+   "battleEXP": 9562,
+   "kills": 341
+  },
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9029,
+   "kills": 328
+  },
+  {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 8048,
+   "kills": 282
   },
   {
    "name": "m0rbius",
@@ -39,25 +53,18 @@
    "kills": 272
   },
   {
-   "name": "Rinoa",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 7842,
-   "kills": 285
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 7545,
-   "kills": 266
-  },
-  {
    "name": "Batman",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 6797,
-   "kills": 229
+   "battleEXP": 7732,
+   "kills": 264
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6565,
+   "kills": 238
   },
   {
    "name": "SteelFury",
@@ -74,32 +81,25 @@
    "kills": 210
   },
   {
-   "name": "Hewitt",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 5758,
-   "kills": 210
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 5822,
+   "kills": 197
   },
   {
    "name": "Dookie",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 5146,
-   "kills": 191
-  },
-  {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 4990,
-   "kills": 169
+   "battleEXP": 5438,
+   "kills": 203
   },
   {
    "name": "TxBoss",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 4638,
-   "kills": 160
+   "battleEXP": 4974,
+   "kills": 171
   },
   {
    "name": "Trumpetao",
@@ -116,6 +116,13 @@
    "kills": 148
   },
   {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 4423,
+   "kills": 153
+  },
+  {
    "name": "2bad4you",
    "clan": "Loading",
    "level": 132,
@@ -126,15 +133,15 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 3530,
-   "kills": 123
+   "battleEXP": 3753,
+   "kills": 131
   },
   {
-   "name": "Curse",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 3478,
-   "kills": 120
+   "name": "Valdivia",
+   "clan": "Loading",
+   "level": 129,
+   "battleEXP": 3573,
+   "kills": 131
   },
   {
    "name": "FiNN",
@@ -147,8 +154,22 @@
    "name": "TremDoOdio",
    "clan": "LegacY",
    "level": 129,
-   "battleEXP": 3110,
-   "kills": 106
+   "battleEXP": 3285,
+   "kills": 113
+  },
+  {
+   "name": "Heaven",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 3235,
+   "kills": 122
+  },
+  {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 3107,
+   "kills": 104
   },
   {
    "name": "JvFBoss",
@@ -158,25 +179,11 @@
    "kills": 101
   },
   {
-   "name": "Valdivia",
-   "clan": "Loading",
-   "level": 129,
-   "battleEXP": 2937,
-   "kills": 109
-  },
-  {
-   "name": "Heaven",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 2811,
-   "kills": 106
-  },
-  {
-   "name": "PaoNaSchapa",
+   "name": "Secret",
    "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 2810,
-   "kills": 94
+   "level": 132,
+   "battleEXP": 2791,
+   "kills": 97
   },
   {
    "name": "DarkFury",
@@ -205,69 +212,152 @@
    "level": 132,
    "battleEXP": 2070,
    "kills": 76
+  }
+ ],
+ "dia_kills": [
+  {
+   "name": "Batman",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 7732,
+   "kills": 264,
+   "killsDia": 76,
+   "xpDia": 2208
+  },
+  {
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 5822,
+   "kills": 197,
+   "killsDia": 69,
+   "xpDia": 1904
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6565,
+   "kills": 238,
+   "killsDia": 60,
+   "xpDia": 1504
+  },
+  {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 4423,
+   "kills": 153,
+   "killsDia": 55,
+   "xpDia": 1597
+  },
+  {
+   "name": "PowerMonster",
+   "clan": "Loading",
+   "level": 133,
+   "battleEXP": 13388,
+   "kills": 476,
+   "killsDia": 44,
+   "xpDia": 1145
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15100,
+   "kills": 506,
+   "killsDia": 43,
+   "xpDia": 1280
+  },
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9029,
+   "kills": 328,
+   "killsDia": 43,
+   "xpDia": 1187
+  },
+  {
+   "name": "Valdivia",
+   "clan": "Loading",
+   "level": 129,
+   "battleEXP": 3573,
+   "kills": 131,
+   "killsDia": 42,
+   "xpDia": 1238
+  },
+  {
+   "name": "Brytani",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 21982,
+   "kills": 764,
+   "killsDia": 42,
+   "xpDia": 1209
+  },
+  {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 3753,
+   "kills": 131,
+   "killsDia": 35,
+   "xpDia": 1038
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 3285,
+   "kills": 113,
+   "killsDia": 35,
+   "xpDia": 992
+  },
+  {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 1591,
+   "kills": 59,
+   "killsDia": 35,
+   "xpDia": 964
   },
   {
    "name": "Secret",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 1999,
-   "kills": 72
-  }
- ],
- "dia_kills": [
-  {
-   "name": "Pocary",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 15100,
-   "kills": 506,
-   "killsDia": 43,
-   "xpDia": 1280
+   "battleEXP": 2791,
+   "kills": 97,
+   "killsDia": 32,
+   "xpDia": 982
   },
   {
-   "name": "Batman",
+   "name": "Heaven",
    "clan": "Loading",
-   "level": 132,
-   "battleEXP": 6797,
-   "kills": 229,
-   "killsDia": 41,
-   "xpDia": 1273
+   "level": 130,
+   "battleEXP": 3235,
+   "kills": 122,
+   "killsDia": 26,
+   "xpDia": 729
   },
   {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 4990,
-   "kills": 169,
-   "killsDia": 41,
-   "xpDia": 1072
-  },
-  {
-   "name": "Hewitt",
+   "name": "PaoNaSchapa",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 5758,
-   "kills": 210,
-   "killsDia": 32,
-   "xpDia": 697
+   "battleEXP": 3107,
+   "kills": 104,
+   "killsDia": 25,
+   "xpDia": 747
   },
   {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 3110,
-   "kills": 106,
-   "killsDia": 28,
-   "xpDia": 817
-  },
-  {
-   "name": "Duraso",
+   "name": "Educadora",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 3530,
-   "kills": 123,
-   "killsDia": 27,
-   "xpDia": 815
+   "battleEXP": 610,
+   "kills": 24,
+   "killsDia": 24,
+   "xpDia": 610
   },
   {
    "name": "Azz0th",
@@ -279,483 +369,393 @@
    "xpDia": 615
   },
   {
-   "name": "Curse",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 3478,
-   "kills": 120,
-   "killsDia": 22,
-   "xpDia": 652
-  },
-  {
-   "name": "Valdivia",
-   "clan": "Loading",
-   "level": 129,
-   "battleEXP": 2937,
-   "kills": 109,
-   "killsDia": 20,
-   "xpDia": 602
-  },
-  {
-   "name": "PowerMonster",
-   "clan": "Loading",
-   "level": 133,
-   "battleEXP": 12747,
-   "kills": 452,
-   "killsDia": 20,
-   "xpDia": 504
-  },
-  {
-   "name": "HeadShot",
-   "clan": "FreeStyle",
-   "level": 131,
-   "battleEXP": 487,
-   "kills": 19,
-   "killsDia": 19,
-   "xpDia": 487
-  },
-  {
-   "name": "MitoPS",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 5944,
-   "kills": 210,
-   "killsDia": 18,
-   "xpDia": 405
-  },
-  {
-   "name": "OnePunchGirl",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 1093,
-   "kills": 41,
-   "killsDia": 17,
-   "xpDia": 466
-  },
-  {
-   "name": "Educadora",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 434,
-   "kills": 17,
-   "killsDia": 17,
-   "xpDia": 434
-  },
-  {
-   "name": "PaoNaSchapa",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 2810,
-   "kills": 94,
-   "killsDia": 15,
-   "xpDia": 450
-  },
-  {
-   "name": "m0rbius",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 7863,
-   "kills": 272,
-   "killsDia": 15,
-   "xpDia": 391
-  },
-  {
-   "name": "L7NNiN",
-   "clan": "DTM",
-   "level": 127,
-   "battleEXP": 385,
-   "kills": 13,
-   "killsDia": 13,
-   "xpDia": 385
-  },
-  {
-   "name": "Trumpetao",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 4597,
-   "kills": 155,
-   "killsDia": 13,
-   "xpDia": 303
-  },
-  {
-   "name": "KingLks",
-   "clan": "Sem Clan",
-   "level": 130,
-   "battleEXP": 336,
-   "kills": 12,
-   "killsDia": 12,
-   "xpDia": 336
-  },
-  {
-   "name": "Gawen",
-   "clan": "Loading",
-   "level": 129,
-   "battleEXP": 1394,
-   "kills": 49,
-   "killsDia": 12,
-   "xpDia": 335
-  },
-  {
-   "name": "HeiusCapone",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 1341,
-   "kills": 50,
-   "killsDia": 12,
-   "xpDia": 321
-  },
-  {
-   "name": "Doomed",
-   "clan": "Sem Clan",
-   "level": 129,
-   "battleEXP": 316,
-   "kills": 12,
-   "killsDia": 12,
-   "xpDia": 316
-  },
-  {
-   "name": "KillShott",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 2206,
-   "kills": 77,
-   "killsDia": 10,
-   "xpDia": 309
-  },
-  {
-   "name": "Heaven",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 2811,
-   "kills": 106,
-   "killsDia": 10,
-   "xpDia": 305
-  },
-  {
    "name": "Dookie",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 5146,
-   "kills": 191,
-   "killsDia": 10,
-   "xpDia": 266
-  },
-  {
-   "name": "Madory",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 2229,
-   "kills": 82,
-   "killsDia": 10,
-   "xpDia": 183
-  },
-  {
-   "name": "FiNN",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 3384,
-   "kills": 108,
-   "killsDia": 9,
-   "xpDia": 283
-  },
-  {
-   "name": "GodStopMe",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 9286,
-   "kills": 332,
-   "killsDia": 9,
-   "xpDia": 238
-  },
-  {
-   "name": "RichthofeN",
-   "clan": "Arcade",
-   "level": 130,
-   "battleEXP": 777,
-   "kills": 26,
-   "killsDia": 8,
-   "xpDia": 281
-  },
-  {
-   "name": "TxBoss",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 4638,
-   "kills": 160,
-   "killsDia": 8,
-   "xpDia": 196
-  }
- ],
- "dia_xp": [
-  {
-   "name": "Pocary",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 15100,
-   "kills": 506,
-   "killsDia": 43,
-   "xpDia": 1280
-  },
-  {
-   "name": "Batman",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 6797,
-   "kills": 229,
-   "killsDia": 41,
-   "xpDia": 1273
-  },
-  {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 4990,
-   "kills": 169,
-   "killsDia": 41,
-   "xpDia": 1072
-  },
-  {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 3110,
-   "kills": 106,
-   "killsDia": 28,
-   "xpDia": 817
-  },
-  {
-   "name": "Duraso",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 3530,
-   "kills": 123,
-   "killsDia": 27,
-   "xpDia": 815
-  },
-  {
-   "name": "Hewitt",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 5758,
-   "kills": 210,
-   "killsDia": 32,
-   "xpDia": 697
-  },
-  {
-   "name": "Curse",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 3478,
-   "kills": 120,
+   "battleEXP": 5438,
+   "kills": 203,
    "killsDia": 22,
-   "xpDia": 652
-  },
-  {
-   "name": "Azz0th",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 1758,
-   "kills": 63,
-   "killsDia": 23,
-   "xpDia": 615
-  },
-  {
-   "name": "Valdivia",
-   "clan": "Loading",
-   "level": 129,
-   "battleEXP": 2937,
-   "kills": 109,
-   "killsDia": 20,
-   "xpDia": 602
-  },
-  {
-   "name": "PowerMonster",
-   "clan": "Loading",
-   "level": 133,
-   "battleEXP": 12747,
-   "kills": 452,
-   "killsDia": 20,
-   "xpDia": 504
-  },
-  {
-   "name": "HeadShot",
-   "clan": "FreeStyle",
-   "level": 131,
-   "battleEXP": 487,
-   "kills": 19,
-   "killsDia": 19,
-   "xpDia": 487
-  },
-  {
-   "name": "OnePunchGirl",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 1093,
-   "kills": 41,
-   "killsDia": 17,
-   "xpDia": 466
-  },
-  {
-   "name": "PaoNaSchapa",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 2810,
-   "kills": 94,
-   "killsDia": 15,
-   "xpDia": 450
-  },
-  {
-   "name": "Educadora",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 434,
-   "kills": 17,
-   "killsDia": 17,
-   "xpDia": 434
-  },
-  {
-   "name": "MitoPS",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 5944,
-   "kills": 210,
-   "killsDia": 18,
-   "xpDia": 405
-  },
-  {
-   "name": "m0rbius",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 7863,
-   "kills": 272,
-   "killsDia": 15,
-   "xpDia": 391
-  },
-  {
-   "name": "L7NNiN",
-   "clan": "DTM",
-   "level": 127,
-   "battleEXP": 385,
-   "kills": 13,
-   "killsDia": 13,
-   "xpDia": 385
-  },
-  {
-   "name": "KingLks",
-   "clan": "Sem Clan",
-   "level": 130,
-   "battleEXP": 336,
-   "kills": 12,
-   "killsDia": 12,
-   "xpDia": 336
-  },
-  {
-   "name": "Gawen",
-   "clan": "Loading",
-   "level": 129,
-   "battleEXP": 1394,
-   "kills": 49,
-   "killsDia": 12,
-   "xpDia": 335
-  },
-  {
-   "name": "HeiusCapone",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 1341,
-   "kills": 50,
-   "killsDia": 12,
-   "xpDia": 321
-  },
-  {
-   "name": "Doomed",
-   "clan": "Sem Clan",
-   "level": 129,
-   "battleEXP": 316,
-   "kills": 12,
-   "killsDia": 12,
-   "xpDia": 316
-  },
-  {
-   "name": "KillShott",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 2206,
-   "kills": 77,
-   "killsDia": 10,
-   "xpDia": 309
-  },
-  {
-   "name": "Heaven",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 2811,
-   "kills": 106,
-   "killsDia": 10,
-   "xpDia": 305
-  },
-  {
-   "name": "Trumpetao",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 4597,
-   "kills": 155,
-   "killsDia": 13,
-   "xpDia": 303
-  },
-  {
-   "name": "FiNN",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 3384,
-   "kills": 108,
-   "killsDia": 9,
-   "xpDia": 283
-  },
-  {
-   "name": "RichthofeN",
-   "clan": "Arcade",
-   "level": 130,
-   "battleEXP": 777,
-   "kills": 26,
-   "killsDia": 8,
-   "xpDia": 281
-  },
-  {
-   "name": "Dookie",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 5146,
-   "kills": 191,
-   "killsDia": 10,
-   "xpDia": 266
+   "xpDia": 558
   },
   {
    "name": "GuimaL",
    "clan": "LegacY",
    "level": 131,
-   "battleEXP": 1687,
-   "kills": 57,
-   "killsDia": 7,
-   "xpDia": 253
-  },
-  {
-   "name": "GodStopMe",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 9286,
-   "kills": 332,
-   "killsDia": 9,
-   "xpDia": 238
+   "battleEXP": 2026,
+   "kills": 70,
+   "killsDia": 20,
+   "xpDia": 592
   },
   {
    "name": "TxBoss",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 4638,
-   "kills": 160,
-   "killsDia": 8,
-   "xpDia": 196
+   "battleEXP": 4974,
+   "kills": 171,
+   "killsDia": 19,
+   "xpDia": 532
+  },
+  {
+   "name": "HeadShot",
+   "clan": "FreeStyle",
+   "level": 131,
+   "battleEXP": 487,
+   "kills": 19,
+   "killsDia": 19,
+   "xpDia": 487
+  },
+  {
+   "name": "GodStopMe",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9562,
+   "kills": 341,
+   "killsDia": 18,
+   "xpDia": 514
+  },
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 5944,
+   "kills": 210,
+   "killsDia": 18,
+   "xpDia": 405
+  },
+  {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 8048,
+   "kills": 282,
+   "killsDia": 16,
+   "xpDia": 503
+  },
+  {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 7863,
+   "kills": 272,
+   "killsDia": 15,
+   "xpDia": 391
+  },
+  {
+   "name": "DELUXE",
+   "clan": "NexuS",
+   "level": 131,
+   "battleEXP": 542,
+   "kills": 17,
+   "killsDia": 14,
+   "xpDia": 442
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1299,
+   "kills": 44,
+   "killsDia": 14,
+   "xpDia": 396
+  },
+  {
+   "name": "RichthofeN",
+   "clan": "Arcade",
+   "level": 130,
+   "battleEXP": 924,
+   "kills": 31,
+   "killsDia": 13,
+   "xpDia": 428
+  },
+  {
+   "name": "L7NNiN",
+   "clan": "DTM",
+   "level": 127,
+   "battleEXP": 385,
+   "kills": 13,
+   "killsDia": 13,
+   "xpDia": 385
+  },
+  {
+   "name": "Trumpetao",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 4597,
+   "kills": 155,
+   "killsDia": 13,
+   "xpDia": 303
+  }
+ ],
+ "dia_xp": [
+  {
+   "name": "Batman",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 7732,
+   "kills": 264,
+   "killsDia": 76,
+   "xpDia": 2208
+  },
+  {
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 5822,
+   "kills": 197,
+   "killsDia": 69,
+   "xpDia": 1904
+  },
+  {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 4423,
+   "kills": 153,
+   "killsDia": 55,
+   "xpDia": 1597
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6565,
+   "kills": 238,
+   "killsDia": 60,
+   "xpDia": 1504
+  },
+  {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 15100,
+   "kills": 506,
+   "killsDia": 43,
+   "xpDia": 1280
+  },
+  {
+   "name": "Valdivia",
+   "clan": "Loading",
+   "level": 129,
+   "battleEXP": 3573,
+   "kills": 131,
+   "killsDia": 42,
+   "xpDia": 1238
+  },
+  {
+   "name": "Brytani",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 21982,
+   "kills": 764,
+   "killsDia": 42,
+   "xpDia": 1209
+  },
+  {
+   "name": "Rinoa",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9029,
+   "kills": 328,
+   "killsDia": 43,
+   "xpDia": 1187
+  },
+  {
+   "name": "PowerMonster",
+   "clan": "Loading",
+   "level": 133,
+   "battleEXP": 13388,
+   "kills": 476,
+   "killsDia": 44,
+   "xpDia": 1145
+  },
+  {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 3753,
+   "kills": 131,
+   "killsDia": 35,
+   "xpDia": 1038
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 3285,
+   "kills": 113,
+   "killsDia": 35,
+   "xpDia": 992
+  },
+  {
+   "name": "Secret",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 2791,
+   "kills": 97,
+   "killsDia": 32,
+   "xpDia": 982
+  },
+  {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 1591,
+   "kills": 59,
+   "killsDia": 35,
+   "xpDia": 964
+  },
+  {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 3107,
+   "kills": 104,
+   "killsDia": 25,
+   "xpDia": 747
+  },
+  {
+   "name": "Heaven",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 3235,
+   "kills": 122,
+   "killsDia": 26,
+   "xpDia": 729
+  },
+  {
+   "name": "Azz0th",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1758,
+   "kills": 63,
+   "killsDia": 23,
+   "xpDia": 615
+  },
+  {
+   "name": "Educadora",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 610,
+   "kills": 24,
+   "killsDia": 24,
+   "xpDia": 610
+  },
+  {
+   "name": "GuimaL",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2026,
+   "kills": 70,
+   "killsDia": 20,
+   "xpDia": 592
+  },
+  {
+   "name": "Dookie",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 5438,
+   "kills": 203,
+   "killsDia": 22,
+   "xpDia": 558
+  },
+  {
+   "name": "TxBoss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 4974,
+   "kills": 171,
+   "killsDia": 19,
+   "xpDia": 532
+  },
+  {
+   "name": "GodStopMe",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9562,
+   "kills": 341,
+   "killsDia": 18,
+   "xpDia": 514
+  },
+  {
+   "name": "LiMaO",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 8048,
+   "kills": 282,
+   "killsDia": 16,
+   "xpDia": 503
+  },
+  {
+   "name": "HeadShot",
+   "clan": "FreeStyle",
+   "level": 131,
+   "battleEXP": 487,
+   "kills": 19,
+   "killsDia": 19,
+   "xpDia": 487
+  },
+  {
+   "name": "DELUXE",
+   "clan": "NexuS",
+   "level": 131,
+   "battleEXP": 542,
+   "kills": 17,
+   "killsDia": 14,
+   "xpDia": 442
+  },
+  {
+   "name": "RichthofeN",
+   "clan": "Arcade",
+   "level": 130,
+   "battleEXP": 924,
+   "kills": 31,
+   "killsDia": 13,
+   "xpDia": 428
+  },
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 5944,
+   "kills": 210,
+   "killsDia": 18,
+   "xpDia": 405
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1299,
+   "kills": 44,
+   "killsDia": 14,
+   "xpDia": 396
+  },
+  {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 7863,
+   "kills": 272,
+   "killsDia": 15,
+   "xpDia": 391
+  },
+  {
+   "name": "L7NNiN",
+   "clan": "DTM",
+   "level": 127,
+   "battleEXP": 385,
+   "kills": 13,
+   "killsDia": 13,
+   "xpDia": 385
+  },
+  {
+   "name": "KingLks",
+   "clan": "Sem Clan",
+   "level": 130,
+   "battleEXP": 336,
+   "kills": 12,
+   "killsDia": 12,
+   "xpDia": 336
   }
  ]
 }
