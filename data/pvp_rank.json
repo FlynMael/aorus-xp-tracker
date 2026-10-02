@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T16:00:02.985537+00:00",
+ "updated_at": "2026-10-02T17:00:03.421545+00:00",
  "day": "2026-10-02",
  "total_players": 1000,
  "geral": [
@@ -49,8 +49,8 @@
    "name": "m0rbius",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 8208,
-   "kills": 285
+   "battleEXP": 8243,
+   "kills": 286
   },
   {
    "name": "Batman",
@@ -70,8 +70,8 @@
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 6924,
-   "kills": 243
+   "battleEXP": 6987,
+   "kills": 245
   },
   {
    "name": "HazeL",
@@ -203,8 +203,8 @@
    "name": "Massacre",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 2599,
-   "kills": 94
+   "battleEXP": 2709,
+   "kills": 99
   },
   {
    "name": "Stelar",
@@ -243,6 +243,15 @@
    "xpDia": 895
   },
   {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 6987,
+   "kills": 245,
+   "killsDia": 29,
+   "xpDia": 826
+  },
+  {
    "name": "Stelar",
    "clan": "LegacY",
    "level": 132,
@@ -250,15 +259,6 @@
    "kills": 82,
    "killsDia": 27,
    "xpDia": 846
-  },
-  {
-   "name": "MitoPS",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 6924,
-   "kills": 243,
-   "killsDia": 27,
-   "xpDia": 763
   },
   {
    "name": "Brytani",
@@ -297,6 +297,15 @@
    "xpDia": 482
   },
   {
+   "name": "Massacre",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 2709,
+   "kills": 99,
+   "killsDia": 20,
+   "xpDia": 568
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -313,15 +322,6 @@
    "kills": 315,
    "killsDia": 17,
    "xpDia": 522
-  },
-  {
-   "name": "Massacre",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 2599,
-   "kills": 94,
-   "killsDia": 15,
-   "xpDia": 458
   },
   {
    "name": "TremDoOdio",
@@ -387,6 +387,15 @@
    "xpDia": 330
   },
   {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 8243,
+   "kills": 286,
+   "killsDia": 11,
+   "xpDia": 291
+  },
+  {
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
@@ -421,15 +430,6 @@
    "kills": 60,
    "killsDia": 10,
    "xpDia": 262
-  },
-  {
-   "name": "m0rbius",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 8208,
-   "kills": 285,
-   "killsDia": 10,
-   "xpDia": 256
   },
   {
    "name": "PecaPekka",
@@ -527,10 +527,10 @@
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 6924,
-   "kills": 243,
-   "killsDia": 27,
-   "xpDia": 763
+   "battleEXP": 6987,
+   "kills": 245,
+   "killsDia": 29,
+   "xpDia": 826
   },
   {
    "name": "Brytani",
@@ -560,6 +560,15 @@
    "xpDia": 638
   },
   {
+   "name": "Massacre",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 2709,
+   "kills": 99,
+   "killsDia": 20,
+   "xpDia": 568
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -585,15 +594,6 @@
    "kills": 104,
    "killsDia": 21,
    "xpDia": 482
-  },
-  {
-   "name": "Massacre",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 2599,
-   "kills": 94,
-   "killsDia": 15,
-   "xpDia": 458
   },
   {
    "name": "TremDoOdio",
@@ -677,6 +677,15 @@
    "xpDia": 306
   },
   {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 8243,
+   "kills": 286,
+   "killsDia": 11,
+   "xpDia": 291
+  },
+  {
    "name": "PecaPekka",
    "clan": "Loading",
    "level": 130,
@@ -702,15 +711,6 @@
    "kills": 60,
    "killsDia": 10,
    "xpDia": 262
-  },
-  {
-   "name": "m0rbius",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 8208,
-   "kills": 285,
-   "killsDia": 10,
-   "xpDia": 256
   },
   {
    "name": "Mawu",
