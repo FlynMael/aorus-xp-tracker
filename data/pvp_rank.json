@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T01:00:06.334621+00:00",
+ "updated_at": "2026-10-02T02:00:04.489376+00:00",
  "day": "2026-10-01",
  "total_players": 1000,
  "geral": [
@@ -297,6 +297,15 @@
    "xpDia": 1209
   },
   {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 1602,
+   "kills": 60,
+   "killsDia": 36,
+   "xpDia": 975
+  },
+  {
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
@@ -313,15 +322,6 @@
    "kills": 113,
    "killsDia": 35,
    "xpDia": 992
-  },
-  {
-   "name": "OnePunchGirl",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 1591,
-   "kills": 59,
-   "killsDia": 35,
-   "xpDia": 964
   },
   {
    "name": "Secret",
@@ -599,10 +599,10 @@
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 1591,
-   "kills": 59,
-   "killsDia": 35,
-   "xpDia": 964
+   "battleEXP": 1602,
+   "kills": 60,
+   "killsDia": 36,
+   "xpDia": 975
   },
   {
    "name": "PaoNaSchapa",
