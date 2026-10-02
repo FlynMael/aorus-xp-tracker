@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T12:00:04.323903+00:00",
+ "updated_at": "2026-10-02T13:00:04.147521+00:00",
  "day": "2026-10-02",
  "total_players": 1000,
  "geral": [
@@ -98,8 +98,8 @@
    "name": "TxBoss",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 5343,
-   "kills": 186
+   "battleEXP": 5370,
+   "kills": 187
   },
   {
    "name": "Curse",
@@ -234,6 +234,15 @@
    "xpDia": 439
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1397,
+   "kills": 48,
+   "killsDia": 10,
+   "xpDia": 306
+  },
+  {
    "name": "GuimaL",
    "clan": "LegacY",
    "level": 131,
@@ -279,15 +288,6 @@
    "xpDia": 166
   },
   {
-   "name": "ASMODEUS",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 1220,
-   "kills": 42,
-   "killsDia": 4,
-   "xpDia": 129
-  },
-  {
    "name": "Trumpetao",
    "clan": "LegacY",
    "level": 132,
@@ -322,6 +322,15 @@
    "kills": 29,
    "killsDia": 1,
    "xpDia": 47
+  },
+  {
+   "name": "TxBoss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 5370,
+   "kills": 187,
+   "killsDia": 1,
+   "xpDia": 27
   }
  ],
  "dia_xp": [
@@ -344,6 +353,15 @@
    "xpDia": 439
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1397,
+   "kills": 48,
+   "killsDia": 10,
+   "xpDia": 306
+  },
+  {
    "name": "HazeL",
    "clan": "Loading",
    "level": 131,
@@ -378,15 +396,6 @@
    "kills": 271,
    "killsDia": 7,
    "xpDia": 141
-  },
-  {
-   "name": "ASMODEUS",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 1220,
-   "kills": 42,
-   "killsDia": 4,
-   "xpDia": 129
   },
   {
    "name": "2bad4you",
@@ -432,6 +441,15 @@
    "kills": 29,
    "killsDia": 1,
    "xpDia": 47
+  },
+  {
+   "name": "TxBoss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 5370,
+   "kills": 187,
+   "killsDia": 1,
+   "xpDia": 27
   }
  ]
 }
