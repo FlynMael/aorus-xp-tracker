@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T18:00:06.133305+00:00",
+ "updated_at": "2026-10-02T19:00:03.748855+00:00",
  "day": "2026-10-02",
  "total_players": 1000,
  "geral": [
@@ -21,8 +21,8 @@
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 133,
-   "battleEXP": 13411,
-   "kills": 477
+   "battleEXP": 13446,
+   "kills": 479
   },
   {
    "name": "GodStopMe",
@@ -460,7 +460,7 @@
   },
   {
    "name": "MantoRosa",
-   "clan": "Sem Clan",
+   "clan": "Loading",
    "level": 131,
    "battleEXP": 363,
    "kills": 13,
@@ -723,7 +723,7 @@
   },
   {
    "name": "MantoRosa",
-   "clan": "Sem Clan",
+   "clan": "Loading",
    "level": 131,
    "battleEXP": 363,
    "kills": 13,
