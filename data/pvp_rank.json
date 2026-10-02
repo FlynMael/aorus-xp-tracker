@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T22:00:04.106599+00:00",
+ "updated_at": "2026-10-02T23:00:03.784464+00:00",
  "day": "2026-10-02",
  "total_players": 1000,
  "geral": [
@@ -84,8 +84,8 @@
    "name": "HazeL",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 6717,
-   "kills": 228
+   "battleEXP": 6773,
+   "kills": 230
   },
   {
    "name": "Trumpetao",
@@ -105,8 +105,8 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 5997,
-   "kills": 214
+   "battleEXP": 6050,
+   "kills": 216
   },
   {
    "name": "TxBoss",
@@ -179,18 +179,18 @@
    "kills": 122
   },
   {
+   "name": "Heaven",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 3406,
+   "kills": 128
+  },
+  {
    "name": "FiNN",
    "clan": "LegacY",
    "level": 132,
    "battleEXP": 3384,
    "kills": 108
-  },
-  {
-   "name": "Heaven",
-   "clan": "Loading",
-   "level": 130,
-   "battleEXP": 3370,
-   "kills": 126
   },
   {
    "name": "DarkFury",
@@ -255,10 +255,10 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 5997,
-   "kills": 214,
-   "killsDia": 80,
-   "xpDia": 2164
+   "battleEXP": 6050,
+   "kills": 216,
+   "killsDia": 82,
+   "xpDia": 2217
   },
   {
    "name": "Massacre",
@@ -315,6 +315,15 @@
    "xpDia": 873
   },
   {
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 6773,
+   "kills": 230,
+   "killsDia": 33,
+   "xpDia": 951
+  },
+  {
    "name": "Rinoa",
    "clan": "Loading",
    "level": 132,
@@ -322,15 +331,6 @@
    "kills": 362,
    "killsDia": 33,
    "xpDia": 867
-  },
-  {
-   "name": "HazeL",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 6717,
-   "kills": 228,
-   "killsDia": 31,
-   "xpDia": 895
   },
   {
    "name": "Pocary",
@@ -396,6 +396,15 @@
    "xpDia": 609
   },
   {
+   "name": "Oxxy",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1662,
+   "kills": 56,
+   "killsDia": 21,
+   "xpDia": 544
+  },
+  {
    "name": "Madory",
    "clan": "LegacY",
    "level": 132,
@@ -421,15 +430,6 @@
    "kills": 89,
    "killsDia": 19,
    "xpDia": 516
-  },
-  {
-   "name": "Oxxy",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 1603,
-   "kills": 54,
-   "killsDia": 19,
-   "xpDia": 485
   },
   {
    "name": "OnePunchGirl",
@@ -527,10 +527,10 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 5997,
-   "kills": 214,
-   "killsDia": 80,
-   "xpDia": 2164
+   "battleEXP": 6050,
+   "kills": 216,
+   "killsDia": 82,
+   "xpDia": 2217
   },
   {
    "name": "Massacre",
@@ -581,10 +581,10 @@
    "name": "HazeL",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 6717,
-   "kills": 228,
-   "killsDia": 31,
-   "xpDia": 895
+   "battleEXP": 6773,
+   "kills": 230,
+   "killsDia": 33,
+   "xpDia": 951
   },
   {
    "name": "Curse",
@@ -668,6 +668,15 @@
    "xpDia": 573
   },
   {
+   "name": "Oxxy",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1662,
+   "kills": 56,
+   "killsDia": 21,
+   "xpDia": 544
+  },
+  {
    "name": "OnePunchGirl",
    "clan": "Loading",
    "level": 131,
@@ -711,15 +720,6 @@
    "kills": 81,
    "killsDia": 15,
    "xpDia": 513
-  },
-  {
-   "name": "Oxxy",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 1603,
-   "kills": 54,
-   "killsDia": 19,
-   "xpDia": 485
   },
   {
    "name": "Madory",
