@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-03T05:00:04.096927+00:00",
+ "updated_at": "2026-10-03T06:00:04.615994+00:00",
  "day": "2026-10-03",
  "total_players": 1000,
  "geral": [
@@ -14,8 +14,8 @@
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 16596,
-   "kills": 555
+   "battleEXP": 16740,
+   "kills": 561
   },
   {
    "name": "PowerMonster",
@@ -49,8 +49,8 @@
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 9216,
-   "kills": 333
+   "battleEXP": 9376,
+   "kills": 337
   },
   {
    "name": "m0rbius",
@@ -216,6 +216,24 @@
  ],
  "dia_kills": [
   {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 16740,
+   "kills": 561,
+   "killsDia": 7,
+   "xpDia": 177
+  },
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9376,
+   "kills": 337,
+   "killsDia": 4,
+   "xpDia": 160
+  },
+  {
    "name": "FiNN",
    "clan": "LegacY",
    "level": 132,
@@ -252,6 +270,15 @@
    "xpDia": 70
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1754,
+   "kills": 61,
+   "killsDia": 2,
+   "xpDia": 54
+  },
+  {
    "name": "TgU",
    "clan": "Loading",
    "level": 131,
@@ -279,18 +306,9 @@
    "xpDia": 50
   },
   {
-   "name": "Pocary",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 16596,
-   "kills": 555,
-   "killsDia": 1,
-   "xpDia": 33
-  },
-  {
    "name": "Weeke",
    "clan": "Loading",
-   "level": 131,
+   "level": 132,
    "battleEXP": 247,
    "kills": 9,
    "killsDia": 1,
@@ -317,6 +335,24 @@
  ],
  "dia_xp": [
   {
+   "name": "Pocary",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 16740,
+   "kills": 561,
+   "killsDia": 7,
+   "xpDia": 177
+  },
+  {
+   "name": "MitoPS",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 9376,
+   "kills": 337,
+   "killsDia": 4,
+   "xpDia": 160
+  },
+  {
    "name": "FiNN",
    "clan": "LegacY",
    "level": 132,
@@ -353,6 +389,15 @@
    "xpDia": 70
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1754,
+   "kills": 61,
+   "killsDia": 2,
+   "xpDia": 54
+  },
+  {
    "name": "PowerMonster",
    "clan": "Loading",
    "level": 133,
@@ -380,18 +425,9 @@
    "xpDia": 49
   },
   {
-   "name": "Pocary",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 16596,
-   "kills": 555,
-   "killsDia": 1,
-   "xpDia": 33
-  },
-  {
    "name": "Weeke",
    "clan": "Loading",
-   "level": 131,
+   "level": 132,
    "battleEXP": 247,
    "kills": 9,
    "killsDia": 1,
