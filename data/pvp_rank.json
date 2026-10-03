@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-03T08:00:04.423029+00:00",
+ "updated_at": "2026-10-03T09:00:04.5979+00:00",
  "day": "2026-10-03",
  "total_players": 1000,
  "geral": [
@@ -91,8 +91,8 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 6365,
-   "kills": 231
+   "battleEXP": 7397,
+   "kills": 271
   },
   {
    "name": "Trumpetao",
@@ -216,6 +216,24 @@
  ],
  "dia_kills": [
   {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 7397,
+   "kills": 271,
+   "killsDia": 41,
+   "xpDia": 1050
+  },
+  {
+   "name": "PecaPekka",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1307,
+   "kills": 43,
+   "killsDia": 8,
+   "xpDia": 193
+  },
+  {
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
@@ -313,15 +331,6 @@
    "kills": 9,
    "killsDia": 1,
    "xpDia": 30
-  },
-  {
-   "name": "Duraso",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 6365,
-   "kills": 231,
-   "killsDia": 1,
-   "xpDia": 18
   },
   {
    "name": "GodStopMe",
@@ -335,6 +344,24 @@
  ],
  "dia_xp": [
   {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 7397,
+   "kills": 271,
+   "killsDia": 41,
+   "xpDia": 1050
+  },
+  {
+   "name": "PecaPekka",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 1307,
+   "kills": 43,
+   "killsDia": 8,
+   "xpDia": 193
+  },
+  {
    "name": "Pocary",
    "clan": "Loading",
    "level": 132,
@@ -432,15 +459,6 @@
    "kills": 9,
    "killsDia": 1,
    "xpDia": 30
-  },
-  {
-   "name": "Duraso",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 6365,
-   "kills": 231,
-   "killsDia": 1,
-   "xpDia": 18
   },
   {
    "name": "GodStopMe",
