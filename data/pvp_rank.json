@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-03T10:00:04.698301+00:00",
+ "updated_at": "2026-10-03T11:00:04.92725+00:00",
  "day": "2026-10-03",
  "total_players": 1000,
  "geral": [
@@ -179,18 +179,18 @@
    "kills": 131
   },
   {
+   "name": "JvFBoss",
+   "clan": "LegacY",
+   "level": 134,
+   "battleEXP": 3527,
+   "kills": 124
+  },
+  {
    "name": "FiNN",
    "clan": "LegacY",
    "level": 132,
    "battleEXP": 3508,
    "kills": 112
-  },
-  {
-   "name": "JvFBoss",
-   "clan": "LegacY",
-   "level": 134,
-   "battleEXP": 3451,
-   "kills": 119
   },
   {
    "name": "DarkFury",
@@ -225,6 +225,15 @@
    "xpDia": 1050
   },
   {
+   "name": "DUFF",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 1260,
+   "kills": 46,
+   "killsDia": 14,
+   "xpDia": 366
+  },
+  {
    "name": "PecaPekka",
    "clan": "Loading",
    "level": 130,
@@ -243,6 +252,15 @@
    "xpDia": 177
   },
   {
+   "name": "JvFBoss",
+   "clan": "LegacY",
+   "level": 134,
+   "battleEXP": 3527,
+   "kills": 124,
+   "killsDia": 5,
+   "xpDia": 76
+  },
+  {
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
@@ -259,6 +277,15 @@
    "kills": 112,
    "killsDia": 4,
    "xpDia": 124
+  },
+  {
+   "name": "F5Boss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 95,
+   "kills": 4,
+   "killsDia": 4,
+   "xpDia": 95
   },
   {
    "name": "HazeL",
@@ -295,6 +322,15 @@
    "kills": 61,
    "killsDia": 2,
    "xpDia": 54
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1885,
+   "kills": 61,
+   "killsDia": 2,
+   "xpDia": 50
   },
   {
    "name": "TgU",
@@ -353,6 +389,15 @@
    "xpDia": 1050
   },
   {
+   "name": "DUFF",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 1260,
+   "kills": 46,
+   "killsDia": 14,
+   "xpDia": 366
+  },
+  {
    "name": "PecaPekka",
    "clan": "Loading",
    "level": 130,
@@ -389,6 +434,15 @@
    "xpDia": 124
   },
   {
+   "name": "F5Boss",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 95,
+   "kills": 4,
+   "killsDia": 4,
+   "xpDia": 95
+  },
+  {
    "name": "HazeL",
    "clan": "Loading",
    "level": 131,
@@ -407,6 +461,15 @@
    "xpDia": 81
   },
   {
+   "name": "JvFBoss",
+   "clan": "LegacY",
+   "level": 134,
+   "battleEXP": 3527,
+   "kills": 124,
+   "killsDia": 5,
+   "xpDia": 76
+  },
+  {
    "name": "Heaven",
    "clan": "Loading",
    "level": 130,
@@ -423,6 +486,15 @@
    "kills": 61,
    "killsDia": 2,
    "xpDia": 54
+  },
+  {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 1885,
+   "kills": 61,
+   "killsDia": 2,
+   "xpDia": 50
   },
   {
    "name": "PowerMonster",
