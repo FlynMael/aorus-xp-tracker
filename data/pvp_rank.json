@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-03T23:00:03.998371+00:00",
+ "updated_at": "2026-10-04T00:00:04.517092+00:00",
  "day": "2026-10-03",
  "total_players": 1000,
  "geral": [
@@ -81,18 +81,18 @@
    "kills": 281
   },
   {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 7974,
+   "kills": 291
+  },
+  {
    "name": "HazeL",
    "clan": "Loading",
    "level": 131,
    "battleEXP": 7778,
    "kills": 259
-  },
-  {
-   "name": "Duraso",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 7699,
-   "kills": 281
   },
   {
    "name": "Trumpetao",
@@ -228,10 +228,10 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 7699,
-   "kills": 281,
-   "killsDia": 51,
-   "xpDia": 1352
+   "battleEXP": 7974,
+   "kills": 291,
+   "killsDia": 61,
+   "xpDia": 1627
   },
   {
    "name": "Trumpetao",
@@ -497,6 +497,15 @@
    "xpDia": 2613
   },
   {
+   "name": "Duraso",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 7974,
+   "kills": 291,
+   "killsDia": 61,
+   "xpDia": 1627
+  },
+  {
    "name": "Trumpetao",
    "clan": "LegacY",
    "level": 132,
@@ -504,15 +513,6 @@
    "kills": 266,
    "killsDia": 49,
    "xpDia": 1407
-  },
-  {
-   "name": "Duraso",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 7699,
-   "kills": 281,
-   "killsDia": 51,
-   "xpDia": 1352
   },
   {
    "name": "MitoPS",
