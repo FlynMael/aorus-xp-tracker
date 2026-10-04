@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-04T03:00:04.504754+00:00",
+ "updated_at": "2026-10-04T04:00:05.157716+00:00",
  "day": "2026-10-04",
  "total_players": 1000,
  "geral": [
@@ -214,6 +214,44 @@
    "kills": 124
   }
  ],
- "dia_kills": [],
- "dia_xp": []
+ "dia_kills": [
+  {
+   "name": "Madu",
+   "clan": "LegacY",
+   "level": 123,
+   "battleEXP": 98,
+   "kills": 4,
+   "killsDia": 4,
+   "xpDia": 98
+  },
+  {
+   "name": "Pikebaguncinhaa",
+   "clan": "Arcade",
+   "level": 124,
+   "battleEXP": 111,
+   "kills": 4,
+   "killsDia": 2,
+   "xpDia": 60
+  }
+ ],
+ "dia_xp": [
+  {
+   "name": "Madu",
+   "clan": "LegacY",
+   "level": 123,
+   "battleEXP": 98,
+   "kills": 4,
+   "killsDia": 4,
+   "xpDia": 98
+  },
+  {
+   "name": "Pikebaguncinhaa",
+   "clan": "Arcade",
+   "level": 124,
+   "battleEXP": 111,
+   "kills": 4,
+   "killsDia": 2,
+   "xpDia": 60
+  }
+ ]
 }
