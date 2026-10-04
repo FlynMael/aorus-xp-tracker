@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-04T21:00:04.107226+00:00",
+ "updated_at": "2026-10-04T22:00:04.474089+00:00",
  "day": "2026-10-04",
  "total_players": 1000,
  "geral": [
@@ -336,10 +336,10 @@
    "name": "BMarch1",
    "clan": "LegacY",
    "level": 131,
-   "battleEXP": 2191,
-   "kills": 71,
-   "killsDia": 4,
-   "xpDia": 164
+   "battleEXP": 2235,
+   "kills": 72,
+   "killsDia": 5,
+   "xpDia": 208
   },
   {
    "name": "Madu",
@@ -587,6 +587,15 @@
    "xpDia": 283
   },
   {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 2235,
+   "kills": 72,
+   "killsDia": 5,
+   "xpDia": 208
+  },
+  {
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
@@ -602,15 +611,6 @@
    "battleEXP": 7769,
    "kills": 273,
    "killsDia": 7,
-   "xpDia": 164
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 2191,
-   "kills": 71,
-   "killsDia": 4,
    "xpDia": 164
   },
   {
