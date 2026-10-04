@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-04T01:00:04.428335+00:00",
+ "updated_at": "2026-10-04T02:00:04.301275+00:00",
  "day": "2026-10-03",
  "total_players": 1000,
  "geral": [
@@ -77,8 +77,8 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 9017,
-   "kills": 326
+   "battleEXP": 9118,
+   "kills": 332
   },
   {
    "name": "Batman",
@@ -123,18 +123,18 @@
    "kills": 216
   },
   {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 5851,
+   "kills": 208
+  },
+  {
    "name": "Curse",
    "clan": "LegacY",
    "level": 131,
    "battleEXP": 5296,
    "kills": 187
-  },
-  {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 5282,
-   "kills": 185
   },
   {
    "name": "Psych0",
@@ -228,10 +228,10 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 9017,
-   "kills": 326,
-   "killsDia": 96,
-   "xpDia": 2670
+   "battleEXP": 9118,
+   "kills": 332,
+   "killsDia": 102,
+   "xpDia": 2771
   },
   {
    "name": "MitoPS",
@@ -250,6 +250,15 @@
    "kills": 266,
    "killsDia": 68,
    "xpDia": 1945
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 5851,
+   "kills": 208,
+   "killsDia": 66,
+   "xpDia": 1726
   },
   {
    "name": "Stelar",
@@ -306,15 +315,6 @@
    "xpDia": 1203
   },
   {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 5282,
-   "kills": 185,
-   "killsDia": 43,
-   "xpDia": 1157
-  },
-  {
    "name": "GuimaL",
    "clan": "LegacY",
    "level": 131,
@@ -351,6 +351,15 @@
    "xpDia": 880
   },
   {
+   "name": "RichthofeN",
+   "clan": "Arcade",
+   "level": 130,
+   "battleEXP": 1840,
+   "kills": 63,
+   "killsDia": 27,
+   "xpDia": 796
+  },
+  {
    "name": "2bad4you",
    "clan": "Loading",
    "level": 132,
@@ -367,15 +376,6 @@
    "kills": 95,
    "killsDia": 24,
    "xpDia": 769
-  },
-  {
-   "name": "RichthofeN",
-   "clan": "Arcade",
-   "level": 130,
-   "battleEXP": 1768,
-   "kills": 60,
-   "killsDia": 24,
-   "xpDia": 724
   },
   {
    "name": "HeiusCapone",
@@ -500,10 +500,10 @@
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
-   "battleEXP": 9017,
-   "kills": 326,
-   "killsDia": 96,
-   "xpDia": 2670
+   "battleEXP": 9118,
+   "kills": 332,
+   "killsDia": 102,
+   "xpDia": 2771
   },
   {
    "name": "MitoPS",
@@ -522,6 +522,15 @@
    "kills": 266,
    "killsDia": 68,
    "xpDia": 1945
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 5851,
+   "kills": 208,
+   "killsDia": 66,
+   "xpDia": 1726
   },
   {
    "name": "Stelar",
@@ -578,15 +587,6 @@
    "xpDia": 1203
   },
   {
-   "name": "TremDoOdio",
-   "clan": "LegacY",
-   "level": 129,
-   "battleEXP": 5282,
-   "kills": 185,
-   "killsDia": 43,
-   "xpDia": 1157
-  },
-  {
    "name": "Madory",
    "clan": "LegacY",
    "level": 132,
@@ -623,6 +623,15 @@
    "xpDia": 880
   },
   {
+   "name": "RichthofeN",
+   "clan": "Arcade",
+   "level": 130,
+   "battleEXP": 1840,
+   "kills": 63,
+   "killsDia": 27,
+   "xpDia": 796
+  },
+  {
    "name": "2bad4you",
    "clan": "Loading",
    "level": 132,
@@ -648,15 +657,6 @@
    "kills": 95,
    "killsDia": 23,
    "xpDia": 757
-  },
-  {
-   "name": "RichthofeN",
-   "clan": "Arcade",
-   "level": 130,
-   "battleEXP": 1768,
-   "kills": 60,
-   "killsDia": 24,
-   "xpDia": 724
   },
   {
    "name": "LiMaO",
