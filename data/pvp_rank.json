@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-04T23:00:04.348684+00:00",
+ "updated_at": "2026-10-05T00:00:04.209509+00:00",
  "day": "2026-10-04",
  "total_players": 1000,
  "geral": [
@@ -112,8 +112,8 @@
    "name": "SteelFury",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 6806,
-   "kills": 251
+   "battleEXP": 6938,
+   "kills": 255
   },
   {
    "name": "2bad4you",
@@ -126,8 +126,15 @@
    "name": "TremDoOdio",
    "clan": "LegacY",
    "level": 129,
-   "battleEXP": 5851,
-   "kills": 208
+   "battleEXP": 5871,
+   "kills": 209
+  },
+  {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 5473,
+   "kills": 197
   },
   {
    "name": "PaoNaSchapa",
@@ -135,13 +142,6 @@
    "level": 133,
    "battleEXP": 5342,
    "kills": 183
-  },
-  {
-   "name": "Curse",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 5296,
-   "kills": 187
   },
   {
    "name": "Psych0",
@@ -315,6 +315,15 @@
    "xpDia": 283
   },
   {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 5473,
+   "kills": 197,
+   "killsDia": 10,
+   "xpDia": 177
+  },
+  {
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
@@ -340,6 +349,15 @@
    "kills": 72,
    "killsDia": 5,
    "xpDia": 208
+  },
+  {
+   "name": "SteelFury",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6938,
+   "kills": 255,
+   "killsDia": 4,
+   "xpDia": 132
   },
   {
    "name": "Madu",
@@ -466,24 +484,6 @@
    "kills": 82,
    "killsDia": 1,
    "xpDia": 32
-  },
-  {
-   "name": "Secret",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 4476,
-   "kills": 159,
-   "killsDia": 1,
-   "xpDia": 32
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 12247,
-   "kills": 434,
-   "killsDia": 1,
-   "xpDia": 21
   }
  ],
  "dia_xp": [
@@ -605,6 +605,15 @@
    "xpDia": 197
   },
   {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 5473,
+   "kills": 197,
+   "killsDia": 10,
+   "xpDia": 177
+  },
+  {
    "name": "TxBoss",
    "clan": "LegacY",
    "level": 133,
@@ -612,6 +621,15 @@
    "kills": 273,
    "killsDia": 7,
    "xpDia": 164
+  },
+  {
+   "name": "SteelFury",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 6938,
+   "kills": 255,
+   "killsDia": 4,
+   "xpDia": 132
   },
   {
    "name": "Doomed",
@@ -738,24 +756,6 @@
    "kills": 4,
    "killsDia": 2,
    "xpDia": 30
-  },
-  {
-   "name": "RichthofeN",
-   "clan": "Arcade",
-   "level": 130,
-   "battleEXP": 1865,
-   "kills": 65,
-   "killsDia": 2,
-   "xpDia": 25
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 12247,
-   "kills": 434,
-   "killsDia": 1,
-   "xpDia": 21
   }
  ]
 }
