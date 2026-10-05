@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-05T07:00:04.743892+00:00",
+ "updated_at": "2026-10-05T08:00:04.835414+00:00",
  "day": "2026-10-05",
  "total_players": 1000,
  "geral": [
@@ -200,17 +200,17 @@
    "kills": 4
   },
   {
+   "name": "NoFarm",
+   "clan": "DTM",
+   "level": 122,
+   "battleEXP": 152,
+   "kills": 8
+  },
+  {
    "name": "Weeke",
    "clan": "Loading",
    "level": 132,
    "battleEXP": 151,
-   "kills": 4
-  },
-  {
-   "name": "Mawu",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 149,
    "kills": 4
   }
  ],
@@ -378,6 +378,15 @@
    "xpDia": 264
   },
   {
+   "name": "NoFarm",
+   "clan": "DTM",
+   "level": 122,
+   "battleEXP": 152,
+   "kills": 8,
+   "killsDia": 8,
+   "xpDia": 152
+  },
+  {
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
@@ -439,6 +448,15 @@
    "kills": 1,
    "killsDia": 1,
    "xpDia": 32
+  },
+  {
+   "name": "LeftEye",
+   "clan": "Arcade",
+   "level": 125,
+   "battleEXP": 15,
+   "kills": 1,
+   "killsDia": 1,
+   "xpDia": 15
   }
  ],
  "dia_xp": [
@@ -623,6 +641,15 @@
    "xpDia": 189
   },
   {
+   "name": "NoFarm",
+   "clan": "DTM",
+   "level": 122,
+   "battleEXP": 152,
+   "kills": 8,
+   "killsDia": 8,
+   "xpDia": 152
+  },
+  {
    "name": "Mawu",
    "clan": "Loading",
    "level": 132,
@@ -666,6 +693,15 @@
    "kills": 1,
    "killsDia": 1,
    "xpDia": 32
+  },
+  {
+   "name": "LeftEye",
+   "clan": "Arcade",
+   "level": 125,
+   "battleEXP": 15,
+   "kills": 1,
+   "killsDia": 1,
+   "xpDia": 15
   }
  ]
 }
