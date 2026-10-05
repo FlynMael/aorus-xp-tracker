@@ -1,217 +1,217 @@
 {
- "updated_at": "2026-10-05T02:00:05.383352+00:00",
- "day": "2026-10-04",
+ "updated_at": "2026-10-05T03:00:04.687189+00:00",
+ "day": "2026-10-05",
  "total_players": 1000,
  "geral": [
-  {
-   "name": "JvFBoss",
-   "clan": "LegacY",
-   "level": 134,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "PumpHell",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "Hewitt",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "PaoNaSchapa",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "TxBoss",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "SteelFury",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "F5Boss",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "LiMaO",
-   "clan": "LegacY",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "Khazard",
-   "clan": "NexuS",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "PowerMonster",
-   "clan": "Loading",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "King2bad",
-   "clan": "Loading",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "PadeiroBoss",
-   "clan": "Sem Clan",
-   "level": 133,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "Batman",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "BaLaBoss",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "Pocary",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "Psych0",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
   {
    "name": "Trumpetao",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "battleEXP": 798,
+   "kills": 23
   },
   {
-   "name": "Hakor",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "name": "HsTuzaO",
+   "clan": "DTM",
+   "level": 127,
+   "battleEXP": 759,
+   "kills": 26
   },
   {
-   "name": "Stelar",
+   "name": "Azz0th",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "DarkFury",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "Madory",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "battleEXP": 695,
+   "kills": 21
   },
   {
    "name": "2bad4you",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "m0rbius",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "GodStopMe",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "battleEXP": 607,
+   "kills": 23
   },
   {
    "name": "Brytani",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "battleEXP": 519,
+   "kills": 15
   },
   {
-   "name": "HeiusCapone",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
-  },
-  {
-   "name": "Massacre",
+   "name": "Pocary",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "battleEXP": 495,
+   "kills": 15
   },
   {
-   "name": "CirosBlack",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "name": "CirosPink",
+   "clan": "Arcade",
+   "level": 130,
+   "battleEXP": 406,
+   "kills": 14
   },
   {
-   "name": "FiNN",
-   "clan": "LegacY",
+   "name": "GodStopMe",
+   "clan": "Loading",
    "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "battleEXP": 316,
+   "kills": 10
+  },
+  {
+   "name": "Empoderado",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 306,
+   "kills": 9
+  },
+  {
+   "name": "m0rbius",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 291,
+   "kills": 9
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 266,
+   "kills": 11
   },
   {
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
-   "battleEXP": 0,
-   "kills": 0
+   "battleEXP": 266,
+   "kills": 9
+  },
+  {
+   "name": "Psych0",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 223,
+   "kills": 8
+  },
+  {
+   "name": "GuimaL",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 217,
+   "kills": 8
+  },
+  {
+   "name": "Curse",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 193,
+   "kills": 6
+  },
+  {
+   "name": "Heaven",
+   "clan": "Loading",
+   "level": 130,
+   "battleEXP": 164,
+   "kills": 5
+  },
+  {
+   "name": "HazeL",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 160,
+   "kills": 7
+  },
+  {
+   "name": "KillerQueeN",
+   "clan": "Arcade",
+   "level": 130,
+   "battleEXP": 154,
+   "kills": 4
+  },
+  {
+   "name": "Weeke",
+   "clan": "Loading",
+   "level": 132,
+   "battleEXP": 151,
+   "kills": 4
+  },
+  {
+   "name": "Valdivia",
+   "clan": "Loading",
+   "level": 129,
+   "battleEXP": 146,
+   "kills": 5
+  },
+  {
+   "name": "OnePunchGirl",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 129,
+   "kills": 4
+  },
+  {
+   "name": "CarolPortaluppi",
+   "clan": "NoaHMeuOvo",
+   "level": 130,
+   "battleEXP": 108,
+   "kills": 3
+  },
+  {
+   "name": "DracO",
+   "clan": "NexuS",
+   "level": 129,
+   "battleEXP": 95,
+   "kills": 4
+  },
+  {
+   "name": "WeekeV3",
+   "clan": "NexuS",
+   "level": 131,
+   "battleEXP": 92,
+   "kills": 3
+  },
+  {
+   "name": "FiNN",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 86,
+   "kills": 3
+  },
+  {
+   "name": "TremDoOdio",
+   "clan": "LegacY",
+   "level": 129,
+   "battleEXP": 57,
+   "kills": 2
+  },
+  {
+   "name": "PaoNaSchapa",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 54,
+   "kills": 2
+  },
+  {
+   "name": "SilverArrow",
+   "clan": "DTM",
+   "level": 129,
+   "battleEXP": 50,
+   "kills": 1
+  },
+  {
+   "name": "JefeS2Danii",
+   "clan": "Arcade",
+   "level": 130,
+   "battleEXP": 48,
+   "kills": 2
+  },
+  {
+   "name": "Capucino",
+   "clan": "Sintonia",
+   "level": 129,
+   "battleEXP": 43,
+   "kills": 1
   }
  ],
  "dia_kills": [],
