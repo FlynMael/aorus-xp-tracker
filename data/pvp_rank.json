@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-05T11:00:02.921331+00:00",
+ "updated_at": "2026-10-05T12:00:03.547904+00:00",
  "day": "2026-10-05",
  "total_players": 1000,
  "geral": [
@@ -172,6 +172,13 @@
    "kills": 8
   },
   {
+   "name": "NoFarm",
+   "clan": "DTM",
+   "level": 122,
+   "battleEXP": 234,
+   "kills": 13
+  },
+  {
    "name": "Psych0",
    "clan": "LegacY",
    "level": 132,
@@ -205,13 +212,6 @@
    "level": 130,
    "battleEXP": 154,
    "kills": 4
-  },
-  {
-   "name": "NoFarm",
-   "clan": "Sem Clan",
-   "level": 122,
-   "battleEXP": 152,
-   "kills": 8
   }
  ],
  "dia_kills": [
@@ -324,6 +324,15 @@
    "xpDia": 373
   },
   {
+   "name": "NoFarm",
+   "clan": "DTM",
+   "level": 122,
+   "battleEXP": 234,
+   "kills": 13,
+   "killsDia": 13,
+   "xpDia": 234
+  },
+  {
    "name": "Heaven",
    "clan": "Loading",
    "level": 130,
@@ -385,15 +394,6 @@
    "kills": 8,
    "killsDia": 8,
    "xpDia": 264
-  },
-  {
-   "name": "NoFarm",
-   "clan": "Sem Clan",
-   "level": 122,
-   "battleEXP": 152,
-   "kills": 8,
-   "killsDia": 8,
-   "xpDia": 152
   },
   {
    "name": "Duraso",
@@ -659,6 +659,15 @@
    "xpDia": 262
   },
   {
+   "name": "NoFarm",
+   "clan": "DTM",
+   "level": 122,
+   "battleEXP": 234,
+   "kills": 13,
+   "killsDia": 13,
+   "xpDia": 234
+  },
+  {
    "name": "PecaPekka",
    "clan": "Loading",
    "level": 130,
@@ -675,15 +684,6 @@
    "kills": 7,
    "killsDia": 7,
    "xpDia": 189
-  },
-  {
-   "name": "NoFarm",
-   "clan": "Sem Clan",
-   "level": 122,
-   "battleEXP": 152,
-   "kills": 8,
-   "killsDia": 8,
-   "xpDia": 152
   },
   {
    "name": "Mawu",
