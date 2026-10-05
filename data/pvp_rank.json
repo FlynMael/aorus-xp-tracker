@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-05T08:00:04.835414+00:00",
+ "updated_at": "2026-10-05T09:00:04.640714+00:00",
  "day": "2026-10-05",
  "total_players": 1000,
  "geral": [
@@ -201,7 +201,7 @@
   },
   {
    "name": "NoFarm",
-   "clan": "DTM",
+   "clan": "Sem Clan",
    "level": 122,
    "battleEXP": 152,
    "kills": 8
@@ -379,7 +379,7 @@
   },
   {
    "name": "NoFarm",
-   "clan": "DTM",
+   "clan": "Sem Clan",
    "level": 122,
    "battleEXP": 152,
    "kills": 8,
@@ -642,7 +642,7 @@
   },
   {
    "name": "NoFarm",
-   "clan": "DTM",
+   "clan": "Sem Clan",
    "level": 122,
    "battleEXP": 152,
    "kills": 8,
