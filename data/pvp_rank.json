@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-05T09:00:04.640714+00:00",
+ "updated_at": "2026-10-05T10:00:04.900736+00:00",
  "day": "2026-10-05",
  "total_players": 1000,
  "geral": [
@@ -144,6 +144,13 @@
    "kills": 13
   },
   {
+   "name": "DUFF",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 297,
+   "kills": 10
+  },
+  {
    "name": "HazeL",
    "clan": "Loading",
    "level": 131,
@@ -154,8 +161,8 @@
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 133,
-   "battleEXP": 266,
-   "kills": 11
+   "battleEXP": 269,
+   "kills": 12
   },
   {
    "name": "Kazghul",
@@ -205,13 +212,6 @@
    "level": 122,
    "battleEXP": 152,
    "kills": 8
-  },
-  {
-   "name": "Weeke",
-   "clan": "Loading",
-   "level": 132,
-   "battleEXP": 151,
-   "kills": 4
   }
  ],
  "dia_kills": [
@@ -360,6 +360,15 @@
    "xpDia": 309
   },
   {
+   "name": "DUFF",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 297,
+   "kills": 10,
+   "killsDia": 10,
+   "xpDia": 297
+  },
+  {
    "name": "m0rbius",
    "clan": "Loading",
    "level": 132,
@@ -403,6 +412,15 @@
    "kills": 6,
    "killsDia": 6,
    "xpDia": 196
+  },
+  {
+   "name": "LeftEye",
+   "clan": "Arcade",
+   "level": 125,
+   "battleEXP": 130,
+   "kills": 6,
+   "killsDia": 6,
+   "xpDia": 130
   },
   {
    "name": "HazeL",
@@ -450,13 +468,22 @@
    "xpDia": 32
   },
   {
-   "name": "LeftEye",
-   "clan": "Arcade",
-   "level": 125,
-   "battleEXP": 15,
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 25,
    "kills": 1,
    "killsDia": 1,
-   "xpDia": 15
+   "xpDia": 25
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 269,
+   "kills": 12,
+   "killsDia": 1,
+   "xpDia": 3
   }
  ],
  "dia_xp": [
@@ -605,6 +632,15 @@
    "xpDia": 309
   },
   {
+   "name": "DUFF",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 297,
+   "kills": 10,
+   "killsDia": 10,
+   "xpDia": 297
+  },
+  {
    "name": "Kazghul",
    "clan": "Loading",
    "level": 131,
@@ -668,6 +704,15 @@
    "xpDia": 133
   },
   {
+   "name": "LeftEye",
+   "clan": "Arcade",
+   "level": 125,
+   "battleEXP": 130,
+   "kills": 6,
+   "killsDia": 6,
+   "xpDia": 130
+  },
+  {
    "name": "MantoNegro",
    "clan": "NexuS",
    "level": 130,
@@ -695,13 +740,22 @@
    "xpDia": 32
   },
   {
-   "name": "LeftEye",
-   "clan": "Arcade",
-   "level": 125,
-   "battleEXP": 15,
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 25,
    "kills": 1,
    "killsDia": 1,
-   "xpDia": 15
+   "xpDia": 25
+  },
+  {
+   "name": "Hewitt",
+   "clan": "LegacY",
+   "level": 133,
+   "battleEXP": 269,
+   "kills": 12,
+   "killsDia": 1,
+   "xpDia": 3
   }
  ]
 }
