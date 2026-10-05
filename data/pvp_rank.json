@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-05T21:00:03.310772+00:00",
+ "updated_at": "2026-10-05T22:00:03.869631+00:00",
  "day": "2026-10-05",
  "total_players": 1000,
  "geral": [
@@ -102,6 +102,13 @@
    "kills": 34
   },
   {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 989,
+   "kills": 36
+  },
+  {
    "name": "Stelar",
    "clan": "LegacY",
    "level": 132,
@@ -169,13 +176,6 @@
    "clan": "DTM",
    "level": 127,
    "battleEXP": 759,
-   "kills": 26
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 754,
    "kills": 26
   },
   {
@@ -297,6 +297,15 @@
    "xpDia": 956
   },
   {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 989,
+   "kills": 36,
+   "killsDia": 36,
+   "xpDia": 989
+  },
+  {
    "name": "Stelar",
    "clan": "LegacY",
    "level": 132,
@@ -376,15 +385,6 @@
    "kills": 34,
    "killsDia": 26,
    "xpDia": 822
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 754,
-   "kills": 26,
-   "killsDia": 26,
-   "xpDia": 754
   },
   {
    "name": "JefeS2Danii",
@@ -569,6 +569,15 @@
    "xpDia": 1039
   },
   {
+   "name": "BMarch1",
+   "clan": "LegacY",
+   "level": 131,
+   "battleEXP": 989,
+   "kills": 36,
+   "killsDia": 36,
+   "xpDia": 989
+  },
+  {
    "name": "m0rbius",
    "clan": "Loading",
    "level": 132,
@@ -639,15 +648,6 @@
    "kills": 31,
    "killsDia": 31,
    "xpDia": 800
-  },
-  {
-   "name": "BMarch1",
-   "clan": "LegacY",
-   "level": 131,
-   "battleEXP": 754,
-   "kills": 26,
-   "killsDia": 26,
-   "xpDia": 754
   },
   {
    "name": "Arash",
