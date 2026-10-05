@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-05T19:00:04.021086+00:00",
+ "updated_at": "2026-10-05T20:00:04.490973+00:00",
  "day": "2026-10-05",
  "total_players": 1000,
  "geral": [
@@ -56,8 +56,8 @@
    "name": "Azz0th",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 1259,
-   "kills": 44
+   "battleEXP": 1272,
+   "kills": 45
   },
   {
    "name": "m0rbius",
@@ -111,7 +111,7 @@
   {
    "name": "BaLaBoss",
    "clan": "LegacY",
-   "level": 132,
+   "level": 133,
    "battleEXP": 942,
    "kills": 37
   },
@@ -123,17 +123,17 @@
    "kills": 29
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 846,
+   "kills": 29
+  },
+  {
    "name": "MitoPS",
    "clan": "Loading",
    "level": 132,
    "battleEXP": 816,
-   "kills": 28
-  },
-  {
-   "name": "ASMODEUS",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 806,
    "kills": 28
   },
   {
@@ -308,7 +308,7 @@
   {
    "name": "BaLaBoss",
    "clan": "LegacY",
-   "level": 132,
+   "level": 133,
    "battleEXP": 942,
    "kills": 37,
    "killsDia": 35,
@@ -333,6 +333,15 @@
    "xpDia": 800
   },
   {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 846,
+   "kills": 29,
+   "killsDia": 29,
+   "xpDia": 846
+  },
+  {
    "name": "Hewitt",
    "clan": "LegacY",
    "level": 134,
@@ -340,15 +349,6 @@
    "kills": 40,
    "killsDia": 29,
    "xpDia": 807
-  },
-  {
-   "name": "ASMODEUS",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 806,
-   "kills": 28,
-   "killsDia": 28,
-   "xpDia": 806
   },
   {
    "name": "Madory",
@@ -414,6 +414,15 @@
    "xpDia": 586
   },
   {
+   "name": "Azz0th",
+   "clan": "LegacY",
+   "level": 132,
+   "battleEXP": 1272,
+   "kills": 45,
+   "killsDia": 24,
+   "xpDia": 577
+  },
+  {
    "name": "Duraso",
    "clan": "Loading",
    "level": 131,
@@ -430,15 +439,6 @@
    "kills": 25,
    "killsDia": 23,
    "xpDia": 607
-  },
-  {
-   "name": "Azz0th",
-   "clan": "LegacY",
-   "level": 132,
-   "battleEXP": 1259,
-   "kills": 44,
-   "killsDia": 23,
-   "xpDia": 564
   },
   {
    "name": "Psych0",
@@ -589,11 +589,20 @@
   {
    "name": "BaLaBoss",
    "clan": "LegacY",
-   "level": 132,
+   "level": 133,
    "battleEXP": 942,
    "kills": 37,
    "killsDia": 35,
    "xpDia": 907
+  },
+  {
+   "name": "ASMODEUS",
+   "clan": "Loading",
+   "level": 131,
+   "battleEXP": 846,
+   "kills": 29,
+   "killsDia": 29,
+   "xpDia": 846
   },
   {
    "name": "GuimaL",
@@ -612,15 +621,6 @@
    "kills": 40,
    "killsDia": 29,
    "xpDia": 807
-  },
-  {
-   "name": "ASMODEUS",
-   "clan": "Loading",
-   "level": 131,
-   "battleEXP": 806,
-   "kills": 28,
-   "killsDia": 28,
-   "xpDia": 806
   },
   {
    "name": "Madory",
@@ -725,10 +725,10 @@
    "name": "Azz0th",
    "clan": "LegacY",
    "level": 132,
-   "battleEXP": 1259,
-   "kills": 44,
-   "killsDia": 23,
-   "xpDia": 564
+   "battleEXP": 1272,
+   "kills": 45,
+   "killsDia": 24,
+   "xpDia": 577
   },
   {
    "name": "MitoPS",
